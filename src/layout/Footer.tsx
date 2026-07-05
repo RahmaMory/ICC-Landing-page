@@ -45,7 +45,7 @@ export default function Footer() {
   </div>
 
   <a
-    href="mailto:rahma.mory1@gmail.com"
+    href="mailto:hr@icc-collab.com"
     target="_blank"
     rel="noopener noreferrer"
     className="
