@@ -177,16 +177,16 @@ export default function DashboardSection() {
               variants={fadeUp}
               className="mt-10 flex flex-wrap items-center gap-5"
             >
-              <Link
-                to="/contact"
+              <a
+                href="#dashboard-contact"
                 className="group inline-flex items-center justify-center rounded-xl border border-cyan-400/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
               >
                 <span>Get Your Dashboard</span>
                 <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+              </a>
 
               <Link
-                to="/features"
+                to="/services/dashboard"
                 className="text-sm font-medium text-white/55 transition-colors duration-300 hover:text-white"
               >
                 Explore Features

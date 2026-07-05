@@ -1,12 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
-import Contact from "./pages/Contact";
 import ProjectDetails from "./pages/ProjectDetails";
 import Projects from "./pages/Projects";
-import Industries from "./pages/Industries";
 import IndustryDetails from "./pages/IndustryDetails";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -21,11 +18,7 @@ import AIAutomationPage from "./components/Services/AIAutomationPage";
 import NotFound from "./components/NotFound";
 import IntroLoader from "./components/IntroLoader";
 import ScrollToHash from "./components/ScrollToHash";
-import SelectedWork from "./pages/SelectedWork";
-import TestimonialsSection from "./components/TestimonialsSection";
-import ProcessSection from "./components/ProcessSection";
-import PricingSection from "./components/pricing/PricingSection";
-import FrequentlyAsked from "./components/FAQSection";
+import ScrollToTop from "./components/ScrollToTop";
 import Expertise from "./components/Expertise";
 
 function App() {
@@ -40,27 +33,22 @@ function App() {
   }, []);
 
   return (
-    
+
     <>
-    <ScrollToHash/>
+      <ScrollToHash />
       {showLoader && <IntroLoader />}
+
+      <ScrollToTop />
 
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/work" element={<SelectedWork />} />
-          <Route path="/testimonials" element={<TestimonialsSection />} />
-          <Route path="/process" element={<ProcessSection />} />
-          <Route path="/pricing" element={<PricingSection />} />
-          <Route path="/faq" element={<FrequentlyAsked />} />
-          <Route path="/services" element={<Expertise />} />
           <Route path="/project/:slug" element={<ProjectDetails />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/industries" element={<Industries />} />
           <Route path="/industry/:slug" element={<IndustryDetails />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/services" element={<Expertise />} />
           <Route path="/services/landing-page" element={<LandingPage />} />
           <Route path="/services/mvp-website" element={<MVPWebsite />} />
           <Route path="/services/mobile-app" element={<MobileApp />} />

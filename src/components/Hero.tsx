@@ -279,8 +279,8 @@ export default function Hero() {
   variants={fadeUp}
   className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto"
 >
-  <Link
-    to="/contact"
+  <a
+    href="#start-project"
     className="
       inline-flex items-center justify-center
       w-full sm:w-auto
@@ -299,7 +299,7 @@ export default function Hero() {
   >
     <span>Start Your Project</span>
     <span className="ml-2">→</span>
-  </Link>
+  </a>
 
   <Link
     to="/#work"

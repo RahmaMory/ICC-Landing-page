@@ -206,7 +206,6 @@ import { motion } from "framer-motion";
 import checkoutImg from "../../../assets/images/E-commerce/1.png";
 import clarityImg from "../../../assets/images/E-commerce/2.png";
 import mobileImg from "../../../assets/images/E-commerce/3.png";
-import { Link } from "react-router-dom";
 import { fadeLeft, fadeUp, staggerContainer } from "../../../lib/motion";
 
 const metrics = [
@@ -405,13 +404,13 @@ export default function EcommerceAfterHeroSection() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                to="/contact"
+              <a
+                href="#ecommerce-contact"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:opacity-90"
               >
                 Launch Your Store
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
 
               <button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5">
                 View Case Studies
@@ -420,6 +419,10 @@ export default function EcommerceAfterHeroSection() {
           </motion.div>
         </div>
       </div>
+
+
+    
+
     </section>
   );
 }

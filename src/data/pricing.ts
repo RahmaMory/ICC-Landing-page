@@ -5,6 +5,7 @@ export interface PricingPlan {
   features: string[]
   popular?: boolean
   buttonText: string
+  href?: string
 }
 
 export const pricingPlans: PricingPlan[] = [
@@ -19,6 +20,7 @@ export const pricingPlans: PricingPlan[] = [
       "1 Week Turnaround",
     ],
     buttonText: "Get Started",
+    href: "#start-project"
   },
   {
     name: "Growth",
@@ -33,6 +35,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     popular: true,
     buttonText: "Get Started",
+    href: "#start-project"
   },
   {
     name: "Pro",
@@ -45,6 +48,7 @@ export const pricingPlans: PricingPlan[] = [
       "Priority Support",
       "6+ Weeks Turnaround",
     ],
-    buttonText: "Contact Sales",
+    buttonText: "Get Started",
+    href: "#start-project"
   },
 ]

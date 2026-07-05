@@ -7,12 +7,17 @@ import TestimonialsSection from "../components/TestimonialsSection"
 import Industries from "./Industries"
 import SelectedWork from "./SelectedWork"
 import RatingSummary from "../components/Reviews/RatingSummary"
+import Contact from "./Contact"
+import GeneralContactForm from "../components/GeneralContactForm"
 
 export default function Home() {
   return (
     <>
       <Hero />
 
+      <section id="services">
+        <Expertise />
+      </section>
       <section id="process">
         <ProcessSection />
       </section>
@@ -41,6 +46,14 @@ export default function Home() {
 
       <section id="faq">
         <FAQSection />
+      </section>
+
+      <section id="start-project">
+        <GeneralContactForm />
+      </section>
+
+      <section id="contact">
+        <Contact />
       </section>
     </>
   )

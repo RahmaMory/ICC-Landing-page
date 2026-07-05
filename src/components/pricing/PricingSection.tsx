@@ -48,12 +48,14 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { pricingPlans } from "../../data/pricing"
+import { pricingPlans} from "../../data/pricing"
 import PricingCard from "./PricingCard"
 import { fadeUp, staggerContainer } from "../../lib/motion"
 
 export default function PricingSection() {
   const [selected, setSelected] = useState<string>("Growth")
+
+
 
   return (
     <section className="bg-[#0B121E] text-white py-24">
@@ -81,6 +83,7 @@ export default function PricingSection() {
               plan={plan}
               isSelected={selected === plan.name}
               onSelect={() => setSelected(plan.name)}
+              href={plan.href} 
             />
           ))}
         </motion.div>
@@ -93,7 +96,7 @@ export default function PricingSection() {
           variants={fadeUp}
         >
           Need something custom?
-          <Link to="/contact">
+          <Link to="/#contact">
             <span className="text-blue-500 ml-1 cursor-pointer">
               Let’s talk.
             </span>

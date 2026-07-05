@@ -6,6 +6,7 @@ import IntegrationProcessSection from './AiAutomationServicesPage/IntegrationPro
 import RealImpactSection from './AiAutomationServicesPage/RealImpactSection'
 import TheCommandCenter from './AiAutomationServicesPage/TheCommandCenter'
 import SystemPreviewSection from './AiAutomationServicesPage/SystemPreviewSection'
+import AutomationForm from '../AutomationForm'
 
 export default function AIAutomationPage() {
   return (
@@ -18,6 +19,7 @@ export default function AIAutomationPage() {
     <RealImpactSection/>
     <TheCommandCenter/>
     <SystemPreviewSection/>
+    <AutomationForm/>
       
     </>
   )

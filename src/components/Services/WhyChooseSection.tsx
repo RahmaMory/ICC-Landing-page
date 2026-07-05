@@ -32,7 +32,7 @@
 //     <div className="bg-[#090E18]">
 //   <section className=" py-40 px-6  ">
 //       <div className="container mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        
+
 //         {/* Left Side */}
 //         <div>
 //           <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
@@ -83,7 +83,7 @@
 //       </div>
 //      <section className="py-32 px-6 mt-40">
 //   <div className="max-w-6xl mx-auto">
-    
+
 //     <div className="
 //       text-center
 //       rounded-3xl
@@ -117,13 +117,9 @@
 // </section>
 //     </section>
 //     </div>
-  
+
 //   );
 // }
-
-
-
-
 
 import { CheckCircle2, Sparkles, Zap, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -243,33 +239,80 @@ export default function WhyChooseSection() {
           >
             <div
               className="
-                text-center
-                rounded-3xl
-                border border-indigo-500/20
-                bg-linear-to-br from-[#1a2135] to-[#141b2d]
-                p-10 sm:p-14 md:p-16
-              "
+    mx-auto
+    w-full
+    max-w-6xl
+    rounded-3xl
+    border border-indigo-500/20
+    bg-gradient-to-br from-[#1a2135] to-[#141b2d]
+    px-5 py-10
+    sm:px-8 sm:py-12
+    md:px-12 md:py-16
+    lg:px-20 lg:py-20
+    text-center
+  "
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              <h2
+                className="
+      text-2xl
+      font-bold
+      leading-tight
+      sm:text-3xl
+      md:text-4xl
+      lg:text-5xl
+      xl:text-6xl
+    "
+              >
                 Ready to Build Something Amazing?
               </h2>
 
-              <p className="text-gray-300 mt-6 text-base sm:text-lg max-w-2xl mx-auto">
-                Join thousands of creators who are building beautiful websites with Wix Vibe
+              <p
+                className="
+      mx-auto
+      mt-5
+      max-w-3xl
+      text-sm
+      leading-7
+      text-gray-300
+      sm:text-base
+      md:mt-6
+      md:text-lg
+      lg:text-xl
+    "
+              >
+                Join thousands of creators who are building beautiful websites with Wix
+                Vibe.
               </p>
 
-              <button
-                className="
-                  mt-10
-                  px-7 py-3
-                  rounded-xl
-                  bg-linear-to-r from-blue-600 to-indigo-500
-                  hover:opacity-90 transition
-                  text-white font-medium
-                "
-              >
-                Start Building Now →
-              </button>
+              <div className="mt-8 md:mt-10">
+                <a
+                  href= "#landingpage-contact"
+                  className="
+        inline-flex
+        items-center
+        justify-center
+        rounded-xl
+        bg-gradient-to-r
+        from-blue-600
+        to-indigo-500
+        px-6
+        py-3
+        text-sm
+        font-semibold
+        text-white
+        transition-all
+        duration-300
+        hover:opacity-90
+        hover:scale-[1.02]
+        sm:px-8
+        sm:py-3.5
+        sm:text-base
+      "
+                >
+                  Start Building Now
+                  <span className="ml-2">→</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         </section>

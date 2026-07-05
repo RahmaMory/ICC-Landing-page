@@ -61,24 +61,24 @@ export default function ShopifyCTASection() {
 
         <motion.h2
           variants={fadeUp}
-          className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[88px]"
+          className="max-w-5xl text-2xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-7xl md:text-6xl lg:text-[80px]"
         >
-          <span className="block">Let AI Run Your Shopify</span>
-          <span className="block bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">Store. You Focus on Growth.</span>
+          <span className="block">Let AI Run Your Shopify Store.</span>
+          <span className="block bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent mt-1.5"> You Focus on Growth.</span>
         </motion.h2>
 
         <motion.div
           variants={fadeUp}
           className="mt-14 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <Link
-            to="/contact"
+          <a
+            href="#shopify-contact"
             className="inline-flex min-w-65 items-center justify-center rounded-2xl bg-cyan-400 px-10 py-5 text-xl font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]"
           >
             Get Your System
-          </Link>
+          </a>
           <Link
-            to="/services"
+            to="/services/shopify"
             className="inline-flex min-w-65 items-center justify-center rounded-2xl border border-cyan-400/20 bg-transparent px-10 py-5 text-xl font-semibold text-white transition-all duration-300 hover:border-cyan-300/35 hover:bg-cyan-400/5 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)]"
           >
             View Our Services

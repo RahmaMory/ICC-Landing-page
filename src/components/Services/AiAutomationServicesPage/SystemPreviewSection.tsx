@@ -48,7 +48,6 @@
 
 
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 export default function SystemPreviewSection() {
@@ -82,8 +81,8 @@ export default function SystemPreviewSection() {
           </motion.p>
 
           <motion.div variants={fadeUp}>
-            <Link
-              to="/contact"
+            <a
+              href="#automation-contact"
               className="group mt-10 inline-flex items-center justify-center rounded-[20px] 
               bg-white px-10 py-5 text-lg font-semibold text-[#0b1220] 
               transition-all duration-300 hover:scale-[1.02] 
@@ -96,7 +95,7 @@ export default function SystemPreviewSection() {
               <span className="ml-4 text-[24px] transition-transform duration-300 group-hover:translate-x-1 ">
                 →
               </span>
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </div>

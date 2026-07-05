@@ -143,18 +143,15 @@ export default function RealImpactSection() {
             {
               value: '30%',
               label: 'Reduction in processing time',
-              ex: '%',
               sub: 'EFFICIENCY',
             },
             {
               value: '$150,000',
-              ex: 'dollars',
               label: 'Annual operational cost savings',
               sub: 'COST SAVINGS',
             },
             {
               value: '2.5x',
-              ex: 'x',
               label: 'Increase in customer engagement',
               sub: 'GROWTH',
               full: true,
@@ -174,10 +171,6 @@ export default function RealImpactSection() {
                 <h3 className="text-[56px] font-semibold tracking-[-0.03em] leading-none flex items-baseline gap-1 ">
                   <span className="text-gray-300 transition-all duration-300 group-hover:bg-linear-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent">
                     {item.value}
-                  </span>
-
-                  <span className="text-blue-300 font-semibold text-sm">
-                    {item.ex}
                   </span>
                 </h3>
 

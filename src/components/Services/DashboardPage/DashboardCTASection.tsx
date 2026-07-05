@@ -85,12 +85,12 @@ export default function DashboardCTASection() {
           variants={fadeUp}
           className="mt-14 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <Link
-            to="/contact"
+          <a
+            href="#dashboard-contact"
             className="group inline-flex min-w-70 items-center justify-center rounded-2xl bg-cyan-400 px-10 py-5 text-xl font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]"
           >
             <span>Get Your Dashboard</span>
-          </Link>
+          </a>
 
           <Link
             to="/services"

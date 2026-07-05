@@ -4,6 +4,14 @@ import { Mail} from "lucide-react"
 import { footerLinks } from "../data/footer"
 import { socialLinks } from "../data/socialLinks"
 export default function Footer() {
+
+    const whatsappUrl =
+    'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.'
+
+  const handleContactClick = () => {
+    window.open(whatsappUrl, "_blank");
+  }
+
   return (
     <footer className="bg-black text-white pt-24 pb-10">
 
@@ -19,8 +27,7 @@ export default function Footer() {
 
    <div className="flex justify-center gap-4 flex-wrap mb-10">
 
-  <Link
-    to="/contact"
+  <div
     className="
       text-base sm:text-lg md:text-xl
       px-4 sm:px-6 md:px-7
@@ -32,9 +39,10 @@ export default function Footer() {
       flex items-center justify-center
       w-full sm:w-auto
     "
+    onClick={handleContactClick}
   >
     Book a Call
-  </Link>
+  </div>
 
   <a
     href="mailto:rahma.mory1@gmail.com"

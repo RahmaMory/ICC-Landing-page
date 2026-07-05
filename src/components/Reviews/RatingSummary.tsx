@@ -27,44 +27,51 @@ export default function RatingSummary() {
   const [animatedBars, setAnimatedBars] = useState([0, 0, 0, 0, 0])
 
   const sectionRef = useRef<HTMLElement | null>(null)
-  const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
-    const node = sectionRef.current
-    if (!node) return
+    const node = sectionRef.current;
+    if (!node) return;
+
+    let timers: ReturnType<typeof setTimeout>[] = [];
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || hasAnimatedRef.current) return
+        if (entry.isIntersecting) {
+          // Reset
+          setAnimatedBars([0, 0, 0, 0, 0]);
 
-        hasAnimatedRef.current = true
+          timers.forEach(clearTimeout);
+          timers = [];
 
-        let startTime: number | null = null
-        const duration = 1400
+          ratings.forEach((item, index) => {
+            const timer = setTimeout(() => {
+              setAnimatedBars((prev) => {
+                const next = [...prev];
+                next[index] = item.percent;
+                return next;
+              });
+            }, index * 300);
 
-        const animate = (timestamp: number) => {
-          if (!startTime) startTime = timestamp
-
-          const progress = Math.min((timestamp - startTime) / duration, 1)
-          const eased = 1 - Math.pow(1 - progress, 3)
-
-          const nextBars = ratings.map((item) => item.percent * eased)
-          setAnimatedBars(nextBars)
-
-          if (progress < 1) {
-            requestAnimationFrame(animate)
-          }
+            timers.push(timer);
+          });
+        } else {
+          timers.forEach(clearTimeout);
+          timers = [];
+          setAnimatedBars([0, 0, 0, 0, 0]);
         }
-
-        requestAnimationFrame(animate)
       },
-      { threshold: 0.35 }
-    )
+      {
+        threshold: 0.4,
+      }
+    );
 
-    observer.observe(node)
+    observer.observe(node);
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      timers.forEach(clearTimeout);
+      observer.disconnect();
+    };
+  }, []);
 
   function handleClick(value: number) {
     setRating(value)
@@ -140,7 +147,7 @@ export default function RatingSummary() {
 
                 <div className="h-3 flex-1 overflow-hidden rounded-full bg-gray-400">
                   <div
-                    className="h-full rounded-full bg-blue-600 transition-all duration-150"
+                    className="h-full rounded-full bg-blue-600 transition-all duration-700 ease-out"
                     style={{ width: `${animatedBars[index]}%` }}
                   />
                 </div>
@@ -163,11 +170,10 @@ export default function RatingSummary() {
                 onMouseEnter={() => setHover(star)}
                 onMouseLeave={() => setHover(0)}
                 onClick={() => handleClick(star)}
-                className={`cursor-pointer transition ${
-                  star <= (hover || rating)
-                    ? "fill-yellow-400 text-yellow-400"
-                    : "text-gray-300"
-                }`}
+                className={`cursor-pointer transition ${star <= (hover || rating)
+                  ? "fill-yellow-400 text-yellow-400"
+                  : "text-gray-300"
+                  }`}
               />
             ))}
           </div>

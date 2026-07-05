@@ -73,12 +73,14 @@ import { motion } from "framer-motion"
 import { fadeUp } from "../../lib/motion"
 
 interface Props {
-  plan: PricingPlan
-  isSelected: boolean
-  onSelect: () => void
+  plan: PricingPlan;
+  isSelected: boolean;
+  onSelect: () => void;
+  onGetStarted?: () => void;
+  href?: string;
 }
 
-export default function PricingCard({ plan, isSelected, onSelect }: Props) {
+export default function PricingCard({ plan, isSelected, onSelect,href }: Props) {
   return (
     <motion.div
       variants={fadeUp}
@@ -124,16 +126,9 @@ export default function PricingCard({ plan, isSelected, onSelect }: Props) {
         ))}
       </ul>
 
-      <button
-        className={`w-full py-3 rounded-lg transition
-        ${
-          isSelected
-            ? "bg-linear-to-r from-blue-600 to-indigo-500 "
-            : "border border-white/20"
-        }`}
-      >
+      <a href={href} className={`w-full py-3 px-1.5 rounded-lg transition bg-[#155DFC]`}>
         {plan.buttonText}
-      </button>
+      </a>
     </motion.div>
   )
 }

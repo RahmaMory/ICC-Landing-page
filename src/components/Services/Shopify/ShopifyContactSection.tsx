@@ -123,7 +123,7 @@ export default function ShopifyContactSection() {
   ]
 
   return (
-    <section className="px-4 py-24 sm:px-6 md:py-28 lg:px-8">
+    <section id='shopify-contact' className="px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="mx-auto max-w-375">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
           <motion.div

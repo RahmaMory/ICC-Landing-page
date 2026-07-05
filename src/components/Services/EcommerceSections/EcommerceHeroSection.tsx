@@ -55,9 +55,6 @@
 //   )
 // }
 
-
-
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../../lib/motion";
 
@@ -74,10 +71,10 @@ export default function EcommerceHeroSection() {
           variants={fadeUp}
           className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
         >
-          Turn Your Store Into a
+          Turn Your Store Into 
           <br />
           <span className="bg-linear-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
-            Sales Machine
+           A Sales Machine
           </span>
         </motion.h1>
 
@@ -96,8 +93,8 @@ export default function EcommerceHeroSection() {
         </motion.p>
 
         <motion.div variants={fadeUp}>
-          <Link
-            to="/contact"
+          <a
+            href="#ecommerce-contact"
             className="
             mt-10 sm:mt-12
             group relative inline-flex items-center justify-center
@@ -118,7 +115,7 @@ export default function EcommerceHeroSection() {
               group-hover:h-6 group-hover:opacity-90
             "
             />
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
     </section>

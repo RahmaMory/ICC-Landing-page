@@ -94,14 +94,6 @@ export default function ShopifyHeroSection() {
         >
           <Link
             to="/contact"
-            className="group inline-flex min-w-55 items-center justify-center rounded-2xl bg-cyan-400 px-8 py-4 text-base font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_28px_rgba(34,211,238,0.30)]"
-          >
-            <span>Book a Call</span>
-            <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
-
-          <Link
-            to="/contact"
             className="group inline-flex min-w-55 items-center justify-center rounded-2xl border border-cyan-400/20 bg-white/5 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-cyan-300/35 hover:bg-cyan-400/8 hover:shadow-[0_0_22px_rgba(34,211,238,0.10)]"
           >
             <span>Get Started</span>

@@ -48,7 +48,7 @@ export default function ProcessCard({ step }: Props) {
         {step.title}
       </h3>
 
-      <p className="text-gray-400 text-md">
+      <p className="text-gray-400 text-md pt-4">
         {step.description}
       </p>
     </motion.div>

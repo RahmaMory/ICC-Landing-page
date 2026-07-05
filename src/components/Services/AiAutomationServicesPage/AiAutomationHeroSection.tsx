@@ -139,14 +139,14 @@ export default function AiAutomationHeroSection() {
           variants={fadeUp}
           className="mt-8 sm:mt-10 flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
-          <Link
-            to="/contact"
+          <a
+            href="#automation-contact"
             className="group inline-flex items-center justify-center rounded-xl h-14 px-7 sm:px-8 text-sm sm:text-base font-medium border border-transparent bg-blue-300 text-black hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto min-w-45"
           >
             <span className="transition-all duration-300 group-hover:tracking-wide group-hover:scale-105">
               Start Automation →
             </span>
-          </Link>
+          </a>
 
           <Link
             to="#"

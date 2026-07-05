@@ -243,7 +243,6 @@
 import  { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { BarChart3, TrendingUp, Gauge, CircleCheck } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 type StatCard = {
@@ -453,12 +452,12 @@ export default function DashboardFeaturesGrid() {
               Join leading companies that trust our dashboards to drive their success
             </p>
 
-            <Link
-              to="/contact"
+            <a
+              href="#dashboard-contact"
               className="group mt-10 inline-flex items-center justify-center rounded-2xl bg-linear-to-r from-cyan-400 to-blue-400 px-10 py-5 text-lg font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]"
             >
               <span>Get Your Dashboard</span>
-            </Link>
+            </a>
           </div>
         </div>
       </motion.div>

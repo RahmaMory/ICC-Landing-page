@@ -105,7 +105,6 @@ import { ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileAppFeatureList from "./MobileAppFeatureList";
 import MobileAppPhoneMockup from "./MobileAppPhoneMockup";
-import { Link } from "react-router-dom";
 import { fadeLeft, fadeRight, fadeUp, staggerContainer } from "../../../lib/motion";
 
 export default function MobileAppHeroSection() {
@@ -197,13 +196,13 @@ export default function MobileAppHeroSection() {
           </motion.blockquote>
 
           <motion.div variants={fadeUp} className="mt-8">
-            <Link
-              to="/contact"
+            <a
+              href = "#mobile-contact"
               className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm sm:text-base font-semibold text-[#0B1020] transition hover:scale-[1.02]"
             >
               Build Your App
               <span className="ml-3">→</span>
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
 

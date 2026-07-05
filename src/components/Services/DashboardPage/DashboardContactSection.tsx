@@ -216,7 +216,8 @@ export default function DashboardContactSection() {
     message: '',
   })
 
-  const whatsappNumber = '201110245333'
+    const phoneNumber = "201031158933";
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -236,7 +237,7 @@ Phone: ${formData.phone || '-'}
 
 Message:
 ${formData.message || '-'}`
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
     window.open(whatsappUrl, '_blank')
 
     setFormData({
@@ -263,7 +264,7 @@ ${formData.message || '-'}`
   ]
 
   return (
-    <section className="relative overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
+    <section id='dashboard-contact' className="relative overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(34,211,238,0.10),transparent_24%),radial-gradient(circle_at_75%_50%,rgba(59,130,246,0.08),transparent_30%)]" />
 
       <div className="mx-auto w-full max-w-375">

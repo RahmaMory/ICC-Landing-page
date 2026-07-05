@@ -64,6 +64,7 @@ import { motion } from "framer-motion";
 import FeaturesSection from "./FeaturesSection";
 import WhyChooseSection from "./WhyChooseSection";
 import { fadeUp, staggerContainer } from "../../lib/motion";
+import LandingPageForm from "../LandingPageForm";
 
 export default function LandingPage() {
   return (
@@ -98,8 +99,8 @@ export default function LandingPage() {
             variants={fadeUp}
             className="mt-8 sm:mt-10 flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4"
           >
-            <Link
-              to="/contact"
+            <a
+              href="#landingpage-contact"
               className="inline-flex items-center justify-center rounded-xl
               h-14 sm:h-15
               px-7 sm:px-8
@@ -110,7 +111,7 @@ export default function LandingPage() {
               w-full sm:w-auto min-w-40"
             >
               Get Started →
-            </Link>
+            </a>
 
             <Link
               to="/services/landing-page"
@@ -130,6 +131,7 @@ export default function LandingPage() {
 
       <FeaturesSection />
       <WhyChooseSection />
+      <LandingPageForm/>
     </>
   );
 }

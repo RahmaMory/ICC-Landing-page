@@ -1,4 +1,4 @@
-import ContactMVPSection from './MVPWebsiteSections/ContactMVPSection'
+import ContactMVPSection from './MVPWebsiteSections/Form'
 import HeroMVPSection from './MVPWebsiteSections/HeroMVPSection'
 import MVPProtocolSection from './MVPWebsiteSections/MVPProtocolSection'
 import TechStackMarquee from './MVPWebsiteSections/TechStackMarquee'
