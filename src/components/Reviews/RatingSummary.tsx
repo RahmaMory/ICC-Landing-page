@@ -17,6 +17,7 @@ export default function RatingSummary() {
   const [hover, setHover] = useState(0)
   const [rating, setRating] = useState(0)
   const [open, setOpen] = useState(false)
+  const [submissionMessage, setSubmissionMessage] = useState("")
 
   const [reviewsCount, setReviewsCount] = useState<number>(() => {
     const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
@@ -78,10 +79,15 @@ export default function RatingSummary() {
     setOpen(true)
   }
 
-  function handleReviewSubmitted() {
+  function handleReviewSubmitted(hasWrittenReview: boolean) {
     const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
     const reviewsArray = Array.isArray(saved) ? saved : []
     setReviewsCount(baseReviews + reviewsArray.length)
+    setSubmissionMessage(
+      hasWrittenReview
+        ? "Thank you! Your review has been added to What Our Clients Say."
+        : "Thank you! Your rating has been submitted."
+    )
   }
 
   return (
@@ -177,6 +183,12 @@ export default function RatingSummary() {
               />
             ))}
           </div>
+
+          {submissionMessage ? (
+            <p className="mt-5 text-sm text-emerald-400" role="status">
+              {submissionMessage}
+            </p>
+          ) : null}
         </div>
 
         <ReviewModal

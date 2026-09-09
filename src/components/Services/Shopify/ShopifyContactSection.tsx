@@ -3,7 +3,7 @@
 
 // export default function ShopifyContactSection() {
 //   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
-//   const whatsappNumber = '201000000000'
+//   const whatsappNumber = '201031158933'
 
 //   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 //     const { name, value } = e.target
@@ -99,7 +99,7 @@ import { fadeLeft, fadeRight } from '../../../lib/motion'
 
 export default function ShopifyContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
-  const whatsappNumber = '201000000000'
+  const whatsappNumber = '201031158933'
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target

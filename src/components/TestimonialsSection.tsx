@@ -90,7 +90,7 @@
 
 import { testimonials as initialTestimonials } from "../data/testimonials"
 import type { Testimonial } from "../data/testimonials"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import TestimonialCard from "./TestimonialCard"
 import { motion } from "framer-motion"
 import { fadeUp } from "../lib/motion"
@@ -102,33 +102,73 @@ import "../App.css"
 import "swiper/css"
 import "swiper/css/navigation"
 
+const reviewsUpdatedEvent = "icc-reviews-updated"
+const emptyReviewPlaceholders = new Set([
+  "no comment provided",
+  "تجربة جيدة مع فريق icc.",
+])
+
+function hasWrittenReview(text?: string): boolean {
+  const normalizedText = text?.trim().toLowerCase() || ""
+  return Boolean(normalizedText) && !emptyReviewPlaceholders.has(normalizedText)
+}
+
+function loadUserTestimonials(): Testimonial[] {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
+    if (!Array.isArray(parsed)) return []
+
+    return parsed.flatMap((item, index): Testimonial[] => {
+      const review = typeof item === "object" && item !== null
+        ? item as Partial<Testimonial>
+        : {}
+
+      const reviewText = review.text?.trim() || ""
+
+      if (!hasWrittenReview(reviewText)) {
+        return []
+      }
+
+      return [{
+        id: typeof review.id === "number" ? review.id : 10_000 + index,
+        name: review.name?.trim() || "زائر",
+        role: review.role?.trim() || "عميل",
+        company: review.company?.trim() || "",
+        rating: typeof review.rating === "number" ? review.rating : 5,
+        text: reviewText,
+        image: review.image || "/avatars/default.webp",
+      }]
+    })
+  } catch {
+    return []
+  }
+}
+
 export default function TestimonialsSection() {
-  const [userTestimonials, setUserTestimonials] = useState<Testimonial[]>([])
+  const [userTestimonials, setUserTestimonials] = useState<Testimonial[]>(loadUserTestimonials)
 
   useEffect(() => {
-    const stored = localStorage.getItem("reviews")
-    if (!stored) return
+    const syncUserTestimonials = () => {
+      setUserTestimonials(loadUserTestimonials())
+    }
 
-    const parsed: unknown = JSON.parse(stored)
-    const userReviews = Array.isArray(parsed) ? parsed : []
+    window.addEventListener(reviewsUpdatedEvent, syncUserTestimonials)
+    window.addEventListener("storage", syncUserTestimonials)
 
-    const formatted: Testimonial[] = userReviews.map((item: any) => ({
-      id: item.id,
-      name: item.name || "Anonymous",
-      role: item.role || "User",
-      company: item.company || "",
-      rating: item.rating,
-      text: item.text || "No comment provided",
-      image: item.image || "/avatars/default.png"
-    }))
-
-    setUserTestimonials(formatted)
+    return () => {
+      window.removeEventListener(reviewsUpdatedEvent, syncUserTestimonials)
+      window.removeEventListener("storage", syncUserTestimonials)
+    }
   }, [])
 
-const testimonials: Testimonial[] = useMemo(
-  () => [...initialTestimonials, ...userTestimonials],
-  [userTestimonials]
-)
+  const writtenUserTestimonials = userTestimonials.filter((review) =>
+    hasWrittenReview(review.text)
+  )
+
+  const testimonials: Testimonial[] = [
+    ...[...writtenUserTestimonials].reverse(),
+    ...initialTestimonials,
+  ]
 
   return (
     <section className="bg-[#0D1421] text-white py-24 overflow-visible">
@@ -140,8 +180,18 @@ const testimonials: Testimonial[] = useMemo(
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeUp}
         >
-          What Founders Say
+          What Our Clients Say
         </motion.h2>
+
+        <motion.p
+          className="-mt-10 mb-16 text-center text-gray-400"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={fadeUp}
+        >
+          See how ICC helps clients design, build, and launch better digital products.
+        </motion.p>
 
         <motion.div
           initial="hidden"
@@ -150,6 +200,7 @@ const testimonials: Testimonial[] = useMemo(
           variants={fadeUp}
         >
           <Swiper
+            key={writtenUserTestimonials.length}
             modules={[Navigation, Autoplay]}
             navigation
             loop

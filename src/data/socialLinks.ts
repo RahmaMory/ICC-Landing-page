@@ -5,7 +5,7 @@ import tiktok from "../assets/icons/tiktok.svg"
 export const socialLinks = [
   {
     name: "whatsapp",
-    link: "https://wa.me/+201031158933",
+    link: "https://wa.me/201031158933",
     type: "image",
     icon: whatsapp
   },
