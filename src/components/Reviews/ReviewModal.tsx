@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 const reviewWhatsAppNumber = "201031158933"
 
@@ -6,6 +6,7 @@ interface ReviewModalProps {
   open: boolean
   setOpen: (value: boolean) => void
   rating: number
+  onCancel: () => void
   onReviewSubmitted: (hasWrittenReview: boolean) => void
 }
 
@@ -13,6 +14,7 @@ export default function ReviewModal({
   open,
   setOpen,
   rating,
+  onCancel,
   onReviewSubmitted,
 }: ReviewModalProps) {
   const [name, setName] = useState("")
@@ -23,6 +25,38 @@ export default function ReviewModal({
   const [company, setCompany] = useState("")
   const [consentToPublish, setConsentToPublish] = useState(false)
   const [consentError, setConsentError] = useState("")
+  const nameInputRef = useRef<HTMLInputElement>(null)
+
+  const resetForm = useCallback(() => {
+    setName("")
+    setNameError("")
+    setText("")
+    setReviewError("")
+    setRole("")
+    setCompany("")
+    setConsentToPublish(false)
+    setConsentError("")
+  }, [])
+
+  const handleCancel = useCallback(() => {
+    resetForm()
+    onCancel()
+  }, [onCancel, resetForm])
+
+  useEffect(() => {
+    if (!open) return
+
+    nameInputRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleCancel()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [handleCancel, open])
 
   function submit() {
     const trimmedName = name.trim()
@@ -77,23 +111,29 @@ export default function ReviewModal({
 
     onReviewSubmitted(Boolean(trimmedText))
     setOpen(false)
-
-    setName("")
-    setNameError("")
-    setText("")
-    setReviewError("")
-    setRole("")
-    setCompany("")
-    setConsentToPublish(false)
-    setConsentError("")
+    resetForm()
   }
 
   if (!open) return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-      <div className="w-full max-w-105 rounded-xl bg-[#0D1421] p-8 text-white">
-        <h3 className="mb-4 text-xl font-semibold">
+      <div
+        className="relative w-full max-w-105 rounded-xl bg-[#0D1421] p-8 text-white"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="review-dialog-title"
+      >
+        <button
+          type="button"
+          onClick={handleCancel}
+          className="absolute right-4 top-3 rounded px-2 py-1 text-2xl leading-none text-gray-400 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+          aria-label="Close review form"
+        >
+          ×
+        </button>
+
+        <h3 id="review-dialog-title" className="mb-4 pr-8 text-xl font-semibold">
           Your Rating: {rating} ⭐
         </h3>
 
@@ -102,6 +142,7 @@ export default function ReviewModal({
         </p>
 
         <input
+          ref={nameInputRef}
           type="text"
           placeholder="Your name *"
           className="w-full rounded border border-gray-600 bg-transparent p-2"
@@ -195,18 +236,15 @@ export default function ReviewModal({
 
         <div className="flex justify-end gap-3">
           <button
-            onClick={() => {
-              setNameError("")
-              setReviewError("")
-              setConsentError("")
-              setOpen(false)
-            }}
+            type="button"
+            onClick={handleCancel}
             className="rounded bg-gray-600 px-4 py-2"
           >
             Cancel
           </button>
 
           <button
+            type="button"
             onClick={submit}
             className="rounded bg-blue-600 px-6 py-2"
           >

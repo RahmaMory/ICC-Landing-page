@@ -2,15 +2,35 @@ html {
   scroll-behavior: smooth;
 }
 
-.swiper-slide-active {
-  transform: scale(1.1) !important;
+.testimonials-swiper {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.testimonials-swiper .swiper-slide-active {
+  transform: scale(1.04) !important;
   opacity: 1 !important;
   z-index: 10;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
-.swiper-slide {
-  transition: all 0.5s ease;
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+  transform: scale(0.95);
+  opacity: 0.82;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  .testimonials-swiper .swiper-slide,
+  .testimonials-swiper .swiper-slide-active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
 }
 
 @keyframes float {

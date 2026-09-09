@@ -34,11 +34,10 @@ export default function Home() {
         <Industries />
       </section>
 
-      <RatingSummary />
-
-      <section id="testimonials">
+      <div id="testimonials" className="scroll-mt-20">
+        <RatingSummary />
         <TestimonialsSection />
-      </section>
+      </div>
 
       <section id="pricing">
         <PricingSection />

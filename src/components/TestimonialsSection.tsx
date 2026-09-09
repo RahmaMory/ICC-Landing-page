@@ -201,13 +201,15 @@ export default function TestimonialsSection() {
         >
           <Swiper
             key={writtenUserTestimonials.length}
+            className="testimonials-swiper"
             modules={[Navigation, Autoplay]}
             navigation
             loop
             centeredSlides
             autoplay={{
-              delay: 3000,
-              disableOnInteraction: false
+              delay: 7000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             spaceBetween={30}
             slidesPerView={3}
@@ -221,7 +223,7 @@ export default function TestimonialsSection() {
             {testimonials.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="transition-all duration-500 scale-85 opacity-60 swiper-slide-custom"
+                className="swiper-slide-custom"
               >
                 <TestimonialCard item={item} />
               </SwiperSlide>

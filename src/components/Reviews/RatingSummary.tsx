@@ -79,14 +79,20 @@ export default function RatingSummary() {
     setOpen(true)
   }
 
+  function handleReviewCancelled() {
+    setOpen(false)
+    setRating(0)
+    setHover(0)
+  }
+
   function handleReviewSubmitted(hasWrittenReview: boolean) {
     const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
     const reviewsArray = Array.isArray(saved) ? saved : []
     setReviewsCount(baseReviews + reviewsArray.length)
     setSubmissionMessage(
       hasWrittenReview
-        ? "Thank you! Your review has been added to What Our Clients Say."
-        : "Thank you! Your rating has been submitted."
+        ? "WhatsApp is ready — send the message to share your review with ICC."
+        : "WhatsApp is ready — send the message to share your rating with ICC."
     )
   }
 
@@ -98,8 +104,7 @@ export default function RatingSummary() {
         </h2>
 
         <p className="mb-10 max-w-xl text-gray-500">
-          Ratings and reviews are verified and are from people who
-          use the same type of device that you use
+          See how clients rate their experience with ICC.
         </p>
 
         <div className="flex flex-col items-center gap-12 md:flex-row">
@@ -165,22 +170,36 @@ export default function RatingSummary() {
         {/* USER RATING */}
         <div className="mt-14 text-center">
           <p className="mb-4 text-lg text-gray-400">
-            Rate this app
+            Rate your experience with ICC
           </p>
 
           <div className="flex justify-center gap-2">
             {[1, 2, 3, 4, 5].map((star) => (
-              <Star
+              <button
                 key={star}
-                size={36}
+                type="button"
+                aria-label={`Rate ${star} out of 5`}
+                aria-pressed={rating === star}
                 onMouseEnter={() => setHover(star)}
                 onMouseLeave={() => setHover(0)}
                 onClick={() => handleClick(star)}
-                className={`cursor-pointer transition ${star <= (hover || rating)
-                  ? "fill-yellow-400 text-yellow-400"
-                  : "text-gray-300"
-                  }`}
-              />
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault()
+                    handleClick(star)
+                  }
+                }}
+                className="rounded-sm transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+              >
+                <Star
+                  size={36}
+                  aria-hidden="true"
+                  className={`cursor-pointer transition ${star <= (hover || rating)
+                    ? "fill-yellow-400 text-yellow-400"
+                    : "text-gray-300"
+                    }`}
+                />
+              </button>
             ))}
           </div>
 
@@ -195,6 +214,7 @@ export default function RatingSummary() {
           open={open}
           setOpen={setOpen}
           rating={rating}
+          onCancel={handleReviewCancelled}
           onReviewSubmitted={handleReviewSubmitted}
         />
       </div>
