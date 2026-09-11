@@ -238,14 +238,7 @@ Phone: ${formData.phone || '-'}
 Message:
 ${formData.message || '-'}`
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
-    window.open(whatsappUrl, '_blank')
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
 
   const benefits = [

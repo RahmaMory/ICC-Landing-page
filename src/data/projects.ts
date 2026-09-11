@@ -27,8 +27,8 @@ export const projects: Project[] = [
     title: "AI Writer Tool",
     image: "/projects/ai-writing-assistant-screenshot.avif",
     desc: "AI SaaS writing assistant.",
-       category: "Mobile",
-    tag: "E-commerce",
+       category: "SaaS",
+    tag: "AI",
         content: "Tool that generates content using AI."
 
   },
@@ -38,8 +38,8 @@ export const projects: Project[] = [
     title: "Startup Landing Page",
     image: "/projects/img.avif",
     desc: "High converting landing page.",
-      category: "SaaS",
-    tag: "AI",
+      category: "Web Development",
+    tag: "Landing Page",
         content: "Landing page optimized for conversion."
 
   },
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   image: "/projects/shopify-seo-scaled.jpg",
   desc: "Professional Shopify e-commerce store.",
   category: "E-commerce",
-  tag: "Retall",
+  tag: "Retail",
   content: "Complete Shopify store setup with custom design and product management."
 },
    {
@@ -87,4 +87,3 @@ export const projects: Project[] = [
 
 
 ]
-

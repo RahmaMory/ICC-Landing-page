@@ -47,7 +47,7 @@ export default function NotFound() {
           </Link>
 
           <Link
-            to="/contact"
+            to="/#contact"
             className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/3 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-blue-300/30 hover:bg-blue-400/5"
           >
             Contact Us

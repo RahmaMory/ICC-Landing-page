@@ -129,7 +129,6 @@
 
 import { motion } from 'framer-motion'
 import { Activity, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import dashboardImg from '../../../assets/images/Dashboard/dashboardHero.png'
 import { fadeLeft, fadeRight, fadeUp, staggerContainer } from '../../../lib/motion'
 
@@ -154,7 +153,7 @@ export default function DashboardSection() {
               QUANTUM INTERFACE V2.0
             </motion.div>
 
-            <motion.h2
+            <motion.h1
               variants={fadeLeft}
               className="text-5xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[88px]"
             >
@@ -162,7 +161,7 @@ export default function DashboardSection() {
               <span className="block bg-linear-to-r from-cyan-300 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Smarter Decisions.
               </span>
-            </motion.h2>
+            </motion.h1>
 
             <motion.p
               variants={fadeUp}
@@ -185,12 +184,12 @@ export default function DashboardSection() {
                 <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
 
-              <Link
-                to="/services/dashboard"
+              <a
+                href="#dashboard-features"
                 className="text-sm font-medium text-white/55 transition-colors duration-300 hover:text-white"
               >
                 Explore Features
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 

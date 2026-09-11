@@ -1,9 +1,10 @@
 import { Building2, ShoppingCart, GraduationCap, HeartPulse, Truck, Video, Landmark, Plane } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 
 export interface Industry {
   slug: string
   title: string
-  icon: any
+  icon: LucideIcon
   description: string
 }
 

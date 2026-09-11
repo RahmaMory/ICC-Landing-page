@@ -8,10 +8,6 @@ export default function DirectContactSection() {
   const whatsappUrl =
     'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.'
 
-  const handleContactClick = () => {
-    window.open(whatsappUrl, "_blank");
-  };
-
   return (
     <section className="relative overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(34,211,238,0.10),transparent_24%),radial-gradient(circle_at_80%_70%,rgba(99,102,241,0.08),transparent_28%)]" />
@@ -86,7 +82,6 @@ export default function DirectContactSection() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="group inline-flex items-center justify-center rounded-2xl bg-blue-400 px-6 py-3 text-sm font-semibold text-[#071126] transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.30)]"
-                  onClick = {handleContactClick}
                >
                   Contact Now
                 </motion.a>

@@ -51,6 +51,7 @@ export default function ProjectDetails() {
         {/* image */}
         <motion.img
           src={project.image}
+          alt={`${project.title} project preview`}
           title="project_img"
           className="rounded-2xl mb-10 w-full"
           initial={{ opacity: 0, scale: 0.95 }}

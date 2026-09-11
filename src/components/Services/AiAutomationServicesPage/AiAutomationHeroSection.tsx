@@ -90,7 +90,6 @@
 
 
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { Cpu, Network } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
@@ -148,15 +147,15 @@ export default function AiAutomationHeroSection() {
             </span>
           </a>
 
-          <Link
-            to="#"
+          <a
+            href="#automation-process"
             className="group inline-flex items-center justify-center rounded-xl h-14 px-7 sm:px-8 text-sm sm:text-base font-medium border border-white/10 bg-white/3 text-white hover:bg-white/5 transition-all duration-300 w-full sm:w-auto min-w-45"
           >
             <span>See How It Works</span>
             <span className="ml-2 transition-transform duration-300 group-hover:translate-x-2">
               →
             </span>
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
 

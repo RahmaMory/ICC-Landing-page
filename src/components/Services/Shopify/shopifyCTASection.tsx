@@ -78,7 +78,7 @@ export default function ShopifyCTASection() {
             Get Your System
           </a>
           <Link
-            to="/services/shopify"
+            to="/services"
             className="inline-flex min-w-65 items-center justify-center rounded-2xl border border-cyan-400/20 bg-transparent px-10 py-5 text-xl font-semibold text-white transition-all duration-300 hover:border-cyan-300/35 hover:bg-cyan-400/5 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)]"
           >
             View Our Services

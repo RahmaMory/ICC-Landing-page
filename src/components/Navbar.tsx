@@ -81,7 +81,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div className="navbar-end">
           <div className="dropdown lg:hidden">
-            <button tabIndex={0} className="btn btn-ghost">
+            <button type="button" tabIndex={0} aria-label="Open navigation menu" className="btn btn-ghost">
               ☰
             </button>
 

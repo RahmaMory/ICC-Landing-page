@@ -1,3 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+html {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+}

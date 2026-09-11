@@ -255,7 +255,7 @@ export default function Hero() {
               <span className="w-2 h-2 bg-green-500 rounded-full relative">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-50 animate-ping"></span>
               </span>
-              Accepting New Projects for Q1
+              Accepting New Projects
             </motion.span>
 
             <motion.h1
@@ -272,7 +272,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-6 text-gray-400 max-w-xl text-lg sm:text-xl"
             >
-              Stop dreaming and start shipping. We are the "Infinity Code Collaboration" studio for startups that need speed, quality, and a design that converts.
+              Stop dreaming and start shipping. We are IO Code Company (ICC), a software studio for startups that need speed, quality, and design that converts.
             </motion.p>
 
           <motion.div

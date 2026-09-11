@@ -202,7 +202,9 @@
 
 
 import { ShoppingCart, Eye, Smartphone, ArrowRight, Shield, Gauge, Percent } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import checkoutImg from "../../../assets/images/E-commerce/1.png";
 import clarityImg from "../../../assets/images/E-commerce/2.png";
 import mobileImg from "../../../assets/images/E-commerce/3.png";
@@ -220,7 +222,7 @@ const cards = [
     title: "Smooth Checkout",
     description:
       "Frictionless payment flows engineered to eliminate drop-offs. We optimize every input field to maximize completed transactions.",
-    button: "Add to Cart",
+    button: "Start Your Store",
     image: checkoutImg,
     progress: "w-16",
   },
@@ -250,7 +252,7 @@ function FeatureCard({
   image,
   progress,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
   button?: string;
@@ -280,10 +282,10 @@ function FeatureCard({
           </div>
 
           {button ? (
-            <button className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/8 px-4 py-2 text-xs font-medium text-blue-200 transition hover:bg-cyan-400/12">
+            <a href="#ecommerce-contact" className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/8 px-4 py-2 text-xs font-medium text-blue-200 transition hover:bg-cyan-400/12">
               {button}
               <ArrowRight className="h-3.5 w-3.5" />
-            </button>
+            </a>
           ) : null}
         </div>
 
@@ -412,9 +414,9 @@ export default function EcommerceAfterHeroSection() {
                 <ArrowRight className="h-4 w-4" />
               </a>
 
-              <button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5">
+              <Link to="/projects" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5">
                 View Case Studies
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

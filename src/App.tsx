@@ -1,25 +1,27 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Home from "./pages/Home";
+import { lazy, useEffect, useState } from "react";
 import MainLayout from "./layout/MainLayout";
-import ProjectDetails from "./pages/ProjectDetails";
-import Projects from "./pages/Projects";
-import IndustryDetails from "./pages/IndustryDetails";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import LandingPage from "./components/Services/LandingPage";
-import MVPWebsite from "./components/Services/MVPWebsite";
-import MobileApp from "./components/Services/MobileApp";
-import GamePage from "./components/Services/GamePage";
-import ShopifyPage from "./components/Services/ShopifyPage";
-import EcommercePage from "./components/Services/EcommercePage";
-import DashboardPage from "./components/Services/DashboardPage";
-import AIAutomationPage from "./components/Services/AIAutomationPage";
-import NotFound from "./components/NotFound";
 import IntroLoader from "./components/IntroLoader";
+import PageMetadata from "./components/PageMetadata";
 import ScrollToHash from "./components/ScrollToHash";
 import ScrollToTop from "./components/ScrollToTop";
-import Expertise from "./components/Expertise";
+
+const Home = lazy(() => import("./pages/Home"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
+const Projects = lazy(() => import("./pages/Projects"));
+const IndustryDetails = lazy(() => import("./pages/IndustryDetails"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Services = lazy(() => import("./pages/Services"));
+const LandingPage = lazy(() => import("./components/Services/LandingPage"));
+const MVPWebsite = lazy(() => import("./components/Services/MVPWebsite"));
+const MobileApp = lazy(() => import("./components/Services/MobileApp"));
+const GamePage = lazy(() => import("./components/Services/GamePage"));
+const ShopifyPage = lazy(() => import("./components/Services/ShopifyPage"));
+const EcommercePage = lazy(() => import("./components/Services/EcommercePage"));
+const DashboardPage = lazy(() => import("./components/Services/DashboardPage"));
+const AIAutomationPage = lazy(() => import("./components/Services/AIAutomationPage"));
+const NotFound = lazy(() => import("./components/NotFound"));
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -27,7 +29,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 3600);
+    }, 1600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,6 +38,7 @@ function App() {
 
     <>
       <ScrollToHash />
+      <PageMetadata />
       {showLoader && <IntroLoader />}
 
       <ScrollToTop />
@@ -48,7 +51,7 @@ function App() {
           <Route path="/industry/:slug" element={<IndustryDetails />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/services" element={<Expertise />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/services/landing-page" element={<LandingPage />} />
           <Route path="/services/mvp-website" element={<MVPWebsite />} />
           <Route path="/services/mobile-app" element={<MobileApp />} />

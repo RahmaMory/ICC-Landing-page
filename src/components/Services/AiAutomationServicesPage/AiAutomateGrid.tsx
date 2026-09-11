@@ -42,7 +42,6 @@
 
 
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { fadeLeft, fadeRight } from '../../../lib/motion'
 
 export default function WhatCanWeAutomateSection() {
@@ -77,15 +76,15 @@ export default function WhatCanWeAutomateSection() {
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeRight}
           >
-            <Link
-              to="/contact"
+            <a
+              href="#automation-contact"
               className="group inline-flex items-center gap-3 text-cyan-400 text-lg sm:text-xl font-medium transition-all duration-300 hover:text-cyan-300"
             >
               <span>Discuss Your Needs</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>

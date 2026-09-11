@@ -41,7 +41,10 @@ export default function FrequentlyAsked() {
                 className="overflow-hidden rounded-xl border border-white/10 bg-[#0F1623]"
               >
                 <button
+                  type="button"
                   onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                   className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/5"
                 >
                   <span
@@ -61,6 +64,7 @@ export default function FrequentlyAsked() {
                 </button>
 
                 <div
+                  id={`faq-answer-${index}`}
                   className={`grid transition-all duration-300 ease-in-out ${
                     isOpen
                       ? "grid-rows-[1fr] opacity-100"

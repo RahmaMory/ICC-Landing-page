@@ -163,7 +163,7 @@ const processSteps = [
 
 export default function IntegrationProcessSection() {
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <section id="automation-process" className="relative scroll-mt-24 px-4 sm:px-6 lg:px-8 py-20 md:py-28">
       <div className="mx-auto max-w-450">
         <motion.div
           className="mx-auto max-w-4xl text-center"

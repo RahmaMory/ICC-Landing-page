@@ -93,7 +93,7 @@ export default function ShopifyHeroSection() {
           className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Link
-            to="/contact"
+            to="#shopify-contact"
             className="group inline-flex min-w-55 items-center justify-center rounded-2xl border border-cyan-400/20 bg-white/5 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-cyan-300/35 hover:bg-cyan-400/8 hover:shadow-[0_0_22px_rgba(34,211,238,0.10)]"
           >
             <span>Get Started</span>

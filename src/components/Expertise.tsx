@@ -61,7 +61,7 @@ import { fadeUp, staggerContainer } from "../lib/motion";
 
 export default function Expertise() {
   return (
-    <div id="expertise" className="bg-[#090E18] py-16 text-white">
+    <div className="bg-[#090E18] py-16 text-white">
       <motion.h2
         initial="hidden"
         whileInView="visible"

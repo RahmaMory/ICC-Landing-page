@@ -125,7 +125,6 @@
 
 
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import img1 from '../../../assets/images/ai-automation/1.png'
 import img2 from '../../../assets/images/ai-automation/2.png'
@@ -239,13 +238,13 @@ export default function AutomationCapabilitiesSection() {
 
                 <div className="mt-10 h-px w-full bg-white/10 transition-colors duration-300 group-hover:bg-cyan-400/20" />
 
-                <Link
-                  to="/contact"
+                <a
+                  href="#automation-contact"
                   className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-white/45 transition-all duration-300 group-hover:text-cyan-400"
                 >
                   <span>Explore Capability</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </a>
               </div>
             </motion.article>
           ))}

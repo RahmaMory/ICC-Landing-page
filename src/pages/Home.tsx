@@ -22,10 +22,6 @@ export default function Home() {
         <ProcessSection />
       </section>
 
-      <section id="expertise">
-        <Expertise />
-      </section>
-
       <section id="work">
         <SelectedWork />
       </section>

@@ -39,7 +39,7 @@ import { fadeLeft, staggerContainer } from "../lib/motion";
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="bg-[#020617] text-white py-20 md:mt-20 mb-0">
+    <section className="bg-[#020617] text-white py-20 md:mt-20 mb-0">
       <div className="container mx-auto px-3">
         <div className="grid lg:grid-cols-[0.6fr_1.1fr] gap-4 items-center">
           {/* left content */}

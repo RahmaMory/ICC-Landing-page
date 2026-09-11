@@ -339,7 +339,7 @@ export default function DashboardFeaturesGrid() {
   const stats = useMemo(() => statCards, [])
 
   return (
-    <section className="relative overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
+    <section id="dashboard-features" className="relative scroll-mt-24 overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="mx-auto w-full max-w-7xl">
         <motion.div
           className="text-center"

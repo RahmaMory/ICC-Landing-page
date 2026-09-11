@@ -15,6 +15,9 @@ export default function Terms() {
             Company services. By using our website or requesting our services,
             you agree to the policies described below.
           </p>
+          <p className="mt-4 text-sm text-slate-500">
+            Last updated: September 12, 2026
+          </p>
         </div>
 
         {/* Sections */}

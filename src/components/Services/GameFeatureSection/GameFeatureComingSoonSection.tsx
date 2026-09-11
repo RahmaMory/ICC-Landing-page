@@ -1,45 +1,45 @@
-import { useState } from 'react'
-import { Play } from 'lucide-react'
+// import { useState } from 'react'
+// import { Play } from 'lucide-react'
 
-function VideoCard({ video }: { video: { id: string; title: string } }) {
-  const [playing, setPlaying] = useState(false)
+// // function VideoCard({ video }: { video: { id: string; title: string } }) {
+// //   const [playing, setPlaying] = useState(false)
 
-  return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white aspect-video">
-      {!playing ? (
-        <>
-          {/* Thumbnail via Drive preview */}
-          <img
-            src={`https://drive.google.com/thumbnail?id=${video.id}&sz=w800`}
-            alt={video.title}
-            className="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-90"
-          />
+// //   return (
+// //     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white aspect-video">
+// //       {!playing ? (
+// //         <>
+// //           {/* Thumbnail via Drive preview */}
+// //           <img
+// //             src={`https://drive.google.com/thumbnail?id=${video.id}&sz=w800`}
+// //             alt={video.title}
+// //             className="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-90"
+// //           />
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-[#071126]/40" />
+// //           {/* Overlay */}
+// //           <div className="absolute inset-0 bg-[#071126]/40" />
 
-          {/* Play button */}
-          <button
-            onClick={() => setPlaying(true)}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-3"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-400/20 border border-blue-400/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-blue-400/30 group-hover:scale-110">
-              <Play className="h-5 w-5 text-blue-300 fill-blue-300" />
-            </div>
-            <span className="text-xs font-medium text-white/70">{video.title}</span>
-          </button>
-        </>
-      ) : (
-        <iframe
-          src={`https://drive.google.com/file/d/${video.id}/preview`}
-          className="h-full w-full"
-          allow="autoplay"
-          allowFullScreen
-        />
-      )}
-    </div>
-  )
-}
+// //           {/* Play button */}
+// //           <button
+// //             onClick={() => setPlaying(true)}
+// //             className="absolute inset-0 flex flex-col items-center justify-center gap-3"
+// //           >
+// //             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-400/20 border border-blue-400/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-blue-400/30 group-hover:scale-110">
+// //               <Play className="h-5 w-5 text-blue-300 fill-blue-300" />
+// //             </div>
+// //             <span className="text-xs font-medium text-white/70">{video.title}</span>
+// //           </button>
+// //         </>
+// //       ) : (
+// //         <iframe
+// //           src={`https://drive.google.com/file/d/${video.id}/preview`}
+// //           className="h-full w-full"
+// //           allow="autoplay"
+// //           allowFullScreen
+// //         />
+// //       )}
+// //     </div>
+// //   )
+// // }
 
 
 
@@ -81,12 +81,12 @@ export default function GameFeatureComingSoonSection() {
               </div>
             </motion.div>
 
-            <motion.h2
+            <motion.h1
               variants={fadeUp}
               className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-5xl lg:text-[64px]"
             >
               Our <span className="bg-linear-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">Game Solutions</span> are launching soon.
-            </motion.h2>
+            </motion.h1>
 
             <motion.p
               variants={fadeUp}
@@ -117,7 +117,7 @@ export default function GameFeatureComingSoonSection() {
               ))}
             </motion.div>
 
-            {/* Video Grid Subsection */}
+            {/* Video Grid Subsection
 <motion.div variants={fadeUp} className="mt-12 w-full max-w-3xl">
   <p className="mb-4 text-sm font-medium tracking-wide text-white/40 uppercase">
     Preview Clips
@@ -147,14 +147,14 @@ export default function GameFeatureComingSoonSection() {
   </div>
 </motion.div>
 
-        
+         */}
 
             <motion.div
               variants={fadeUp}
               className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
             >
               <Link
-                to="/contact"
+                to="/#contact"
                 className="group inline-flex items-center justify-center rounded-2xl bg-blue-400 px-8 py-4 text-base font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_28px_rgba(34,211,238,0.30)]"
               >
                 <span>Reserve Your Spot</span>

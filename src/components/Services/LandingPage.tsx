@@ -59,7 +59,6 @@
 // }
 
 
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import FeaturesSection from "./FeaturesSection";
 import WhyChooseSection from "./WhyChooseSection";
@@ -113,8 +112,8 @@ export default function LandingPage() {
               Get Started →
             </a>
 
-            <Link
-              to="/services/landing-page"
+            <a
+              href="#landing-features"
               className="inline-flex items-center justify-center rounded-xl
               h-14 sm:h-15
               px-7 sm:px-8
@@ -124,12 +123,14 @@ export default function LandingPage() {
               w-full sm:w-auto min-w-40"
             >
               View Examples
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </section>
 
-      <FeaturesSection />
+      <div id="landing-features" className="scroll-mt-24">
+        <FeaturesSection />
+      </div>
       <WhyChooseSection />
       <LandingPageForm/>
     </>

@@ -8,10 +8,6 @@ export default function Footer() {
     const whatsappUrl =
     'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.'
 
-  const handleContactClick = () => {
-    window.open(whatsappUrl, "_blank");
-  }
-
   return (
     <footer className="bg-black text-white pt-24 pb-10">
 
@@ -27,7 +23,10 @@ export default function Footer() {
 
    <div className="flex justify-center gap-4 flex-wrap mb-10">
 
-  <div
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
     className="
       text-base sm:text-lg md:text-xl
       px-4 sm:px-6 md:px-7
@@ -39,10 +38,9 @@ export default function Footer() {
       flex items-center justify-center
       w-full sm:w-auto
     "
-    onClick={handleContactClick}
   >
     Book a Call
-  </div>
+  </a>
 
   <a
     href="mailto:hr@icc-collab.com"
@@ -76,6 +74,8 @@ export default function Footer() {
         href={social.link}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Visit IO Code Company on ${social.name}`}
+        title={social.name}
         className="group"
       >
 
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           <p className="text-gray-400 text-sm mb-6">
-            Modern software studio for startups and creators.
+            IO Code Company (ICC) is a modern software studio for startups and growing businesses.
             Building the future, one click at a time.
           </p>
 
@@ -135,9 +135,11 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Company</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            {footerLinks.company.map((item, i) => (
-              <li key={i} className="hover:text-blue-400 transition cursor-pointer">
-                {item}
+            {footerLinks.company.map((item) => (
+              <li key={item.path}>
+                <Link to={item.path} className="hover:text-blue-400 transition">
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -147,9 +149,11 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Services</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            {footerLinks.services.map((item, i) => (
-              <li key={i} className="hover:text-blue-400 transition cursor-pointer">
-                {item}
+            {footerLinks.services.map((item) => (
+              <li key={item.path}>
+                <Link to={item.path} className="hover:text-blue-400 transition">
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -180,7 +184,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/10 pt-6 text-center text-gray-500 text-sm">
-        © 2026 Infinity Code Collaboration Studio. All rights reserved.
+        © 2026 IO Code Company (ICC). All rights reserved.
       </div>
 
     </footer>

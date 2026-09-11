@@ -98,7 +98,7 @@ export const policySections: PolicySection[] = [
       {
         title: "What ICC Provides",
         text:
-          "ICC — IO Code Company is a software solutions house that provides digital products, custom software, business platforms, websites, applications, technical systems, automation, integrations, and technology services for startups, companies, organizations, and individuals.",
+          "IO Code Company (ICC) is a software solutions house that provides digital products, custom software, business platforms, websites, applications, technical systems, automation, integrations, and technology services for startups, companies, organizations, and individuals.",
         items: [
           "Corporate websites, landing pages, portfolios, service websites, and product websites.",
           "Web applications, dashboards, admin panels, internal systems, client portals, CRM platforms, ERP-style tools, and management systems.",

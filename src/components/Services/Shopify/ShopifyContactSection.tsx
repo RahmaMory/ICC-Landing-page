@@ -111,9 +111,7 @@ export default function ShopifyContactSection() {
 
     const text = `New Shopify Automation Inquiry\n\nName: ${formData.name || '-'}\nEmail: ${formData.email || '-'}\nPhone: ${formData.phone || '-'}\n\nMessage:\n${formData.message || '-'}`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
-    window.open(whatsappUrl, '_blank')
-
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
 
   const benefits = [
@@ -137,10 +135,10 @@ export default function ShopifyContactSection() {
               Get Started
             </div>
             <h2 className="mt-12 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-6xl lg:text-[84px]">
-              Ready to transform your data?
+              Ready to automate your Shopify store?
             </h2>
             <p className="mt-8 max-w-xl text-lg leading-9 text-white/68">
-              Let&apos;s discuss how our custom Shopify automation systems can help you make smarter, faster decisions.
+              Let&apos;s discuss how the right Shopify systems can reduce manual work and help your store scale faster.
             </p>
             <div className="mt-12 space-y-7">
               {benefits.map((item) => (
@@ -164,7 +162,7 @@ export default function ShopifyContactSection() {
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeRight}
           >
-            <h3 className="text-3xl font-semibold text-white sm:text-4xl">Get Your Dashboard</h3>
+            <h3 className="text-3xl font-semibold text-white sm:text-4xl">Plan Your Shopify Automation</h3>
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div>
                 <label htmlFor="name" className="mb-3 block text-sm font-medium text-white/75">Name *</label>

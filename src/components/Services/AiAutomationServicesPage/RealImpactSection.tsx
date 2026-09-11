@@ -125,7 +125,7 @@ export default function RealImpactSection() {
           </p>
 
           <Link
-            to="#"
+            to="/projects"
             className="inline-flex mt-8 items-center justify-center rounded-lg border border-cyan-400/40 px-6 py-3 text-sm font-medium text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300"
           >
             View Case Studies

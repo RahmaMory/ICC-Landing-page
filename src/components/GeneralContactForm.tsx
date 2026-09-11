@@ -13,7 +13,7 @@ export default function GeneralContactForm() {
     projectDetails: "",
   });
 
-  const [buttonState, setButtonState] = useState<"idle" | "loading" | "sent">("idle");
+  const [buttonState, setButtonState] = useState<"idle" | "ready">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,13 +25,11 @@ export default function GeneralContactForm() {
     }));
   };
 
-  const handleWhatsAppSubmit = async () => {
+  const handleWhatsAppSubmit = () => {
     if (!formData.name || !formData.email || !formData.projectDetails) {
       alert("Please fill in the required fields.");
       return;
     }
-
-    setButtonState("loading");
 
     const phoneNumber = "201031158933";
 
@@ -48,19 +46,8 @@ Project Details: ${formData.projectDetails}
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    await new Promise((resolve) => setTimeout(resolve, 900));
-
-    window.open(whatsappURL, "_blank");
-
-    setFormData({
-      name: "",
-      email: "",
-      companyName: "",
-      companyIndustry: "",
-      projectDetails: "",
-    });
-
-    setButtonState("sent");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    setButtonState("ready");
 
     setTimeout(() => {
       setButtonState("idle");
@@ -68,7 +55,7 @@ Project Details: ${formData.projectDetails}
   };
 
   return (
-    <section id="start-project" className="bg-[#070B14] px-6 py-32">
+    <section className="bg-[#070B14] px-6 py-32">
       <div className="max-w-6xl mx-auto">
         <div
           className="
@@ -186,7 +173,7 @@ Project Details: ${formData.projectDetails}
                   name="companyIndustry"
                   value={formData.companyIndustry}
                   onChange={handleChange}
-                  placeholder="Acme Corp"
+                  placeholder="Technology, retail, healthcare..."
                   className="
                     mt-2 w-full rounded-xl
                     bg-[#070B14] border border-white/10
@@ -225,31 +212,22 @@ Project Details: ${formData.projectDetails}
                 whileTap={{ scale: 0.99 }}
                 type="button"
                 onClick={handleWhatsAppSubmit}
-                disabled={buttonState === "loading"}
                 className={`
                   w-full mt-4 rounded-xl py-4 font-medium text-white
                   transition-all duration-300
                   shadow-lg
                   ${
-                    buttonState === "sent"
+                    buttonState === "ready"
                       ? "bg-linear-to-r from-emerald-500 to-green-500 shadow-emerald-500/20 scale-[1.02]"
                       : "bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 shadow-purple-500/20 hover:opacity-90"
                   }
-                  ${buttonState === "loading" ? "opacity-80 cursor-not-allowed" : ""}
                 `}
               >
-                <span className="flex items-center justify-center gap-2">
-                  {buttonState === "loading" && (
-                    <>
-                      <span className="h-5 w-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                      Sending...
-                    </>
-                  )}
-
-                  {buttonState === "sent" && (
+                <span className="flex items-center justify-center gap-2" role="status">
+                  {buttonState === "ready" && (
                     <>
                       <CheckCircle2 className="h-5 w-5 animate-pulse" />
-                      Sent Successfully
+                      WhatsApp Ready — Send Your Message
                     </>
                   )}
 

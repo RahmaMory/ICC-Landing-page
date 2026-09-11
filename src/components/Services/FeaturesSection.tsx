@@ -117,9 +117,9 @@ export default function FeaturesSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.h1 variants={fadeUp} className="text-5xl font-bold">
+          <motion.h2 variants={fadeUp} className="text-5xl font-bold">
             Powerful Features
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             variants={fadeUp}
