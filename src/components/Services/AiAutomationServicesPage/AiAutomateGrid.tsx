@@ -64,8 +64,8 @@ export default function WhatCanWeAutomateSection() {
             </h2>
 
             <p className="mt-8 max-w-2xl text-base sm:text-lg md:text-[18px] leading-8 text-white/60">
-              From customer interactions to complex backend data processing, our
-              AI systems integrate seamlessly into your existing architecture.
+              From customer support to document handling and internal workflows,
+              we connect automation to the tools your team already uses.
             </p>
           </motion.div>
 

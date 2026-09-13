@@ -131,12 +131,12 @@ export default function MobileAppHeroSection() {
             variants={fadeLeft}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[74px] font-bold leading-[1.02] text-white"
           >
-            Mobile Apps
+            Mobile Apps Built
             <br />
-            People Keep
+            for Everyday
             <br />
             <span className="bg-linear-to-r from-blue-300 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
-              Coming Back To
+              Use
             </span>
           </motion.h1>
 
@@ -144,8 +144,8 @@ export default function MobileAppHeroSection() {
             variants={fadeUp}
             className="mt-6 max-w-xl text-base sm:text-lg leading-8 text-gray-400"
           >
-            Designed for engagement. Built for retention, performance, and
-            long-term growth.
+            ICC designs clear, responsive mobile experiences around the tasks
+            your users need to complete.
           </motion.p>
 
           <motion.div
@@ -163,8 +163,8 @@ export default function MobileAppHeroSection() {
               </div>
 
               <p className="text-sm sm:text-base leading-7 text-gray-400">
-                Most apps get deleted because they feel slow, confusing, or
-                unnecessary.
+                A useful idea can lose users when the experience feels slow or
+                confusing.
               </p>
             </div>
 
@@ -179,8 +179,8 @@ export default function MobileAppHeroSection() {
               </div>
 
               <p className="text-sm sm:text-base leading-7 text-gray-400">
-                We build fast, intuitive mobile apps with clear UX, smooth
-                flows, and real product value.
+                We simplify the main journeys and build around clarity, speed,
+                and reliable use.
               </p>
             </div>
           </motion.div>
@@ -191,8 +191,8 @@ export default function MobileAppHeroSection() {
             variants={fadeUp}
             className="mt-8 border-l-2 border-cyan-400/60 pl-4 text-sm sm:text-base italic leading-7 text-gray-300/90"
           >
-            “Boost retention, increase engagement, and create an app users
-            actually enjoy opening.”
+            “From the first screen to the final action, every step should feel
+            clear and purposeful.”
           </motion.blockquote>
 
           <motion.div variants={fadeUp} className="mt-8">

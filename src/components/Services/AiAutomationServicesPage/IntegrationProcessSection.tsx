@@ -180,8 +180,8 @@ export default function IntegrationProcessSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg md:text-[18px] leading-8 text-white/60">
-            A systematic, risk-free approach to deploying AI automation within
-            your existing infrastructure.
+            A structured approach to designing, testing, and introducing
+            automation within your existing workflow.
           </p>
         </motion.div>
 

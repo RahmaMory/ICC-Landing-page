@@ -54,8 +54,8 @@ export default function HeroMVPSection() {
           </h1>
 
           <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-sm sm:text-base md:text-lg leading-7 sm:leading-8 text-gray-400">
-            Get your idea to market quickly. We engineer high-performance,
-            scalable MVPs designed for rapid validation and growth.
+            Turn your core idea into a working product you can test with real
+            users and improve with confidence.
           </p>
 
           <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

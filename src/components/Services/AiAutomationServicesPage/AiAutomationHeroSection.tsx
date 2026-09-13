@@ -110,17 +110,17 @@ export default function AiAutomationHeroSection() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-40 animate-ping"></span>
             <span className="relative h-2 w-2 rounded-full bg-cyan-400"></span>
           </span>
-          Next-Generation Business Intelligence
+          PRACTICAL AI FOR BUSINESS WORKFLOWS
         </motion.span>
 
         <motion.h1
           variants={fadeUp}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mt-6 text-white"
         >
-          Automate Your Business
+          AI Automation Built
           <br />
           <span className="relative inline-block bg-linear-to-r from-cyan-400 via-blue-300 to-purple-400 bg-clip-text text-transparent">
-            with AI.
+            Around Real Workflows.
             <span className="absolute inset-0 bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 blur-2xl opacity-35 -z-10"></span>
           </span>
         </motion.h1>
@@ -129,9 +129,8 @@ export default function AiAutomationHeroSection() {
           variants={fadeUp}
           className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-8"
         >
-          We design intelligent systems that streamline operations, reduce
-          costs, and scale your business automatically. Stop managing tasks and
-          start managing growth.
+          ICC connects AI and automation to repetitive tasks, support flows,
+          documents, and the tools your team already uses.
         </motion.p>
 
         <motion.div

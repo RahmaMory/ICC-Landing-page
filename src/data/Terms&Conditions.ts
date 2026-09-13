@@ -37,7 +37,7 @@ type PolicySection = {
   blocks: PolicyBlock[];
 };
 
-const policyEmail = "info@iocodecompany.com";
+const policyEmail = "hr@icc-collab.com";
 
 export const policySections: PolicySection[] = [
   {
@@ -50,7 +50,7 @@ export const policySections: PolicySection[] = [
       {
         title: "Information We May Collect",
         text:
-          "IO Code Company may collect information that helps us communicate with clients, understand business needs, prepare technical solutions, deliver software services, provide support, and improve our internal process. We only collect information that is reasonably related to our work and service delivery.",
+          "ICC — IO Code Company may collect information that helps us communicate with clients, understand business needs, prepare technical solutions, deliver software services, provide support, and improve our internal process. We only collect information that is reasonably related to our work and service delivery.",
         items: [
           "Basic contact information such as full name, company name, phone number, email address, job title, and preferred communication channel.",
           "Project information such as business goals, requested features, design references, technical requirements, workflows, user roles, content, documents, and brand assets.",
@@ -98,7 +98,7 @@ export const policySections: PolicySection[] = [
       {
         title: "What ICC Provides",
         text:
-          "IO Code Company (ICC) is a software solutions house that provides digital products, custom software, business platforms, websites, applications, technical systems, automation, integrations, and technology services for startups, companies, organizations, and individuals.",
+          "ICC — IO Code Company is a software solutions house that provides digital products, custom software, business platforms, websites, applications, technical systems, automation, integrations, and technology services for startups, companies, organizations, and individuals.",
         items: [
           "Corporate websites, landing pages, portfolios, service websites, and product websites.",
           "Web applications, dashboards, admin panels, internal systems, client portals, CRM platforms, ERP-style tools, and management systems.",

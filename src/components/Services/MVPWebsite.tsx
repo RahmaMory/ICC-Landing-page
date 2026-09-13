@@ -5,12 +5,12 @@ import TechStackMarquee from './MVPWebsiteSections/TechStackMarquee'
 
 export default function MVPWebsite() {
   return (
-    <>
+    <main>
     <HeroMVPSection/>
     <MVPProtocolSection/>
     <TechStackMarquee/>
     <ContactMVPSection/>
       
-    </>
+    </main>
   )
 }

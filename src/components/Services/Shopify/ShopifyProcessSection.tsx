@@ -46,9 +46,9 @@ import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 const steps = [
   { step: 'Phase 01', title: 'Analyze', desc: 'We study your Shopify operations to identify automation gaps and bottlenecks.' },
-  { step: 'Phase 02', title: 'Design', desc: 'We create AI workflows tailored to your team, store structure, and growth goals.' },
+  { step: 'Phase 02', title: 'Design', desc: 'We map workflows around your team, store structure, and priorities.' },
   { step: 'Phase 03', title: 'Automate', desc: 'We implement custom automations across operations, support, and reporting.' },
-  { step: 'Phase 04', title: 'Optimize', desc: 'We continuously refine performance to maximize speed, clarity, and scale.' },
+  { step: 'Phase 04', title: 'Improve', desc: 'We review performance and refine the workflows after testing.' },
 ]
 
 export default function ShopifyProcessSection() {
@@ -65,7 +65,7 @@ export default function ShopifyProcessSection() {
             The Integration Protocol
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-white/60">
-            A proven approach to launching your Shopify automation systems.
+            A clear process for planning, connecting, testing, and improving your store workflows.
           </p>
         </motion.div>
 

@@ -189,14 +189,14 @@ const steps = [
     number: "01",
     tag: "THE TRAP",
     title: "Problem",
-    desc: "Spending months building the wrong thing. Wasting capital on unvalidated assumptions while competitors move faster.",
+    desc: "Long feature lists can delay launch before the core idea has been tested.",
     image: problemImg,
   },
   {
     number: "02",
     tag: "THE PIVOT",
     title: "Solution",
-    desc: "We help you validate fast with a real product. We strip away the noise and focus entirely on your core value proposition.",
+    desc: "We define the smallest useful version and build around its main user journey.",
     image: solutionImg,
   },
   {
@@ -214,7 +214,7 @@ const steps = [
     number: "04",
     tag: "THE LAUNCH",
     title: "Result",
-    desc: "Launch in weeks, not months. Get real user feedback, iterate rapidly, and secure your market position.",
+    desc: "Launch a focused first version, collect feedback, and plan the next release with clearer priorities.",
     image: resultImg,
   },
 ];
@@ -236,8 +236,8 @@ export default function MVPProtocolSection() {
           The MVP Protocol
         </h2>
         <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 text-gray-400">
-          A systematic approach to transforming ideas into market-ready products
-          with ruthless efficiency.
+          A focused process for choosing the essential features, building them
+          well, and learning from real use.
         </p>
       </motion.div>
 

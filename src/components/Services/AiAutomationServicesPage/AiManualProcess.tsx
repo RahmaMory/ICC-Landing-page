@@ -190,9 +190,8 @@ export default function BottleneckSolutionSection() {
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
-                Every hour spent on repetitive tasks is an hour stolen from strategic
-                growth. Inefficiencies breed errors, frustrate teams, and cap your
-                scaling potential.
+                Repetitive work takes time from higher-value tasks and creates
+                more places for delays or inconsistent results.
               </p>
 
               <ul className="mt-10 space-y-5">
@@ -205,7 +204,7 @@ export default function BottleneckSolutionSection() {
                 <li className="flex items-start gap-4 text-white/65">
                   <span className="mt-2 h-2 w-2 rounded-full bg-red-500" />
                   <span className="text-base sm:text-lg">
-                    Human errors causing costly mistakes
+                    Inconsistent results across repeated tasks
                   </span>
                 </li>
                 <li className="flex items-start gap-4 text-white/65">
@@ -246,9 +245,8 @@ export default function BottleneckSolutionSection() {
                 </h3>
 
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
-                  We build bespoke AI-powered systems that automate complex
-                  workflows, eliminate errors, and unlock unprecedented growth
-                  capacity.
+                  We design practical systems around the steps your team repeats,
+                  with clear rules, integrations, and human review where needed.
                 </p>
 
                 <motion.div

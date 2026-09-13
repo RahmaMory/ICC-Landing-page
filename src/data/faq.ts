@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "How long does a typical project take?",
     answer:
-      "Most projects are delivered within 2-4 weeks. MVPs can be faster, while complex platforms take longer.",
+      "Most projects are delivered within 2-3 weeks. Larger or more complex projects may take longer depending on scope and feedback.",
   },
   {
     question: "Do you provide hosting?",

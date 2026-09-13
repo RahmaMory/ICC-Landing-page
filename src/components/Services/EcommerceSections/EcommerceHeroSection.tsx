@@ -13,14 +13,14 @@
 //            Turn Your Store Into a
 //             <br />
 //             <span className="bg-gradient-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
-//              Sales Machine
+//              Clearer Buying
 //             </span>
 //           </h1>
 //           <p className="text-blue-300 mt-6 sm:mt-6 ext-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7">Trusted by startups & growing brands</p>
 
 //           <p className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7">
             
-//             More than a store. A sales machine.
+//             A clear buying experience for your customers.
 //           </p>
 
 // <Link
@@ -71,10 +71,10 @@ export default function EcommerceHeroSection() {
           variants={fadeUp}
           className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
         >
-          Turn Your Store Into 
+          E-commerce Experiences Built
           <br />
           <span className="bg-linear-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
-           A Sales Machine
+           for Clearer Buying
           </span>
         </motion.h1>
 
@@ -82,14 +82,15 @@ export default function EcommerceHeroSection() {
           variants={fadeUp}
           className="text-blue-300 mt-6 sm:mt-6 ext-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7"
         >
-          Trusted by startups & growing brands
+          Built for startups and growing brands
         </motion.p>
 
         <motion.p
           variants={fadeUp}
           className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7"
         >
-          More than a store. A sales machine.
+          A focused online store that helps customers discover products,
+          understand their options, and complete purchases with less friction.
         </motion.p>
 
         <motion.div variants={fadeUp}>

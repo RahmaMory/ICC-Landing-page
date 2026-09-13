@@ -89,7 +89,7 @@ export default function DashboardOurSolution() {
           </div>
 
           <h2 className="mt-8 text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-[68px]">
-            Data without clarity is useless.
+            Data is useful when the next step is clear.
           </h2>
         </motion.div>
 
@@ -110,9 +110,8 @@ export default function DashboardOurSolution() {
             </h3>
 
             <p className="mt-8 max-w-2xl text-lg leading-9 text-white/65">
-              Transform overwhelming datasets into intuitive visualizations that
-              drive action. Our dashboards are built for clarity, speed, and
-              precision.
+              We organize the metrics, controls, and workflows your team uses
+              most, so important information is easier to understand and act on.
             </p>
           </motion.div>
 

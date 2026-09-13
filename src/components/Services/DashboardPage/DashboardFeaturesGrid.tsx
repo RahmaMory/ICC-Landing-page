@@ -257,19 +257,19 @@ const featureCards = [
     icon: BarChart3,
     title: 'Real-time data',
     description:
-      'Stay updated with live data streams and instant synchronization across all your systems.',
+      'Keep important operational data visible in one current view.',
   },
   {
     icon: TrendingUp,
     title: 'Clear analytics',
     description:
-      'Visualize complex metrics with intuitive charts and graphs that anyone can understand.',
+      'Turn complex metrics into focused charts and useful summaries.',
   },
   {
     icon: Gauge,
     title: 'Easy control panels',
     description:
-      'Manage everything from a single, streamlined interface designed for efficiency.',
+      'Manage key actions from an interface shaped around your workflow.',
   },
 ]
 
@@ -349,11 +349,11 @@ export default function DashboardFeaturesGrid() {
           variants={fadeUp}
         >
           <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-            Powerful Features
+            Dashboard Essentials
           </h2>
 
           <p className="mt-4 text-base text-white/60 sm:text-lg">
-            Everything you need to turn data into decisions
+            The information and controls your team needs in one place.
           </p>
         </motion.div>
 
@@ -449,7 +449,7 @@ export default function DashboardFeaturesGrid() {
             </h5>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
-              Join leading companies that trust our dashboards to drive their success
+              Tell us what your team needs to monitor, understand, and control.
             </p>
 
             <a

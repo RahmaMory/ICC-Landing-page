@@ -2,12 +2,12 @@
 
 // export default function WhyChooseSection() {
 //   const points = [
-//     "No coding experience required",
-//     "Responsive design out of the box",
+//     "Clear content hierarchy",
+//     "Responsive on every screen",
 //     "SEO optimized",
-//     "Integrated with Wix infrastructure",
+//     "Built around your brand",
 //     "Real-time preview",
-//     "One-click deployment",
+//     "Domain and launch support",
 //   ];
 
 //   const highlights = [
@@ -40,8 +40,7 @@
 //           </h2>
 
 //           <p className="text-gray-300 mt-6 text-lg max-w-xl leading-8">
-//             Built on top of the Wix platform, focusing on business logic while
-//             leveraging powerful infrastructure.
+//             Strategy, design, and development support one clear business goal.
 //           </p>
 
 //           <ul className="mt-10 space-y-5">
@@ -97,7 +96,7 @@
 //       </h2>
 
 //       <p className="text-gray-300 mt-6 text-base sm:text-lg max-w-2xl mx-auto">
-//         Join thousands of creators who are building beautiful websites with Wix Vibe
+//         Tell ICC what you are launching and we will plan the right landing page.
 //       </p>
 
 //       <button className="
@@ -127,28 +126,28 @@ import { fadeLeft, fadeRight, fadeUp, staggerContainer } from "../../lib/motion"
 
 export default function WhyChooseSection() {
   const points = [
-    "No coding experience required",
-    "Responsive design out of the box",
-    "SEO optimized",
-    "Integrated with Wix infrastructure",
-    "Real-time preview",
-    "One-click deployment",
+    "Clear content hierarchy",
+    "Responsive on every screen",
+    "Search-friendly page structure",
+    "Built around your brand",
+    "Review link before launch",
+    "Domain and launch support",
   ];
 
   const highlights = [
     {
-      title: "AI-First Approach",
-      desc: "Smart automation",
+      title: "Focused Strategy",
+      desc: "One clear conversion goal",
       icon: Sparkles,
     },
     {
-      title: "Instant Results",
-      desc: "See changes live",
+      title: "Fast Delivery",
+      desc: "A streamlined build process",
       icon: Zap,
     },
     {
-      title: "Production Ready",
-      desc: "Deploy with confidence",
+      title: "Ready to Grow",
+      desc: "Easy to update and extend",
       icon: Code2,
     },
   ];
@@ -174,8 +173,8 @@ export default function WhyChooseSection() {
               variants={fadeUp}
               className="text-gray-300 mt-6 text-lg max-w-xl leading-8"
             >
-              Built on top of the Wix platform, focusing on business logic while
-              leveraging powerful infrastructure.
+              We combine strategy, design, and development so your page supports
+              one clear business goal.
             </motion.p>
 
             <motion.ul variants={staggerContainer} className="mt-10 space-y-5">
@@ -263,7 +262,7 @@ export default function WhyChooseSection() {
       xl:text-6xl
     "
               >
-                Ready to Build Something Amazing?
+                Ready to Launch Your Landing Page?
               </h2>
 
               <p
@@ -280,8 +279,8 @@ export default function WhyChooseSection() {
       lg:text-xl
     "
               >
-                Join thousands of creators who are building beautiful websites with Wix
-                Vibe.
+                Tell us what you&apos;re launching, and ICC will shape the right page
+                around your audience and goal.
               </p>
 
               <div className="mt-8 md:mt-10">
@@ -309,7 +308,7 @@ export default function WhyChooseSection() {
         sm:text-base
       "
                 >
-                  Start Building Now
+                  Start Your Landing Page
                   <span className="ml-2">→</span>
                 </a>
               </div>

@@ -4,11 +4,11 @@ import EcommerceHeroSection from "./EcommerceSections/EcommerceHeroSection";
 
 export default function EcommercePage() {
   return (
-    <>
+    <main>
     <EcommerceHeroSection/>
     <EcommerceAfterHeroSection/>
     <EcommerceForm/>
       
-    </>
+    </main>
   )
 }

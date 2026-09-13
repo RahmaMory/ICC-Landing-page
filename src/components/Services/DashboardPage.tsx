@@ -7,7 +7,7 @@ import DashboardContactSection from './DashboardPage/DashboardContactSection'
 
 export default function DashboardPage() {
   return (
-    <>
+    <main>
     <DashboardSection/>
     <DataDashboard/>
     <DashboardCTASection/>
@@ -15,6 +15,6 @@ export default function DashboardPage() {
     <DashboardFeaturesGrid/>
     <DashboardContactSection/>
       
-    </>
+    </main>
   )
 }

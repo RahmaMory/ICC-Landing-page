@@ -74,7 +74,7 @@ export default function Footer() {
         href={social.link}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Visit IO Code Company on ${social.name}`}
+        aria-label={`Visit ICC — IO Code Company on ${social.name}`}
         title={social.name}
         className="group"
       >
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           <p className="text-gray-400 text-sm mb-6">
-            IO Code Company (ICC) is a modern software studio for startups and growing businesses.
+            ICC — IO Code Company is a modern software studio for startups and growing businesses.
             Building the future, one click at a time.
           </p>
 
@@ -184,7 +184,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/10 pt-6 text-center text-gray-500 text-sm">
-        © 2026 IO Code Company (ICC). All rights reserved.
+        © 2026 ICC — IO Code Company. All rights reserved.
       </div>
 
     </footer>

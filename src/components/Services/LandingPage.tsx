@@ -17,8 +17,7 @@
 //           </h1>
 
 //           <p className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7">
-//             Wix Vibe is the world's best AI software development agent,
-//             helping you create production-ready websites in minutes.
+//             ICC builds focused landing pages around a clear business goal.
 //           </p>
 
 //           <div className="mt-8 sm:mt-10 flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
@@ -67,7 +66,7 @@ import LandingPageForm from "../LandingPageForm";
 
 export default function LandingPage() {
   return (
-    <>
+    <main>
       <section className="px-4 sm:px-6 py-24 sm:py-28 md:py-32 lg:py-40">
         <motion.div
           className="max-w-5xl mx-auto text-center"
@@ -79,10 +78,10 @@ export default function LandingPage() {
             variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
-            Build Beautiful Websites with
+            Landing Pages Built to
             <br />
             <span className="bg-linear-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
-              AI Magic
+              Turn Interest Into Action
             </span>
           </motion.h1>
 
@@ -90,8 +89,8 @@ export default function LandingPage() {
             variants={fadeUp}
             className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7"
           >
-            Wix Vibe is the world's best AI software development agent,
-            helping you create production-ready websites in minutes.
+            ICC designs and develops fast, focused landing pages that explain
+            your offer clearly and guide visitors toward the next step.
           </motion.p>
 
           <motion.div
@@ -122,7 +121,7 @@ export default function LandingPage() {
               hover:bg-white/5 transition
               w-full sm:w-auto min-w-40"
             >
-              View Examples
+              See What&apos;s Included
             </a>
           </motion.div>
         </motion.div>
@@ -133,6 +132,6 @@ export default function LandingPage() {
       </div>
       <WhyChooseSection />
       <LandingPageForm/>
-    </>
+    </main>
   );
 }

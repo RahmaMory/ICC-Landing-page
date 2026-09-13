@@ -8,55 +8,59 @@ const siteUrl = "https://www.icc-collab.com"
 
 const routeMetadata: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "IO Code Company (ICC) | Software Development & Digital Solutions",
-    description: "IO Code Company (ICC) builds websites, mobile apps, e-commerce stores, dashboards, MVPs, games, and AI automation solutions.",
+    title: "ICC — IO Code Company | Software Development & Digital Solutions",
+    description: "ICC — IO Code Company builds websites, mobile apps, e-commerce stores, dashboards, MVPs, games, and AI automation solutions.",
   },
   "/services": {
-    title: "Software Development Services | IO Code Company (ICC)",
-    description: "Explore website, mobile app, e-commerce, dashboard, game development, and AI automation services from IO Code Company (ICC).",
+    title: "Software Development Services | ICC — IO Code Company",
+    description: "Explore website, mobile app, e-commerce, dashboard, game development, and AI automation services from ICC — IO Code Company.",
+  },
+  "/about": {
+    title: "About ICC — IO Code Company | Software Development Team",
+    description: "Meet ICC — IO Code Company, a software team based in Sadat City with branches in 6th of October City.",
   },
   "/projects": {
-    title: "Our Projects | IO Code Company (ICC)",
-    description: "Explore selected websites, applications, dashboards, e-commerce stores, and digital products created by IO Code Company (ICC).",
+    title: "Our Projects | ICC — IO Code Company",
+    description: "Explore selected websites, applications, dashboards, e-commerce stores, and digital products created by ICC — IO Code Company.",
   },
   "/privacy": {
-    title: "Privacy Policy | IO Code Company (ICC)",
-    description: "Learn how IO Code Company (ICC) handles website inquiries, ratings, project information, communications, and client data.",
+    title: "Privacy Policy | ICC — IO Code Company",
+    description: "Learn how ICC — IO Code Company handles website inquiries, ratings, project information, communications, and client data.",
   },
   "/terms": {
-    title: "Terms & Conditions | IO Code Company (ICC)",
-    description: "Read the service, project, payment, ownership, privacy, delivery, and support terms for IO Code Company (ICC).",
+    title: "Terms & Conditions | ICC — IO Code Company",
+    description: "Read the service, project, payment, ownership, privacy, delivery, and support terms for ICC — IO Code Company.",
   },
   "/services/landing-page": {
-    title: "Landing Page Development | IO Code Company (ICC)",
+    title: "Landing Page Development | ICC — IO Code Company",
     description: "Conversion-focused landing page design and development for startups and growing businesses.",
   },
   "/services/mvp-website": {
-    title: "MVP Website Development | IO Code Company (ICC)",
+    title: "MVP Website Development | ICC — IO Code Company",
     description: "Launch a focused MVP website quickly, validate your idea, and build a foundation ready to scale.",
   },
   "/services/mobile-app": {
-    title: "Mobile App Development | IO Code Company (ICC)",
+    title: "Mobile App Development | ICC — IO Code Company",
     description: "Design and development of useful, scalable mobile applications for modern businesses and products.",
   },
   "/services/game": {
-    title: "Game Development | IO Code Company (ICC)",
+    title: "Game Development | ICC — IO Code Company",
     description: "Upcoming game development solutions for brands, products, and interactive digital experiences.",
   },
   "/services/shopify": {
-    title: "Shopify Automation | IO Code Company (ICC)",
+    title: "Shopify Automation | ICC — IO Code Company",
     description: "Custom Shopify systems and automation for orders, customer support, inventory, reporting, and growth.",
   },
   "/services/ecommerce": {
-    title: "E-commerce Development | IO Code Company (ICC)",
+    title: "E-commerce Development | ICC — IO Code Company",
     description: "Fast, secure, conversion-focused online stores designed around buying behavior and business growth.",
   },
   "/services/dashboard": {
-    title: "Business Dashboard Development | IO Code Company (ICC)",
+    title: "Business Dashboard Development | ICC — IO Code Company",
     description: "Custom dashboards that turn business data into clear insights and faster decisions.",
   },
   "/services/ai-automation": {
-    title: "AI Automation Services | IO Code Company (ICC)",
+    title: "AI Automation Services | ICC — IO Code Company",
     description: "AI automation systems that streamline operations, reduce manual work, and help businesses scale.",
   },
 }
@@ -83,8 +87,8 @@ export default function PageMetadata() {
       const project = projects.find((item) => item.slug === pathname.split("/").pop())
       metadata = project
         ? {
-            title: `${project.title} | IO Code Company (ICC)`,
-            description: project.desc || "Explore a project delivered by IO Code Company (ICC).",
+            title: `${project.title} | ICC — IO Code Company`,
+            description: project.desc || "Explore a project delivered by ICC — IO Code Company.",
           }
         : undefined
     }
@@ -93,14 +97,14 @@ export default function PageMetadata() {
       const industry = industries.find((item) => item.slug === pathname.split("/").pop())
       metadata = industry
         ? {
-            title: `${industry.title} Software Solutions | IO Code Company (ICC)`,
+            title: `${industry.title} Software Solutions | ICC — IO Code Company`,
             description: industry.description,
           }
         : undefined
     }
 
-    const title = metadata?.title || "Page Not Found | IO Code Company (ICC)"
-    const description = metadata?.description || "The requested page could not be found on the IO Code Company (ICC) website."
+    const title = metadata?.title || "Page Not Found | ICC — IO Code Company"
+    const description = metadata?.description || "The requested page could not be found on the ICC — IO Code Company website."
     const canonicalUrl = `${siteUrl}${pathname === "/" ? "" : pathname}`
     const socialImage = new URL(ICCLogo, siteUrl).href
 

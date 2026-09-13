@@ -221,7 +221,7 @@ const cards = [
     icon: ShoppingCart,
     title: "Smooth Checkout",
     description:
-      "Frictionless payment flows engineered to eliminate drop-offs. We optimize every input field to maximize completed transactions.",
+      "A simple payment flow that removes unnecessary steps and keeps checkout easy to follow.",
     button: "Start Your Store",
     image: checkoutImg,
     progress: "w-16",
@@ -230,7 +230,7 @@ const cards = [
     icon: Eye,
     title: "Product Clarity",
     description:
-      "High-fidelity galleries and intuitive layouts that let your products speak for themselves. Clear hierarchy drives purchasing decisions.",
+      "Clear product pages that help customers compare details and choose with confidence.",
     image: clarityImg,
     progress: "w-14",
   },
@@ -238,7 +238,7 @@ const cards = [
     icon: Smartphone,
     title: "Mobile-First Architecture",
     description:
-      "Flawless performance and responsive design ensuring a perfect, lightning-fast shopping experience on any device, anywhere.",
+      "Responsive layouts and optimized assets for a consistent shopping experience across devices.",
     image: mobileImg,
     progress: "w-16",
   },
@@ -322,9 +322,9 @@ export default function EcommerceAfterHeroSection() {
             variants={fadeUp}
           >
             <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-              <span className="text-slate-400">“Many stores look good</span>
+              <span className="text-slate-400">“A good-looking store still needs</span>
               <br />
-              <span>but don’t convert.”</span>
+              <span>a clear buying journey.”</span>
             </h2>
             <div className="mx-auto mt-8 h-px w-20 bg-cyan-300/30" />
           </motion.div>
@@ -338,14 +338,13 @@ export default function EcommerceAfterHeroSection() {
               variants={fadeLeft}
             >
               <h3 className="max-w-sm text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl">
-                We design stores optimized for
-                <span className="block text-blue-300">buying behavior.</span>
+                We design around how customers
+                <span className="block text-blue-300">browse, compare, and buy.</span>
               </h3>
 
               <p className="mt-6 max-w-md text-sm leading-7 text-slate-400 sm:text-[15px]">
-                Stop losing customers to confusing navigation and slow checkouts.
-                Our architecture is built on data-driven principles to guide users
-                effortlessly from discovery to purchase.
+                Clear navigation, useful product information, and a simple
+                checkout help customers move through the store with confidence.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -396,13 +395,12 @@ export default function EcommerceAfterHeroSection() {
             variants={fadeUp}
           >
             <h3 className="text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px]">
-              Increase conversion
-              <span className="block text-blue-400">and sales.</span>
+              Ready for a clearer
+              <span className="block text-blue-400">online store?</span>
             </h3>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-[15px]">
-              Transform your digital storefront into a high-performance sales
-              engine. Ready to scale your revenue?
+              Let&apos;s plan the products, pages, and buying flow your business needs.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

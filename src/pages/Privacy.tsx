@@ -12,7 +12,7 @@ const privacySections: PrivacySection[] = [
     id: "scope",
     title: "1. Scope of This Policy",
     paragraphs: [
-      "This Privacy Policy explains how IO Code Company (ICC) handles information shared by website visitors, prospective clients, active clients, partners, and project stakeholders. It applies to information provided through this website, WhatsApp conversations started from the website, email communications, project discussions, and service delivery.",
+      "This Privacy Policy explains how ICC — IO Code Company handles information shared by website visitors, prospective clients, active clients, partners, and project stakeholders. It applies to information provided through this website, WhatsApp conversations started from the website, email communications, project discussions, and service delivery.",
       "ICC is a software solutions company. The information we handle is generally connected to business inquiries, quotations, project planning, software delivery, support, and professional communication. This policy should be read together with our Terms & Conditions and any project-specific agreement made with a client.",
     ],
   },
@@ -135,7 +135,7 @@ const privacySections: PrivacySection[] = [
     id: "contact",
     title: "14. Privacy Contact",
     paragraphs: [
-      "For questions about this policy, privacy requests, project information, or review-publication consent, contact IO Code Company (ICC) using the email below. Please include enough context for us to identify the relevant inquiry or project without sending unnecessary sensitive information.",
+      "For questions about this policy, privacy requests, project information, or review-publication consent, contact ICC — IO Code Company using the email below. Please include enough context for us to identify the relevant inquiry or project without sending unnecessary sensitive information.",
     ],
   },
 ]
@@ -150,7 +150,7 @@ export default function Privacy() {
           </div>
           <h1 className="mt-6 text-4xl font-bold sm:text-5xl">Privacy Policy</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-400">
-            How IO Code Company (ICC) handles information shared through our website, communications, and software services.
+            How ICC — IO Code Company handles information shared through our website, communications, and software services.
           </p>
           <p className="mt-4 text-sm text-slate-500">Last updated: September 12, 2026</p>
         </header>
@@ -186,9 +186,9 @@ export default function Privacy() {
                 </ul>
               ) : null}
               {section.id === "contact" ? (
-                <a href="mailto:info@iocodecompany.com" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-[#071126] transition hover:bg-cyan-300">
+                <a href="mailto:hr@icc-collab.com" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-[#071126] transition hover:bg-cyan-300">
                   <Mail className="h-5 w-5" aria-hidden="true" />
-                  info@iocodecompany.com
+                  hr@icc-collab.com
                 </a>
               ) : null}
             </section>

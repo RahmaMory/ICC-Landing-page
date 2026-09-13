@@ -342,9 +342,8 @@ export default function DataDashboard() {
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
-                In a sea of metrics, finding the signal through the noise is the
-                hardest part. Complex systems slow down decision-making and obscure
-                the truth.
+                Scattered reports and crowded screens make important information
+                harder to find and decisions slower to make.
               </p>
 
               <motion.div
@@ -407,8 +406,7 @@ export default function DataDashboard() {
                     </h3>
 
                     <p className="mt-4 max-w-md text-[17px] leading-8 text-white/58">
-                      Live metrics streaming directly to your command center with
-                      zero latency.
+                      Keep important metrics updated in one clear operational view.
                     </p>
 
                     <div className="mt-8 h-px w-full bg-white/10" />
@@ -446,8 +444,7 @@ export default function DataDashboard() {
                     </h3>
 
                     <p className="mt-4 max-w-md text-[17px] leading-8 text-white/58">
-                      Visualizations that tell a story, not just show numbers. Spot
-                      trends instantly.
+                      Use focused charts and summaries to make patterns easier to see.
                     </p>
                   </div>
                 </motion.article>
@@ -468,7 +465,7 @@ export default function DataDashboard() {
                   </h3>
 
                   <p className="mt-4 max-w-md text-[17px] leading-8 text-white/58">
-                    Manage everything from a single, streamlined interface designed for efficiency.
+                    Manage key tasks from one interface built around your workflow.
                   </p>
                 </div>
               </motion.article>

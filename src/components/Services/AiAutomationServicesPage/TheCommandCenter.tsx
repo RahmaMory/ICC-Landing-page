@@ -187,19 +187,19 @@ const features = [
     icon: Activity,
     title: 'Real-Time Telemetry',
     description:
-      'Monitor automation flows as they happen with millisecond latency.',
+      'Monitor automation flows and their current status in one place.',
   },
   {
     icon: BrainCircuit,
     title: 'Predictive Analytics',
     description:
-      'AI models forecast bottlenecks before they impact operations.',
+      'Use relevant signals to identify likely bottlenecks earlier.',
   },
   {
     icon: Network,
     title: 'System Integration',
     description:
-      'Connects seamlessly with your existing CRM, ERP, and databases.',
+      'Connect with the CRM, ERP, and databases already used by your team.',
   },
 ]
 
@@ -222,8 +222,8 @@ export default function TheCommandCenter() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg md:text-[18px] leading-8 text-white/60">
-            Total visibility and control. Our custom dashboards translate complex
-            AI operations into clear, actionable insights.
+            Custom dashboards turn automation activity into clear status,
+            exceptions, and next actions for your team.
           </p>
         </motion.div>
 

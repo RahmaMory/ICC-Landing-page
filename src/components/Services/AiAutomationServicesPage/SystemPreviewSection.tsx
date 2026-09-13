@@ -76,8 +76,8 @@ export default function SystemPreviewSection() {
             variants={fadeUp}
             className="mx-auto mt-8 max-w-2xl text-base sm:text-lg md:text-[18px] leading-8 text-white/60"
           >
-            The future of business is automated. Don&apos;t get left behind
-            managing manual processes.
+            Start with the repetitive workflow that costs your team the most time,
+            then build from there.
           </motion.p>
 
           <motion.div variants={fadeUp}>

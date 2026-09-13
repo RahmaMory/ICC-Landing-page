@@ -80,31 +80,31 @@
 
 
 
-import { Sparkles, Zap, Palette, Code2 } from "lucide-react";
+import { MessageSquareText, MonitorSmartphone, Zap, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../lib/motion";
 
 export default function FeaturesSection() {
   const features = [
     {
-      title: "AI-Powered Design",
-      desc: "Create stunning websites with intelligent design suggestions and automated layouts.",
-      icon: Sparkles,
+      title: "Clear Messaging",
+      desc: "A focused page structure that makes your offer easy to understand.",
+      icon: MessageSquareText,
     },
     {
-      title: "Lightning Fast",
-      desc: "Build and deploy production-ready websites in minutes, not days.",
+      title: "Responsive Design",
+      desc: "A smooth experience across mobile, tablet, and desktop.",
+      icon: MonitorSmartphone,
+    },
+    {
+      title: "Fast Performance",
+      desc: "Optimized assets and clean development for quick loading.",
       icon: Zap,
     },
     {
-      title: "Beautiful Templates",
-      desc: "Access a curated collection of professionally designed templates.",
-      icon: Palette,
-    },
-    {
-      title: "Clean Code",
-      desc: "Generate production-ready, maintainable code that follows best practices.",
-      icon: Code2,
+      title: "Ready to Launch",
+      desc: "A tested page prepared for your domain, analytics, and campaigns.",
+      icon: BadgeCheck,
     },
   ];
 
@@ -118,14 +118,14 @@ export default function FeaturesSection() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={fadeUp} className="text-5xl font-bold">
-            Powerful Features
+            What Your Landing Page Includes
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="text-gray-400 mt-10 mb-10 text-lg max-w-2xl mx-auto"
           >
-            Everything you need to build amazing websites, powered by AI
+            The essentials for a clear, fast, and professional launch.
           </motion.p>
         </motion.div>
 

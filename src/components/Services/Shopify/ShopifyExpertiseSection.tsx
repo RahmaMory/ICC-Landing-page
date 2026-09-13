@@ -73,12 +73,12 @@ const items = [
   {
     icon: Boxes,
     title: 'Order & Fulfillment Automation',
-    desc: 'Automatically process, route, and fulfill orders without repetitive manual work.',
+    desc: 'Connect order handling, routing, and fulfillment around your existing process.',
   },
   {
     icon: Bot,
     title: 'AI Customer Support',
-    desc: 'Deliver instant responses and reduce support load with AI-driven support systems.',
+    desc: 'Handle common questions and route complex requests to the right team member.',
   },
   {
     icon: Package,
@@ -88,7 +88,7 @@ const items = [
   {
     icon: Megaphone,
     title: 'Marketing Automation',
-    desc: 'Recover carts, trigger campaigns, and automate customer journeys for growth.',
+    desc: 'Connect cart recovery, campaigns, and customer follow-up across your tools.',
   },
 ]
 
@@ -106,7 +106,7 @@ export default function ShopifyExpertiseSection() {
           <div>
             <p className="text-sm font-medium tracking-[0.14em] text-cyan-300">OUR EXPERTISE</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-              Shopify Automation Solutions Built for Scale
+              Shopify Automation Built Around Your Store
             </h2>
           </div>
         </motion.div>

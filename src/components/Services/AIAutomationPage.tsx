@@ -10,7 +10,7 @@ import AutomationForm from '../AutomationForm'
 
 export default function AIAutomationPage() {
   return (
-    <>
+    <main>
     <AiAutomationServicesPage/>
     <BottleneckSolutionSection/>
     <WhatCanWeAutomateSection/>
@@ -21,6 +21,6 @@ export default function AIAutomationPage() {
     <SystemPreviewSection/>
     <AutomationForm/>
       
-    </>
+    </main>
   )
 }

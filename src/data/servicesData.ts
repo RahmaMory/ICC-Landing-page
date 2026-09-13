@@ -22,56 +22,56 @@ export type ServiceItem = {
 export const servicesData: ServiceItem[] = [
   {
     title: "Landing Page",
-    desc: "High-converting single pagers.",
+    desc: "Focused pages built to turn visits into inquiries.",
     icon: PanelsTopLeft,
     count: 28,
     path: "/services/landing-page"
   },
   {
     title: "MVP Website",
-    desc: "Launch your idea in weeks.",
+    desc: "Core product experiences for early validation.",
     icon: Laptop,
     count: 26,
     path: "/services/mvp-website"
   },
   {
     title: "Mobile App",
-    desc: "iOS & Android solutions.",
+    desc: "Intuitive iOS and Android applications.",
     icon: Smartphone,
     count: 13,
     path: "/services/mobile-app"
   },
   {
     title: "Game",
-    desc: "Interactive web experiences.",
+    desc: "Interactive games for brands and digital products.",
     icon: Gamepad2,
     comingSoon: true,
     path: "/services/game"
   },
   {
     title: "Shopify",
-    desc: "Custom themes & setups.",
+    desc: "Shopify stores, integrations, and automation.",
     icon: ShoppingBag,
     count: 10,
     path: "/services/shopify"
   },
   {
     title: "E-commerce",
-    desc: "Full-scale online stores.",
+    desc: "Custom stores built around the buying journey.",
     icon: Store,
     count: 13,
     path: "/services/ecommerce"
   },
   {
     title: "Dashboard",
-    desc: "Admin panels & SaaS tools.",
+    desc: "Clear dashboards and business control panels.",
     icon: LayoutDashboard,
     count: 6,
     path: "/services/dashboard"
   },
   {
     title: "AI / Automation",
-    desc: "Smart integrations & bots.",
+    desc: "Practical AI workflows, integrations, and assistants.",
     icon: Sparkles,
     count: 4,
     path: "/services/ai-automation"

@@ -150,7 +150,7 @@ export default function DashboardSection() {
               className="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-400/15 bg-cyan-400/8 px-4 py-2 text-xs font-medium tracking-[0.12em] text-cyan-300/90"
             >
               <span className="h-2 w-2 rounded-full bg-cyan-400" />
-              QUANTUM INTERFACE V2.0
+              BUSINESS DASHBOARD DEVELOPMENT
             </motion.div>
 
             <motion.h1
@@ -167,9 +167,8 @@ export default function DashboardSection() {
               variants={fadeUp}
               className="mt-8 max-w-lg text-lg leading-8 text-white/60"
             >
-              Turn your raw data into clear, actionable insights. We design
-              high-end control panels that simplify complexity and help your team
-              make faster, better decisions.
+              ICC designs clear control panels that bring important data,
+              workflows, and decisions into one useful view.
             </motion.p>
 
             <motion.div

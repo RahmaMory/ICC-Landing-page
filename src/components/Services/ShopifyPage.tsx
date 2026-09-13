@@ -9,7 +9,7 @@ import ShopifyContactSection from './Shopify/ShopifyContactSection'
 
 export default function ShopifyPage() {
   return (
-    <>
+    <main>
 <ShopifyHeroSection/>
 <ShopifyProblemSolutionSection/>
 <ShopifyExpertiseSection/>
@@ -19,8 +19,7 @@ export default function ShopifyPage() {
 <ShopifyCTASection/>
 <ShopifyContactSection/>
 
-    </>
+    </main>
 
   )
 }
-

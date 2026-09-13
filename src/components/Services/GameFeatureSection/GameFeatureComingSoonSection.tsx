@@ -85,16 +85,16 @@ export default function GameFeatureComingSoonSection() {
               variants={fadeUp}
               className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-5xl lg:text-[64px]"
             >
-              Our <span className="bg-linear-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">Game Solutions</span> are launching soon.
+              Our <span className="bg-linear-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">Game Development Service</span> is coming soon.
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="mt-6 max-w-2xl text-base leading-8 text-white/62 sm:text-lg"
             >
-              We’re building a new game-focused experience designed for brands,
-              products, and interactive digital engagement. Reserve your spot now
-              and be among the first to access it.
+              ICC is preparing a focused service for interactive brand
+              experiences and digital products. Contact us to discuss an idea or
+              join the first project schedule.
             </motion.p>
 
             <motion.div
@@ -102,8 +102,8 @@ export default function GameFeatureComingSoonSection() {
               className="mt-10 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3"
             >
               {[
-                "Early access priority",
-                "Private launch updates",
+                "Early project discussions",
+                "Service launch updates",
                 "First booking availability",
               ].map((item) => (
                 <motion.div
@@ -157,14 +157,14 @@ export default function GameFeatureComingSoonSection() {
                 to="/#contact"
                 className="group inline-flex items-center justify-center rounded-2xl bg-blue-400 px-8 py-4 text-base font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_28px_rgba(34,211,238,0.30)]"
               >
-                <span>Reserve Your Spot</span>
+                <span>Discuss a Game Idea</span>
                 <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </Link>
 
               <p className="text-sm text-white/45">
-                Be one of the first to get access.
+                Early project conversations are now open.
               </p>
             </motion.div>
           </div>

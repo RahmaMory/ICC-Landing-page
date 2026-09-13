@@ -72,10 +72,10 @@ export default function ShopifyProblemSolutionSection() {
       'Teams lose visibility, speed, and focus.',
     ],
     aiWay: [
-      'Instant, automated operational workflows.',
-      '24/7 AI-driven customer response flows.',
-      'Predictive, proactive inventory visibility.',
-      'Higher accuracy, lower cost, faster growth.',
+      'Orders move through defined automated steps.',
+      'Common support requests receive faster first responses.',
+      'Inventory updates stay connected to store activity.',
+      'Teams gain clearer operational visibility.',
     ],
   }
 
@@ -89,7 +89,7 @@ export default function ShopifyProblemSolutionSection() {
           variants={fadeUp}
           className="text-center text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[58px]"
         >
-          The Evolution of Commerce
+          From Manual Tasks to Connected Workflows
         </motion.h2>
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -101,7 +101,7 @@ export default function ShopifyProblemSolutionSection() {
             whileHover={{ y: -4 }}
             className="rounded-[28px] border border-orange-400/15 bg-[#131d2f] p-8"
           >
-            <h3 className="text-[24px] font-semibold text-red-500 flex gap-2 align-middle"><ShieldX/> The Old Way</h3>
+            <h3 className="text-[24px] font-semibold text-red-500 flex gap-2 align-middle"><ShieldX/> Manual Workflow</h3>
             <ul className="mt-6 space-y-4 text-white/60">
               {items.oldWay.map((item, index) => (
                 <li key={item}>
@@ -128,7 +128,7 @@ export default function ShopifyProblemSolutionSection() {
             whileHover={{ y: -4 }}
             className="rounded-[28px] border border-cyan-400/15 bg-[#131d2f] p-8 shadow-[0_0_30px_rgba(34,211,238,0.06)]"
           >
-            <h3 className="text-[24px] font-semibold text-cyan-300 flex gap-2 align-middle"><CircleCheck /> The AI Way</h3>
+            <h3 className="text-[24px] font-semibold text-cyan-300 flex gap-2 align-middle"><CircleCheck /> Connected Workflow</h3>
             <ul className="mt-6 space-y-4 text-white/60">
               {items.aiWay.map((item, index) => (
                 <li key={item}>

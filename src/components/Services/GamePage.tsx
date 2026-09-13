@@ -2,8 +2,8 @@ import GameFeatureComingSoonSection from './GameFeatureSection/GameFeatureComing
 
 export default function GamePage() {
   return (
-    <>
+    <main>
       <GameFeatureComingSoonSection/>
-    </>
+    </main>
   )
 }

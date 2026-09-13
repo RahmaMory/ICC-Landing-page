@@ -120,8 +120,8 @@ export default function RealImpactSection() {
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
-            We don't just build tech; we engineer outcomes. Our systems deliver
-            measurable ROI from day one.
+            We connect each automation to a clear operational goal, then review
+            its effect on time, workload, and service quality.
           </p>
 
           <Link
