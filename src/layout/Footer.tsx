@@ -6,7 +6,7 @@ import { socialLinks } from "../data/socialLinks"
 export default function Footer() {
 
     const whatsappUrl =
-    'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.'
+    'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20book%20a%20free%2015-minute%20discovery%20call%20with%20ICC.'
 
   return (
     <footer className="bg-black text-white pt-24 pb-10">
@@ -18,15 +18,32 @@ export default function Footer() {
         </h2>
 
         <p className="text-gray-400 max-w-xl mx-auto mb-8 text-xl">
-          Tell us what you need, and we&apos;ll help you define a clear next step.
+          Book a free 15-minute discovery call to discuss your idea and define
+          the right next step.
         </p>
 
    <div className="flex justify-center gap-4 flex-wrap mb-10">
 
   <a
+    href="tel:+201031158933"
+    aria-label="Call ICC to book a free 15-minute discovery call"
+    className="
+      flex w-full items-center justify-center
+      rounded-lg border border-white
+      bg-gradient-to-r from-blue-600 to-indigo-500
+      px-4 py-2 text-base
+      transition hover:opacity-90
+      sm:hidden
+    "
+  >
+    Book a Free 15-Minute Call
+  </a>
+
+  <a
     href={whatsappUrl}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Open WhatsApp to book a free 15-minute discovery call with ICC"
     className="
       text-base sm:text-lg md:text-xl
       px-4 sm:px-6 md:px-7
@@ -35,11 +52,11 @@ export default function Footer() {
       border border-white
       bg-gradient-to-r from-blue-600 to-indigo-500
       hover:opacity-90 transition
-      flex items-center justify-center
+      hidden items-center justify-center sm:flex
       w-full sm:w-auto
     "
   >
-    Start a Conversation
+    Book a Free 15-Minute Call
   </a>
 
   <a
