@@ -93,6 +93,11 @@ Project Details: ${formData.projectDetails}
                   <CheckCircle2 className="text-blue-400" />
                   Free technical consultation
                 </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <CheckCircle2 className="text-blue-400" />
+                  Agreed revisions and post-launch support
+                </div>
               </div>
             </motion.div>
 

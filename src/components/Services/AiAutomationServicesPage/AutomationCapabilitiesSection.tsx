@@ -138,43 +138,43 @@ const capabilities = [
   {
     title: 'AI-Powered Customer Support',
     description:
-      'Automate responses to common customer queries and escalate complex issues seamlessly.',
-    tag: 'Customer Service',
+      'Handle common questions and route complex requests to the right team member.',
+    tag: 'Customer Support',
     image: img1,
   },
   {
     title: 'Intelligent Document Processing',
     description:
-      'Extract, classify, and validate data from various document types with high accuracy.',
-    tag: 'Data Processing',
+      'Extract, organize, and validate document data with human review where needed.',
+    tag: 'Documents & Data',
     image: img2,
   },
   {
-    title: 'Predictive System Maintenance',
+    title: 'Workflow Automation',
     description:
-      'Anticipate equipment failures and schedule maintenance proactively to minimize downtime.',
+      'Connect repeated tasks across the tools your team already uses.',
     tag: 'Operations',
     image: img3,
   },
   {
-    title: 'Automated Content Creation',
+    title: 'Content Assistance',
     description:
-      'Generate high-quality articles, marketing copy, and reports using advanced AI models.',
-    tag: 'Marketing & Content',
+      'Prepare drafts, summaries, and structured content for your team to review.',
+    tag: 'Content Workflows',
     image: img4,
   },
   {
-    title: 'Real-time Fraud Detection',
+    title: 'CRM & Business Integrations',
     description:
-      'Identify and flag suspicious transactions and activities instantly to prevent financial losses.',
-    tag: 'Security & Finance',
+      'Connect forms, CRM records, email, and internal tools into clearer workflows.',
+    tag: 'System Integration',
     image: img5,
   },
   {
-    title: 'Supply Chain Optimization',
+    title: 'Reporting & Data Workflows',
     description:
-      'Enhance logistics, inventory management, and demand forecasting for improved efficiency.',
-    tag: 'Logistics',
+      'Organize routine data updates and reports so information is easier to use.',
+    tag: 'Reporting',
     image: img6,
   },
 ]
@@ -190,9 +190,9 @@ export default function AutomationCapabilitiesSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.12 }}
         >
-          {capabilities.map((item, index) => (
+          {capabilities.map((item) => (
             <motion.article
-              key={index}
+              key={item.title}
               variants={fadeUp}
               whileHover={{ y: -5 }}
               className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-[#071126] p-8 transition-all duration-500 ease-out shadow-[0_0_0_1px_rgba(255,255,255,0.02)] hover:border-cyan-400/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]"

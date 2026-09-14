@@ -251,8 +251,8 @@ ${formData.message || '-'}`
       description: 'Tailored dashboards for your business',
     },
     {
-      title: 'Fast Response',
-      description: "We’ll get back to you within 24 hours",
+      title: 'Follow-Up & Support',
+      description: 'Agreed updates and support after launch',
     },
   ]
 

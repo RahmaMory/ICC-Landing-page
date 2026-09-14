@@ -117,7 +117,7 @@ export default function ShopifyContactSection() {
   const benefits = [
     { title: 'Free Consultation', description: 'Discuss your Shopify needs with our experts' },
     { title: 'Custom Systems', description: 'Tailored automation built around your store' },
-    { title: 'Fast Response', description: 'We’ll get back to you within 24 hours' },
+    { title: 'Follow-Up & Support', description: 'Agreed updates and support after launch' },
   ]
 
   return (

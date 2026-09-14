@@ -37,7 +37,7 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services/mobile-app": {
     title: "Mobile App Development | ICC — IO Code Company",
-    description: "Mobile app design and development built around clear user journeys, responsive experiences, and real business needs.",
+    description: "Native and cross-platform Android and iOS app development with backend, admin panel, maintenance, and agreed updates.",
   },
   "/services/game": {
     title: "Game Development | ICC — IO Code Company",

@@ -37,21 +37,25 @@
 //   );
 // }
 
-import { Layers3, Zap, Activity } from "lucide-react";
+import { Database, Layers3, Smartphone, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
   {
+    icon: Smartphone,
+    title: "Android & iOS",
+  },
+  {
     icon: Layers3,
-    title: "Clean UX",
+    title: "Native & Cross-platform",
   },
   {
-    icon: Zap,
-    title: "Fast performance",
+    icon: Database,
+    title: "Backend & Admin Panels",
   },
   {
-    icon: Activity,
-    title: "Scalable architecture",
+    icon: Wrench,
+    title: "Maintenance & Updates",
   },
 ];
 

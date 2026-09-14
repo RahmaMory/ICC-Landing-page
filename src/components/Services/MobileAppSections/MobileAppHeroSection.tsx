@@ -144,8 +144,10 @@ export default function MobileAppHeroSection() {
             variants={fadeUp}
             className="mt-6 max-w-xl text-base sm:text-lg leading-8 text-gray-400"
           >
-            ICC designs clear, responsive mobile experiences around the tasks
-            your users need to complete.
+            ICC designs and builds Android and iOS apps using native or
+            cross-platform technology based on your product and users. When
+            needed, the service also includes the backend, admin panel, and
+            ongoing maintenance.
           </motion.p>
 
           <motion.div

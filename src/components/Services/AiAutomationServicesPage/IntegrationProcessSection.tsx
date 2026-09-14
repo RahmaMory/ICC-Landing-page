@@ -149,14 +149,14 @@ const processSteps = [
     number: '3',
     title: 'Testing, Validation & Optimization',
     description:
-      'Rigorously test the automation solution for functionality, performance, and reliability.',
+      'Test the workflow against agreed cases and refine it before launch.',
     image: img9,
   },
   {
     number: '4',
-    title: 'Deployment, Training & Continuous Monitoring',
+    title: 'Launch, Training & Follow-Up',
     description:
-      'Deploy the solution, train users, and continuously monitor performance for ongoing success.',
+      'Launch the workflow, train the team, and refine it through agreed follow-up and updates.',
     image: img10,
   },
 ]

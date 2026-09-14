@@ -152,7 +152,7 @@ const solutionCards = [
   {
     icon: <DollarSign className="w-6 h-6 text-blue-400" />,
     title: 'Reduce Costs',
-    desc: 'Lower operational overhead significantly.',
+    desc: 'Reduce avoidable effort across repetitive operational work.',
   },
   {
     icon: <TrendingUp className="w-6 h-6 text-blue-400" />,
@@ -163,7 +163,7 @@ const solutionCards = [
   {
     icon: <Zap className="w-6 h-6 text-blue-400" />,
     title: 'Improve Accuracy',
-    desc: 'Reduce manual errors and increase consistency.',
+    desc: 'Make repeatable steps more consistent with clear rules and checks.',
   },
 ]
 
