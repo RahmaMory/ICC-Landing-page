@@ -14,11 +14,11 @@ export default function Footer() {
       {/* CTA Section */}
       <div className="container mx-auto px-6 text-center mb-10">
         <h2 className="text-5xl font-bold mb-6">
-          Ready to Build?
+          Have a Project in Mind?
         </h2>
 
         <p className="text-gray-400 max-w-xl mx-auto mb-8 text-xl">
-          Let's turn your vision into reality. Book a free 15-minute discovery call today.
+          Tell us what you need, and we&apos;ll help you define a clear next step.
         </p>
 
    <div className="flex justify-center gap-4 flex-wrap mb-10">
@@ -39,7 +39,7 @@ export default function Footer() {
       w-full sm:w-auto
     "
   >
-    Book a Call
+    Start a Conversation
   </a>
 
   <a

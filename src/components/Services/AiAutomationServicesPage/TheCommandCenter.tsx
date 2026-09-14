@@ -185,13 +185,13 @@ import { fadeLeft, fadeRight, fadeUp } from '../../../lib/motion'
 const features = [
   {
     icon: Activity,
-    title: 'Real-Time Telemetry',
+    title: 'Live Workflow Status',
     description:
       'Monitor automation flows and their current status in one place.',
   },
   {
     icon: BrainCircuit,
-    title: 'Predictive Analytics',
+    title: 'Early Bottleneck Signals',
     description:
       'Use relevant signals to identify likely bottlenecks earlier.',
   },
@@ -215,9 +215,9 @@ export default function TheCommandCenter() {
           variants={fadeUp}
         >
           <h2 className="text-white font-semibold leading-[0.95] tracking-[-0.04em] text-4xl sm:text-5xl md:text-6xl lg:text-[72px]">
-            <span>The Command </span>
+            <span>A Clear View of </span>
             <span className="bg-linear-to-r from-cyan-400 to-purple-300 bg-clip-text text-transparent">
-              Center
+              Every Workflow
             </span>
           </h2>
 
@@ -282,7 +282,7 @@ export default function TheCommandCenter() {
                   </div>
 
                   <div className="ml-3 rounded-md border border-cyan-400/20 bg-[#091224] px-4 py-1.5 text-[12px] text-white/55">
-                    system_status: optimal
+                    workflow_overview
                   </div>
                 </div>
 

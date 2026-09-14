@@ -44,9 +44,9 @@ import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 export default function ShopifyCTASection() {
   return (
-    <section className="px-4 py-24 sm:px-6 md:py-32 lg:px-8 bg-[#090E18]">
+    <section className="bg-[#090E18] px-4 py-20 sm:px-6 md:py-24 lg:px-8">
       <motion.div
-        className="mx-auto flex min-h-[68vh] max-w-375 flex-col items-center justify-center text-center"
+        className="mx-auto flex max-w-375 flex-col items-center justify-center text-center"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -63,8 +63,8 @@ export default function ShopifyCTASection() {
           variants={fadeUp}
           className="max-w-5xl text-2xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-7xl md:text-6xl lg:text-[80px]"
         >
-          <span className="block">Let AI Run Your Shopify Store.</span>
-          <span className="block bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent mt-1.5"> You Focus on Growth.</span>
+          <span className="block">Streamline the Work Behind Your Store.</span>
+          <span className="mt-1.5 block bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">Keep Your Team Focused on Growth.</span>
         </motion.h2>
 
         <motion.div

@@ -58,9 +58,6 @@ export default function Navbar() {
               <MenuLink to="/#services">Services</MenuLink>
             </li>
             <li>
-              <MenuLink to="/about">About</MenuLink>
-            </li>
-            <li>
               <MenuLink to="/#work">Work</MenuLink>
             </li>
             <li>
@@ -94,9 +91,6 @@ export default function Navbar() {
             <ul className="menu menu-sm dropdown-content right-0 z-50 mt-3 w-52 rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
               <li>
                 <MenuLink to="/#services">Services</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/about">About</MenuLink>
               </li>
               <li>
                 <MenuLink to="/#work">Work</MenuLink>

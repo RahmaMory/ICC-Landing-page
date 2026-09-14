@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import { lazy, useEffect, useState } from "react";
 import MainLayout from "./layout/MainLayout";
 import IntroLoader from "./components/IntroLoader";
@@ -13,7 +13,6 @@ const IndustryDetails = lazy(() => import("./pages/IndustryDetails"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Services = lazy(() => import("./pages/Services"));
-const About = lazy(() => import("./pages/About"));
 const LandingPage = lazy(() => import("./components/Services/LandingPage"));
 const MVPWebsite = lazy(() => import("./components/Services/MVPWebsite"));
 const MobileApp = lazy(() => import("./components/Services/MobileApp"));
@@ -53,7 +52,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/services/landing-page" element={<LandingPage />} />
           <Route path="/services/mvp-website" element={<MVPWebsite />} />
           <Route path="/services/mobile-app" element={<MobileApp />} />

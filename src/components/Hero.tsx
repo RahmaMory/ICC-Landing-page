@@ -272,7 +272,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-6 text-gray-400 max-w-xl text-lg sm:text-xl"
             >
-              Stop dreaming and start shipping. We are IO Code Company (ICC), a software studio for startups that need speed, quality, and design that converts.
+              Turn your idea into a clear, launch-ready digital product. ICC — IO Code Company brings strategy, design, and development together for startups and growing businesses.
             </motion.p>
 
           <motion.div

@@ -187,21 +187,21 @@ import { fadeLeft, fadeRight, fadeUp } from "../../../lib/motion";
 const steps = [
   {
     number: "01",
-    tag: "THE TRAP",
+    tag: "START WITH THE PROBLEM",
     title: "Problem",
     desc: "Long feature lists can delay launch before the core idea has been tested.",
     image: problemImg,
   },
   {
     number: "02",
-    tag: "THE PIVOT",
+    tag: "DEFINE THE CORE",
     title: "Solution",
     desc: "We define the smallest useful version and build around its main user journey.",
     image: solutionImg,
   },
   {
     number: "03",
-    tag: "THE ARSENAL",
+    tag: "BUILD THE ESSENTIALS",
     title: "Features",
     image: featuresImg,
     featuresList: [
@@ -212,7 +212,7 @@ const steps = [
   },
   {
     number: "04",
-    tag: "THE LAUNCH",
+    tag: "LAUNCH AND LEARN",
     title: "Result",
     desc: "Launch a focused first version, collect feedback, and plan the next release with clearer priorities.",
     image: resultImg,
@@ -233,7 +233,7 @@ export default function MVPProtocolSection() {
         variants={fadeUp}
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-          The MVP Protocol
+          How We Build Your MVP
         </h2>
         <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 text-gray-400">
           A focused process for choosing the essential features, building them

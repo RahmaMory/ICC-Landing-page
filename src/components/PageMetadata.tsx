@@ -9,15 +9,11 @@ const siteUrl = "https://www.icc-collab.com"
 const routeMetadata: Record<string, { title: string; description: string }> = {
   "/": {
     title: "ICC — IO Code Company | Software Development & Digital Solutions",
-    description: "ICC — IO Code Company builds websites, mobile apps, e-commerce stores, dashboards, MVPs, games, and AI automation solutions.",
+    description: "ICC — IO Code Company designs and builds websites, mobile apps, e-commerce systems, dashboards, MVPs, and practical automation for growing businesses.",
   },
   "/services": {
     title: "Software Development Services | ICC — IO Code Company",
-    description: "Explore website, mobile app, e-commerce, dashboard, game development, and AI automation services from ICC — IO Code Company.",
-  },
-  "/about": {
-    title: "About ICC — IO Code Company | Software Development Team",
-    description: "Meet ICC — IO Code Company, a software team based in Sadat City with branches in 6th of October City.",
+    description: "Explore website, mobile app, e-commerce, dashboard, MVP, and automation services from ICC — IO Code Company.",
   },
   "/projects": {
     title: "Our Projects | ICC — IO Code Company",
@@ -33,15 +29,15 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services/landing-page": {
     title: "Landing Page Development | ICC — IO Code Company",
-    description: "Conversion-focused landing page design and development for startups and growing businesses.",
+    description: "Focused landing page design and development that explains your offer clearly and guides visitors toward the next step.",
   },
   "/services/mvp-website": {
     title: "MVP Website Development | ICC — IO Code Company",
-    description: "Launch a focused MVP website quickly, validate your idea, and build a foundation ready to scale.",
+    description: "Build a focused first version of your product, test the core idea with users, and plan the next release with clearer priorities.",
   },
   "/services/mobile-app": {
     title: "Mobile App Development | ICC — IO Code Company",
-    description: "Design and development of useful, scalable mobile applications for modern businesses and products.",
+    description: "Mobile app design and development built around clear user journeys, responsive experiences, and real business needs.",
   },
   "/services/game": {
     title: "Game Development | ICC — IO Code Company",
@@ -49,19 +45,19 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services/shopify": {
     title: "Shopify Automation | ICC — IO Code Company",
-    description: "Custom Shopify systems and automation for orders, customer support, inventory, reporting, and growth.",
+    description: "Shopify systems and automation that connect orders, support, inventory, and reporting around the way your team works.",
   },
   "/services/ecommerce": {
     title: "E-commerce Development | ICC — IO Code Company",
-    description: "Fast, secure, conversion-focused online stores designed around buying behavior and business growth.",
+    description: "Custom e-commerce experiences built around clear product discovery, simple checkout, and consistent mobile shopping.",
   },
   "/services/dashboard": {
     title: "Business Dashboard Development | ICC — IO Code Company",
-    description: "Custom dashboards that turn business data into clear insights and faster decisions.",
+    description: "Custom business dashboards that organize important data, controls, and workflows in one clear operational view.",
   },
   "/services/ai-automation": {
     title: "AI Automation Services | ICC — IO Code Company",
-    description: "AI automation systems that streamline operations, reduce manual work, and help businesses scale.",
+    description: "Practical AI and automation systems for repetitive tasks, customer support, documents, and connected business workflows.",
   },
 }
 

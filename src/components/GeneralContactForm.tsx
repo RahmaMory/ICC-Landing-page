@@ -73,16 +73,16 @@ Project Details: ${formData.projectDetails}
               variants={fadeLeft}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Ready to build
+                Tell Us What You
                 <br />
                 <span className="bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  something real?
+                  Want to Build
                 </span>
               </h2>
 
               <p className="text-gray-400 mt-6 max-w-md leading-7">
-                Stop planning. Start building. Drop your details below and
-                let&apos;s validate your idea in the real world.
+                Share your goal, and we&apos;ll help you define the right next
+                step for your project.
               </p>
 
               <div className="mt-10 space-y-6">
@@ -231,7 +231,7 @@ Project Details: ${formData.projectDetails}
                     </>
                   )}
 
-                  {buttonState === "idle" && "Initialize Project"}
+                  {buttonState === "idle" && "Continue on WhatsApp"}
                 </span>
               </motion.button>
             </motion.div>

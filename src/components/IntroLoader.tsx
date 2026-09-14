@@ -102,7 +102,7 @@ export default function IntroLoader() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="relative z-10 mt-4 text-xs uppercase tracking-[0.22em] text-white/35"
         >
-          Initializing experience
+          Ideas into digital products
         </motion.p>
       </div>
     </motion.div>

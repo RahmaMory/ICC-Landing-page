@@ -71,16 +71,16 @@ Project Details: ${formData.projectDetails}
               variants={fadeLeft}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Ready to build
+                Let&apos;s Plan Your
                 <br />
                 <span className="bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  something real?
+                  Landing Page
                 </span>
               </h2>
 
               <p className="text-gray-400 mt-6 max-w-md leading-7">
-                Stop planning. Start building. Drop your details below and
-                let&apos;s validate your idea in the real world.
+                Share your offer, audience, and goal. We&apos;ll turn them into a
+                clear plan for your page.
               </p>
 
               <div className="mt-10 space-y-6">
@@ -208,7 +208,7 @@ Project Details: ${formData.projectDetails}
                     </>
                   )}
 
-                  {buttonState === "idle" && "Initialize Project"}
+                  {buttonState === "idle" && "Continue on WhatsApp"}
                 </span>
               </motion.button>
             </motion.div>
