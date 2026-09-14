@@ -338,7 +338,7 @@ export default function EcommerceAfterHeroSection() {
 
           <div className="mt-20 grid gap-10 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start">
             <motion.div
-              className="self-start lg:sticky lg:top-1/2 lg:-translate-y-1/2"
+              className="self-start lg:sticky lg:top-28"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}

@@ -97,9 +97,19 @@ export default function Expertise() {
             <motion.div key={item.path} variants={fadeUp}>
               <Link
                 to={item.path}
+                aria-label={`${item.title}: ${item.desc}${item.comingSoon ? ". Coming soon" : `. +${item.count} projects`}`}
                 className="group relative overflow-hidden bg-[#0D131F] border border-gray-800 rounded-2xl p-6 hover:scale-105 transition duration-500 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-500 block"
               >
-                <span className="absolute right-4 top-4 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300 transition-colors group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white">
+                {item.comingSoon && (
+                  <span className="absolute right-4 top-4 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300 transition-colors group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white">
+                    Coming Soon
+                  </span>
+                )}
+
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 z-20 flex translate-x-24 scale-90 items-center justify-center text-2xl font-bold text-white opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-70 group-focus-visible:translate-x-0 group-focus-visible:scale-100 group-focus-visible:opacity-70 sm:text-3xl"
+                >
                   {item.comingSoon ? "Coming Soon" : `+${item.count} Projects`}
                 </span>
 
