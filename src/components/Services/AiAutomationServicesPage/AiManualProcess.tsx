@@ -147,7 +147,7 @@ const solutionCards = [
   {
     icon: <Zap className="w-6 h-6 text-blue-400" />,
     title: 'Save Time',
-    desc: 'Automate up to 80% of routine tasks.',
+    desc: 'Reduce repetitive steps across routine work.',
   },
   {
     icon: <DollarSign className="w-6 h-6 text-blue-400" />,
@@ -157,7 +157,7 @@ const solutionCards = [
   {
     icon: <TrendingUp className="w-6 h-6 text-blue-400" />,
     title: 'Scale Operations',
-    desc: 'Handle 10x volume without adding headcount.',
+    desc: 'Support growing workloads with clearer workflows.',
     active: true,
   },
   {

@@ -211,9 +211,9 @@ import mobileImg from "../../../assets/images/E-commerce/3.png";
 import { fadeLeft, fadeUp, staggerContainer } from "../../../lib/motion";
 
 const metrics = [
-  { icon: Percent, value: "+42%", label: "Conversion Increase" },
-  { icon: Gauge, value: "-60%", label: "Load Time Reduction" },
-  { icon: Shield, value: "100%", label: "Secure Transactions" },
+  { icon: Percent, value: "Clearer", label: "Buying Journey" },
+  { icon: Gauge, value: "Faster", label: "Store Performance" },
+  { icon: Shield, value: "Secure", label: "Payment Integrations" },
 ];
 
 const cards = [

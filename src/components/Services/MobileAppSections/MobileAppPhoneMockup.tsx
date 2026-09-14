@@ -9,12 +9,12 @@ export default function MobileAppPhoneMockup() {
       <div className="absolute -left-16 top-20 -z-20 h-65 w-65 rounded-full border border-cyan-400/10" />
       <div className="absolute -left-6 top-8 -z-20 h-90 w-90 rounded-full border border-cyan-400/5" />
 
-      {/* attention badge */}
+      {/* experience badge */}
       <div className="absolute -right-4.5 top-[28%] z-30 hidden rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-[11px] text-gray-200 backdrop-blur-md sm:block">
         <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">
-          Attention
+          User experience
         </div>
-        <div className="mt-1 text-lg font-semibold text-white">94%</div>
+        <div className="mt-1 text-lg font-semibold text-white">Focused</div>
       </div>
 
       {/* phone frame */}

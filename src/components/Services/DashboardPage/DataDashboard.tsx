@@ -412,17 +412,12 @@ export default function DataDashboard() {
                     <div className="mt-8 h-px w-full bg-white/10" />
 
                     <div className="mt-6">
-                      <div className="flex items-end gap-2">
-                        <span className="text-[52px] font-semibold leading-none tracking-[-0.04em] text-white">
-                          99
-                        </span>
-                        <span className="pb-2 text-[28px] font-semibold leading-none text-cyan-300">
-                          .9%
-                        </span>
+                      <div className="text-[44px] font-semibold leading-none tracking-[-0.04em] text-white sm:text-[48px]">
+                        Reliable
                       </div>
 
                       <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.14em] text-white/45">
-                        Uptime reliability
+                        Data updates
                       </p>
                     </div>
                   </div>

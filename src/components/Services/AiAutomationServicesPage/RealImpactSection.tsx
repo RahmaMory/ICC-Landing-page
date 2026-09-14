@@ -141,19 +141,19 @@ export default function RealImpactSection() {
         >
           {[
             {
-              value: '30%',
-              label: 'Reduction in processing time',
-              sub: 'EFFICIENCY',
+              value: 'Faster',
+              label: 'Processing with fewer repetitive steps',
+              sub: 'WORKFLOW EFFICIENCY',
             },
             {
-              value: '$150,000',
-              label: 'Annual operational cost savings',
-              sub: 'COST SAVINGS',
+              value: 'Measured',
+              label: 'Operational impact tied to clear goals',
+              sub: 'BUSINESS VALUE',
             },
             {
-              value: '2.5x',
-              label: 'Increase in customer engagement',
-              sub: 'GROWTH',
+              value: 'Tracked',
+              label: 'Service quality and workflow performance',
+              sub: 'CONTINUOUS IMPROVEMENT',
               full: true,
             },
           ].map((item, i) => (

@@ -306,9 +306,11 @@ export default function TheCommandCenter() {
 
                   <div className="space-y-6">
                     <div className="rounded-[18px] border border-cyan-400/12 bg-[#071126] p-5">
-                      <div className="h-4 w-20 rounded-full bg-white/10" />
+                      <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/45">
+                        System health
+                      </div>
                       <div className="mt-7 text-[34px] font-semibold tracking-[-0.03em] text-white">
-                        99.9%
+                        Visible
                       </div>
                       <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-black/30">
                         <div className="h-full w-[86%] rounded-full bg-linear-to-r from-fuchsia-500 to-violet-400" />
@@ -316,9 +318,11 @@ export default function TheCommandCenter() {
                     </div>
 
                     <div className="rounded-[18px] border border-cyan-400/12 bg-[#071126] p-5">
-                      <div className="h-4 w-20 rounded-full bg-white/10" />
+                      <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/45">
+                        Workflow status
+                      </div>
                       <div className="mt-7 text-[34px] font-semibold tracking-[-0.03em] text-white">
-                        1.2ms
+                        Live
                       </div>
                       <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-black/30">
                         <div className="h-full w-[48%] rounded-full bg-linear-to-r from-fuchsia-500 to-violet-400" />
