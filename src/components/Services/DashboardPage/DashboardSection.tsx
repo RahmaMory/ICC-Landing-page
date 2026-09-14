@@ -128,9 +128,18 @@
 
 
 import { motion } from 'framer-motion'
-import { Activity, ArrowRight } from 'lucide-react'
+import { Activity, ArrowRight, CheckCircle2 } from 'lucide-react'
 import dashboardImg from '../../../assets/images/Dashboard/dashboardHero.png'
 import { fadeLeft, fadeRight, fadeUp, staggerContainer } from '../../../lib/motion'
+
+const dashboardScope = [
+  'Connected data sources',
+  'Role-based access',
+  'Reports and exports',
+  'Alerts and workflow actions',
+  'Admin tools and user guidance',
+  'Testing, maintenance, and agreed updates',
+]
 
 export default function DashboardSection() {
   return (
@@ -167,9 +176,19 @@ export default function DashboardSection() {
               variants={fadeUp}
               className="mt-8 max-w-lg text-lg leading-8 text-white/60"
             >
-              ICC designs clear control panels that bring important data,
-              workflows, and decisions into one useful view.
+              ICC designs and develops complete control panels that connect
+              important data, user roles, reports, and daily workflows in one
+              useful view.
             </motion.p>
+
+            <motion.div variants={fadeUp} className="mt-7 grid gap-3 sm:grid-cols-2">
+              {dashboardScope.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm leading-6 text-white/65">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               variants={fadeUp}

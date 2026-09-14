@@ -88,14 +88,14 @@
 
 
 import { motion } from 'framer-motion'
-import { BarChart3, Cpu, ScanSearch, PlugZap } from 'lucide-react'
+import { BarChart3, Boxes, HeartHandshake, PlugZap } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 const topCards = [
-  { icon: BarChart3, title: 'Real-time tracking', desc: 'Monitor store performance, revenue, and operations as they happen.' },
-  { icon: ScanSearch, title: 'Smart insights', desc: 'Turn complex data into clear operational visibility and faster decisions.' },
-  { icon: Cpu, title: 'AI automation', desc: 'Reduce manual work with AI-driven systems built around your workflow.' },
-  { icon: PlugZap, title: 'Integrations', desc: 'Connect your Shopify store to the tools your business already uses.' },
+  { icon: Boxes, title: 'Store Management', desc: 'Manage products, collections, inventory, orders, discounts, and store content.' },
+  { icon: HeartHandshake, title: 'Customer Journeys', desc: 'Support clear browsing, checkout, account, support, and follow-up experiences.' },
+  { icon: BarChart3, title: 'Store Reporting', desc: 'Keep important sales and operational information easier to review.' },
+  { icon: PlugZap, title: 'Integrations & Automation', desc: 'Connect Shopify to the agreed tools and reduce repeated operational work.' },
 ]
 
 export default function ShopifyFeaturesSection() {
@@ -109,7 +109,7 @@ export default function ShopifyFeaturesSection() {
           variants={fadeUp}
           className="text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]"
         >
-          Engineered for Scale
+          Built to Run and Grow
         </motion.h2>
 
         <motion.div

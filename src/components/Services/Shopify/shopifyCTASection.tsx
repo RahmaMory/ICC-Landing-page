@@ -75,7 +75,7 @@ export default function ShopifyCTASection() {
             href="#shopify-contact"
             className="inline-flex min-w-65 items-center justify-center rounded-2xl bg-cyan-400 px-10 py-5 text-xl font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]"
           >
-            Get Your System
+            Build Your Shopify Store
           </a>
           <Link
             to="/services"

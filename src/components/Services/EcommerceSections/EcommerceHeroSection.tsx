@@ -89,8 +89,9 @@ export default function EcommerceHeroSection() {
           variants={fadeUp}
           className="text-gray-400 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-7"
         >
-          A focused online store that helps customers discover products,
-          understand their options, and complete purchases with less friction.
+          ICC builds custom online stores for businesses that need tailored
+          catalogs, buying journeys, admin workflows, or integrations beyond a
+          standard platform setup.
         </motion.p>
 
         <motion.div variants={fadeUp}>

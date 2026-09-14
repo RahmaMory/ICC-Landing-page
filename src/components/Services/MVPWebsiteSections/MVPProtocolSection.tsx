@@ -176,7 +176,7 @@
 
 
 
-import { Zap, Rocket, Layers } from "lucide-react";
+import { Database, MonitorSmartphone, Rocket, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import problemImg from "../../../assets/images/mvp/Problem.png";
 import solutionImg from "../../../assets/images/mvp/suliotion.png";
@@ -205,16 +205,17 @@ const steps = [
     title: "Features",
     image: featuresImg,
     featuresList: [
-      { icon: Zap, text: "Fast development" },
-      { icon: Rocket, text: "Core features only" },
-      { icon: Layers, text: "Scalable base" },
+      { icon: MonitorSmartphone, text: "Responsive product interface" },
+      { icon: Database, text: "Backend, database, and APIs" },
+      { icon: ShieldCheck, text: "User accounts and admin tools" },
+      { icon: Rocket, text: "Testing, deployment, and launch" },
     ],
   },
   {
     number: "04",
     tag: "LAUNCH AND LEARN",
     title: "Result",
-    desc: "Launch a focused first version, collect feedback, and plan the next release with clearer priorities.",
+    desc: "Launch a tested first version, collect feedback, and improve it through agreed revisions and post-launch support.",
     image: resultImg,
   },
 ];

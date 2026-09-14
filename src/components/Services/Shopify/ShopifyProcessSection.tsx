@@ -45,10 +45,10 @@ import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 const steps = [
-  { step: 'Phase 01', title: 'Analyze', desc: 'We study your Shopify operations to identify automation gaps and bottlenecks.' },
-  { step: 'Phase 02', title: 'Design', desc: 'We map workflows around your team, store structure, and priorities.' },
-  { step: 'Phase 03', title: 'Automate', desc: 'We implement custom automations across operations, support, and reporting.' },
-  { step: 'Phase 04', title: 'Improve', desc: 'We review performance and refine the workflows after testing.' },
+  { step: 'Phase 01', title: 'Plan', desc: 'We define your products, customers, store structure, and required workflows.' },
+  { step: 'Phase 02', title: 'Design & Build', desc: 'We create the storefront, product journey, pages, and responsive experience.' },
+  { step: 'Phase 03', title: 'Configure & Connect', desc: 'We set up products, payments, shipping, integrations, and agreed automations.' },
+  { step: 'Phase 04', title: 'Test, Launch & Support', desc: 'We test the full journey, launch the store, guide your team, and provide agreed follow-up.' },
 ]
 
 export default function ShopifyProcessSection() {
@@ -62,10 +62,10 @@ export default function ShopifyProcessSection() {
           variants={fadeUp}
         >
           <h2 className="text-center text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-            The Integration Protocol
+            From Plan to Shopify Launch
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-white/60">
-            A clear process for planning, connecting, testing, and improving your store workflows.
+            A complete process for designing, building, connecting, testing, and supporting your store.
           </p>
         </motion.div>
 

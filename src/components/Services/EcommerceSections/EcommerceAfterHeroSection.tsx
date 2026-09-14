@@ -201,7 +201,7 @@
 
 
 
-import { ShoppingCart, Eye, Smartphone, ArrowRight, Shield, Gauge, Percent } from "lucide-react";
+import { ArrowRight, CheckCircle2, Eye, Gauge, Percent, Shield, ShoppingCart, Smartphone } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -216,12 +216,19 @@ const metrics = [
   { icon: Shield, value: "Secure", label: "Payment Integrations" },
 ];
 
+const includedScope = [
+  "Custom storefront and product catalog",
+  "Admin panel, inventory, and order management",
+  "Payment, shipping, and agreed business integrations",
+  "Testing, launch, maintenance, and agreed updates",
+];
+
 const cards = [
   {
     icon: ShoppingCart,
     title: "Smooth Checkout",
     description:
-      "A simple payment flow that removes unnecessary steps and keeps checkout easy to follow.",
+      "A clear checkout with the agreed payment and shipping options connected to your order flow.",
     button: "Start Your Store",
     image: checkoutImg,
     progress: "w-16",
@@ -230,7 +237,7 @@ const cards = [
     icon: Eye,
     title: "Product Clarity",
     description:
-      "Clear product pages that help customers compare details and choose with confidence.",
+      "A tailored catalog with useful navigation, search, filters, and product details.",
     image: clarityImg,
     progress: "w-14",
   },
@@ -238,7 +245,7 @@ const cards = [
     icon: Smartphone,
     title: "Mobile-First Architecture",
     description:
-      "Responsive layouts and optimized assets for a consistent shopping experience across devices.",
+      "Responsive shopping, customer accounts, and optimized performance across devices.",
     image: mobileImg,
     progress: "w-16",
   },
@@ -346,6 +353,15 @@ export default function EcommerceAfterHeroSection() {
                 Clear navigation, useful product information, and a simple
                 checkout help customers move through the store with confidence.
               </p>
+
+              <div className="mt-8 space-y-3">
+                {includedScope.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm leading-6 text-white/70">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-8 space-y-4">
                 {metrics.map((item, index) => {

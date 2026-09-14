@@ -146,8 +146,8 @@ export default function MobileAppHeroSection() {
           >
             ICC designs and builds Android and iOS apps using native or
             cross-platform technology based on your product and users. When
-            needed, the service also includes the backend, admin panel, and
-            ongoing maintenance.
+            needed, the service also includes the backend, admin panel, testing,
+            store launch support, and ongoing maintenance.
           </motion.p>
 
           <motion.div

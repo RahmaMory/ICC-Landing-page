@@ -37,7 +37,14 @@
 //   );
 // }
 
-import { Database, Layers3, Smartphone, Wrench } from "lucide-react";
+import {
+  BadgeCheck,
+  Database,
+  Layers3,
+  Palette,
+  Smartphone,
+  Wrench,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
@@ -50,8 +57,16 @@ const features = [
     title: "Native & Cross-platform",
   },
   {
+    icon: Palette,
+    title: "UI/UX & Prototyping",
+  },
+  {
     icon: Database,
     title: "Backend & Admin Panels",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Testing & Store Launch Support",
   },
   {
     icon: Wrench,

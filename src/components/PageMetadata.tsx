@@ -13,7 +13,7 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services": {
     title: "Software Development Services | ICC — IO Code Company",
-    description: "Explore website, mobile app, e-commerce, dashboard, MVP, and automation services from ICC — IO Code Company.",
+    description: "Explore complete website, mobile app, Shopify, custom e-commerce, dashboard, MVP, and automation services from ICC — IO Code Company.",
   },
   "/projects": {
     title: "Our Projects | ICC — IO Code Company",
@@ -29,31 +29,31 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services/landing-page": {
     title: "Landing Page Development | ICC — IO Code Company",
-    description: "Focused landing page design and development that explains your offer clearly and guides visitors toward the next step.",
+    description: "Focused landing page strategy, design, development, integrations, SEO foundations, analytics setup, and launch support.",
   },
   "/services/mvp-website": {
     title: "MVP Website Development | ICC — IO Code Company",
-    description: "Build a focused first version of your product, test the core idea with users, and plan the next release with clearer priorities.",
+    description: "Web MVP development with a responsive interface, backend, database, user access, admin tools, testing, and deployment.",
   },
   "/services/mobile-app": {
     title: "Mobile App Development | ICC — IO Code Company",
-    description: "Native and cross-platform Android and iOS app development with backend, admin panel, maintenance, and agreed updates.",
+    description: "Native and cross-platform Android and iOS app development with UI/UX, backend, admin panel, testing, store launch support, and maintenance.",
   },
   "/services/game": {
     title: "Game Development | ICC — IO Code Company",
     description: "Upcoming game development solutions for brands, products, and interactive digital experiences.",
   },
   "/services/shopify": {
-    title: "Shopify Automation | ICC — IO Code Company",
-    description: "Shopify systems and automation that connect orders, support, inventory, and reporting around the way your team works.",
+    title: "Shopify Store Development & Automation | ICC — IO Code Company",
+    description: "Complete Shopify store strategy, design, development, product setup, payments, shipping, integrations, automation, launch, and support.",
   },
   "/services/ecommerce": {
     title: "E-commerce Development | ICC — IO Code Company",
-    description: "Custom e-commerce experiences built around clear product discovery, simple checkout, and consistent mobile shopping.",
+    description: "Custom e-commerce systems with tailored catalogs, checkout, payments, shipping, admin workflows, integrations, launch, and support.",
   },
   "/services/dashboard": {
     title: "Business Dashboard Development | ICC — IO Code Company",
-    description: "Custom business dashboards that organize important data, controls, and workflows in one clear operational view.",
+    description: "Custom business dashboards with connected data, role-based access, reports, exports, alerts, admin tools, and ongoing support.",
   },
   "/services/ai-automation": {
     title: "AI Automation Services | ICC — IO Code Company",

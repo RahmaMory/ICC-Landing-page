@@ -222,8 +222,9 @@ export default function TheCommandCenter() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg md:text-[18px] leading-8 text-white/60">
-            Custom dashboards turn automation activity into clear status,
-            exceptions, and next actions for your team.
+            When your project needs oversight, an optional custom dashboard can
+            turn automation activity into clear status, exceptions, and next
+            actions for your team.
           </p>
         </motion.div>
 

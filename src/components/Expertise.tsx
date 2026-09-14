@@ -79,7 +79,8 @@ export default function Expertise() {
         variants={fadeUp}
         className="text-center max-w-2xl mx-auto text-gray-400 mt-4"
       >
-        Everything you need to build your digital presence, from simple landing pages to complex SaaS platforms.
+        Websites, mobile apps, online stores, dashboards, and practical
+        automation—designed, built, launched, and supported by ICC.
       </motion.p>
 
       <motion.div
@@ -98,19 +99,8 @@ export default function Expertise() {
                 to={item.path}
                 className="group relative overflow-hidden bg-[#0D131F] border border-gray-800 rounded-2xl p-6 hover:scale-105 transition duration-500 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-500 block"
               >
-                {/* Coming Soon Badge */}
-                {item.comingSoon && (
-                  <span className="absolute top-4 right-4 text-xs font-semibold text-blue-300 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
-                    Soon
-                  </span>
-                )}
-
-                <span className="absolute -right-10 top-1/2 -translate-y-1/2 text-4xl font-bold text-white opacity-0 transition-all duration-500 group-hover:right-1/2 group-hover:translate-x-1/2 group-hover:opacity-60">
-                  {item.comingSoon ? (
-                    <span className="text-white">Soon...</span>
-                  ) : (
-                    `+${item.count}`
-                  )}
+                <span className="absolute right-4 top-4 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300 transition-colors group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white">
+                  {item.comingSoon ? "Coming Soon" : `+${item.count} Projects`}
                 </span>
 
                 <motion.div

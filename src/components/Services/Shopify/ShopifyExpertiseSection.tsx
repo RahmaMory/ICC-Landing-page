@@ -65,30 +65,40 @@
 
 
 
-import { Boxes, Bot, Package, Megaphone } from 'lucide-react'
+import { Boxes, Bot, CreditCard, PackageSearch, Palette, PlugZap } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
 
 const items = [
   {
+    icon: Palette,
+    title: 'Store Design & Development',
+    desc: 'A responsive Shopify storefront designed and developed around your brand.',
+  },
+  {
+    icon: PackageSearch,
+    title: 'Products & Collections',
+    desc: 'Clear catalog structure, product pages, collections, search, and navigation.',
+  },
+  {
+    icon: CreditCard,
+    title: 'Payments & Shipping',
+    desc: 'Configure the agreed payment, shipping, tax, and checkout settings.',
+  },
+  {
     icon: Boxes,
-    title: 'Order & Fulfillment Automation',
-    desc: 'Connect order handling, routing, and fulfillment around your existing process.',
+    title: 'Orders & Store Operations',
+    desc: 'Connect order handling, fulfillment, inventory, and customer notifications.',
   },
   {
     icon: Bot,
-    title: 'AI Customer Support',
-    desc: 'Handle common questions and route complex requests to the right team member.',
+    title: 'Support & Marketing Automation',
+    desc: 'Connect common support, cart recovery, campaigns, and customer follow-up.',
   },
   {
-    icon: Package,
-    title: 'Inventory Management Automation',
-    desc: 'Track stock, sync updates, and reduce inventory blind spots across your store.',
-  },
-  {
-    icon: Megaphone,
-    title: 'Marketing Automation',
-    desc: 'Connect cart recovery, campaigns, and customer follow-up across your tools.',
+    icon: PlugZap,
+    title: 'Integrations & Maintenance',
+    desc: 'Connect agreed business tools and support the store after launch.',
   },
 ]
 
@@ -106,7 +116,7 @@ export default function ShopifyExpertiseSection() {
           <div>
             <p className="text-sm font-medium tracking-[0.14em] text-cyan-300">OUR EXPERTISE</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-              Shopify Automation Built Around Your Store
+              Complete Shopify Delivery, From Design to Support
             </h2>
           </div>
         </motion.div>
@@ -116,7 +126,7 @@ export default function ShopifyExpertiseSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.12 }}
-          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
         >
           {items.map((item) => {
             const Icon = item.icon

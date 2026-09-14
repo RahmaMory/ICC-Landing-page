@@ -402,11 +402,11 @@ export default function DataDashboard() {
                     </div>
 
                     <h3 className="text-[24px] font-semibold tracking-[-0.03em] text-white">
-                      Real-time data
+                      Connected data updates
                     </h3>
 
                     <p className="mt-4 max-w-md text-[17px] leading-8 text-white/58">
-                      Keep important metrics updated in one clear operational view.
+                      Keep important metrics updated according to the connected data sources.
                     </p>
 
                     <div className="mt-8 h-px w-full bg-white/10" />

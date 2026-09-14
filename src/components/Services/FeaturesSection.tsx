@@ -80,34 +80,51 @@
 
 
 
-import { MessageSquareText, MonitorSmartphone, Zap, BadgeCheck } from "lucide-react";
+import {
+  BadgeCheck,
+  ChartNoAxesCombined,
+  MessageSquareText,
+  MonitorSmartphone,
+  Plug,
+  Zap,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../lib/motion";
 
-export default function FeaturesSection() {
-  const features = [
-    {
-      title: "Clear Messaging",
-      desc: "A focused page structure that makes your offer easy to understand.",
-      icon: MessageSquareText,
-    },
-    {
-      title: "Responsive Design",
-      desc: "A smooth experience across mobile, tablet, and desktop.",
-      icon: MonitorSmartphone,
-    },
-    {
-      title: "Fast Performance",
-      desc: "Optimized assets and clean development for quick loading.",
-      icon: Zap,
-    },
-    {
-      title: "Ready to Launch",
-      desc: "A tested page prepared for your domain, analytics, and campaigns.",
-      icon: BadgeCheck,
-    },
-  ];
+const features = [
+  {
+    title: "Clear Messaging",
+    desc: "A focused page structure that makes your offer easy to understand.",
+    icon: MessageSquareText,
+  },
+  {
+    title: "Responsive Design",
+    desc: "A smooth experience across mobile, tablet, and desktop.",
+    icon: MonitorSmartphone,
+  },
+  {
+    title: "Fast Performance",
+    desc: "Optimized assets and clean development for quick loading.",
+    icon: Zap,
+  },
+  {
+    title: "Forms & Integrations",
+    desc: "Inquiry forms connected to the agreed email, WhatsApp, CRM, or tools.",
+    icon: Plug,
+  },
+  {
+    title: "SEO & Analytics Setup",
+    desc: "Search-friendly structure, page metadata, and agreed tracking setup.",
+    icon: ChartNoAxesCombined,
+  },
+  {
+    title: "Ready to Launch",
+    desc: "A tested page prepared for your domain, campaigns, and future updates.",
+    icon: BadgeCheck,
+  },
+];
 
+export default function FeaturesSection() {
   return (
     <section className="py-20">
       <div className="container mx-auto text-center">
@@ -131,18 +148,18 @@ export default function FeaturesSection() {
 
         <div className="container">
           <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.12 }}
           >
-            {features.map((item, index) => {
+            {features.map((item) => {
               const Icon = item.icon;
 
               return (
                 <motion.div
-                  key={index}
+                  key={item.title}
                   variants={fadeUp}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.25 }}

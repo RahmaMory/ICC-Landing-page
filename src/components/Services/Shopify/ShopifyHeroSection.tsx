@@ -74,9 +74,9 @@ export default function ShopifyHeroSection() {
           variants={fadeUp}
           className="mx-auto mt-10 max-w-6xl text-5xl font-semibold leading-[0.9] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[92px]"
         >
-          <span className="block">Shopify Systems That Reduce</span>
+          <span className="block">Complete Shopify Stores,</span>
           <span className="block bg-linear-to-r from-cyan-400 via-sky-400 to-violet-400 bg-clip-text text-transparent">
-            Manual Work.
+            Built to Sell and Scale.
           </span>
         </motion.h1>
 
@@ -84,8 +84,9 @@ export default function ShopifyHeroSection() {
           variants={fadeUp}
           className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-white/65"
         >
-          ICC connects the workflows behind orders, support, inventory, and
-          reporting so your team can operate with more clarity and less repetition.
+          ICC handles store strategy, responsive design, development, product
+          setup, payments, shipping, integrations, launch, and ongoing support.
+          We can also automate the work behind your store.
         </motion.p>
 
         <motion.div

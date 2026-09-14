@@ -142,7 +142,7 @@ const processSteps = [
     number: '2',
     title: 'Solution Design & Development',
     description:
-      'Design the automation architecture, develop scripts, and integrate with existing systems.',
+      'Design and build the workflow, connect the required systems, and define human review points.',
     image: img8,
   },
   {

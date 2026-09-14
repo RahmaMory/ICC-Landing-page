@@ -54,8 +54,9 @@ export default function HeroMVPSection() {
           </h1>
 
           <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-sm sm:text-base md:text-lg leading-7 sm:leading-8 text-gray-400">
-            Turn your core idea into a working product you can test with real
-            users and improve with confidence.
+            Turn your core idea into a working web product with its interface,
+            backend, user access, admin tools, and deployment—ready to test with
+            real users.
           </p>
 
           <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
