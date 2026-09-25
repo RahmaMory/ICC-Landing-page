@@ -164,7 +164,7 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="font-semibold mb-4">Services</h4>
+          <h4 className="mb-4 text-center font-semibold">Services</h4>
           <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-gray-400">
             {footerLinks.services.map((item) => (
               <li key={item.path}>
