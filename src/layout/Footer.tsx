@@ -175,7 +175,7 @@ export default function Footer() {
             ))}
           </ul>
           <Link
-            to="/services"
+            to="/#services"
             className="mt-4 inline-flex text-sm font-medium text-blue-400 transition hover:text-blue-300"
           >
             View All Services →
