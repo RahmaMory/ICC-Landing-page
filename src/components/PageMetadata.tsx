@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import ICCLogo from "../assets/logos/ICC.png"
 import { industries } from "../data/industries"
 import { projects } from "../data/projects"
 
@@ -102,7 +101,7 @@ export default function PageMetadata() {
     const title = metadata?.title || "Page Not Found | ICC — IO Code Company"
     const description = metadata?.description || "The requested page could not be found on the ICC — IO Code Company website."
     const canonicalUrl = `${siteUrl}${pathname === "/" ? "" : pathname}`
-    const socialImage = new URL(ICCLogo, siteUrl).href
+    const socialImage = `${siteUrl}/icc-social-preview.png`
 
     document.title = title
     setMeta('meta[name="description"]', "name", "description", description)
@@ -111,6 +110,9 @@ export default function PageMetadata() {
     setMeta('meta[property="og:type"]', "property", "og:type", "website")
     setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl)
     setMeta('meta[property="og:image"]', "property", "og:image", socialImage)
+    setMeta('meta[property="og:image:width"]', "property", "og:image:width", "1733")
+    setMeta('meta[property="og:image:height"]', "property", "og:image:height", "907")
+    setMeta('meta[property="og:image:alt"]', "property", "og:image:alt", "ICC — IO Code Company | You Imagine. We Build.")
     setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image")
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title)
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", description)
