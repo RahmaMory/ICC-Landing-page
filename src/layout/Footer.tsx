@@ -128,7 +128,7 @@ export default function Footer() {
       <div className="border-t border-white/10"></div>
 
       {/* Links Section */}
-      <div className="container mx-auto grid gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_0.7fr_1.4fr_0.7fr]">
+      <div className="container mx-auto grid gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_0.75fr_0.75fr_0.75fr]">
 
         {/* Brand */}
         <div>
@@ -164,8 +164,8 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="mb-4 text-center font-semibold">Services</h4>
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-gray-400">
+          <h4 className="mb-4 font-semibold">Services</h4>
+          <ul className="space-y-3 text-sm text-gray-400">
             {footerLinks.services.map((item) => (
               <li key={item.path}>
                 <Link to={item.path} className="hover:text-blue-400 transition">
@@ -174,6 +174,12 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          <Link
+            to="/services"
+            className="mt-4 inline-flex text-sm font-medium text-blue-400 transition hover:text-blue-300"
+          >
+            View All Services →
+          </Link>
         </div>
 
         {/* Legal */}
