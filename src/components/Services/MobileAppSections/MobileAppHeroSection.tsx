@@ -131,9 +131,9 @@ export default function MobileAppHeroSection() {
             variants={fadeLeft}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[74px] font-bold leading-[1.02] text-white"
           >
-            Mobile Apps Built
+            Mobile Apps Built{" "}
             <br />
-            for Everyday
+            for Everyday{" "}
             <br />
             <span className="bg-linear-to-r from-blue-300 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
               Use

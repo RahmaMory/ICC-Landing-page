@@ -117,7 +117,7 @@ export default function AiAutomationHeroSection() {
           variants={fadeUp}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mt-6 text-white"
         >
-          AI Automation Built
+          AI Automation Built{" "}
           <br />
           <span className="relative inline-block bg-linear-to-r from-cyan-400 via-blue-300 to-purple-400 bg-clip-text text-transparent">
             Around Real Workflows.

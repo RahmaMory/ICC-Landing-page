@@ -329,7 +329,7 @@ export default function EcommerceAfterHeroSection() {
             variants={fadeUp}
           >
             <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[56px]">
-              <span className="text-slate-400">“A good-looking store still needs</span>
+              <span className="text-slate-400">“A good-looking store still needs{" "}</span>
               <br />
               <span>a clear buying journey.”</span>
             </h2>
@@ -345,7 +345,7 @@ export default function EcommerceAfterHeroSection() {
               variants={fadeLeft}
             >
               <h3 className="max-w-sm text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl">
-                We design around how customers
+                We design around how customers{" "}
                 <span className="block text-blue-300">browse, compare, and buy.</span>
               </h3>
 
@@ -411,7 +411,7 @@ export default function EcommerceAfterHeroSection() {
             variants={fadeUp}
           >
             <h3 className="text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px]">
-              Ready for a clearer
+              Ready for a clearer{" "}
               <span className="block text-blue-400">online store?</span>
             </h3>
 

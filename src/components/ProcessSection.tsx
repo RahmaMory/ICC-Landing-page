@@ -54,7 +54,8 @@ export default function ProcessSection() {
             </h2>
 
             <p className="text-gray-400 max-w-lg">
-              A simple, transparent timeline to get you from concept to launch without the headaches.
+              A clear four-step process from the first discussion to launch and
+              follow-up.
             </p>
           </motion.div>
 

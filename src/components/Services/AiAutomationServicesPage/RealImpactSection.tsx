@@ -112,7 +112,7 @@ export default function RealImpactSection() {
           variants={fadeLeft}
         >
           <h2 className="text-white font-semibold leading-[0.95] tracking-[-0.04em] text-5xl sm:text-6xl lg:text-[72px]">
-            Real Business
+            Real Business{" "}
             <br />
             <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Impact

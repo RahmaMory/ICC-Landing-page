@@ -22,7 +22,8 @@ export default function SelectedWork() {
             </h2>
 
             <p className="text-gray-400 max-w-lg">
-              We let our code speak for itself. Here are some of our recent favorite shipments.
+              Explore a selection of recent websites, apps, stores, and digital
+              products built by ICC.
             </p>
           </motion.div>
 

@@ -8,21 +8,21 @@ export const processSteps: ProcessStep[] = [
   {
     number: "01",
     title: "Discover",
-    description: "We dive deep into your vision and goals."
+    description: "We define the goal, users, scope, and priorities."
   },
   {
     number: "02",
     title: "Design",
-    description: "Crafting the visual identity and UX."
+    description: "We map the experience and agree on the visual direction."
   },
   {
     number: "03",
     title: "Build",
-    description: "Clean, scalable code development."
+    description: "We develop the approved solution in clear stages."
   },
   {
     number: "04",
     title: "Launch",
-    description: "Deployment and post-launch support."
+    description: "We test, deploy, and provide the agreed follow-up."
   }
 ]

@@ -65,7 +65,7 @@ export default function SystemPreviewSection() {
             variants={fadeUp}
             className="text-white font-semibold leading-[0.9] tracking-[-0.05em] text-5xl sm:text-6xl md:text-7xl lg:text-[96px] xl:text-[108px]"
           >
-            <span className="block">Let AI handle the work.</span>
+            <span className="block">Let AI handle the work.{" "}</span>
 
             <span className="mt-2 block bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               You focus on growth.

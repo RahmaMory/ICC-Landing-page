@@ -78,7 +78,7 @@ export default function LandingPage() {
             variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
-            Landing Pages Built to
+            Landing Pages Built to{" "}
             <br />
             <span className="bg-linear-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
               Turn Interest Into Action

@@ -57,7 +57,7 @@ export default function WhatCanWeAutomateSection() {
             variants={fadeLeft}
           >
             <h2 className="text-white font-semibold leading-[0.95] tracking-[-0.04em] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="block">What Can We</span>
+              <span className="block">What Can We{" "}</span>
               <span className="mt-2 block bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Automate?
               </span>

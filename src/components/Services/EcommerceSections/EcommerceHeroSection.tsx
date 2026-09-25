@@ -71,7 +71,7 @@ export default function EcommerceHeroSection() {
           variants={fadeUp}
           className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
         >
-          E-commerce Experiences Built
+          E-commerce Experiences Built{" "}
           <br />
           <span className="bg-linear-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">
            for Clearer Buying

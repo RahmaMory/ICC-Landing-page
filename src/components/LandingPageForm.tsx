@@ -71,7 +71,7 @@ Project Details: ${formData.projectDetails}
               variants={fadeLeft}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Let&apos;s Plan Your
+                Let&apos;s Plan Your{" "}
                 <br />
                 <span className="bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Landing Page
@@ -109,10 +109,15 @@ Project Details: ${formData.projectDetails}
               className="space-y-6"
             >
               <div>
-                <label className="text-sm text-gray-400">Name</label>
+                <label htmlFor="landing-name" className="text-sm text-gray-400">
+                  Name *
+                </label>
                 <input
+                  id="landing-name"
                   type="text"
                   name="name"
+                  required
+                  aria-required="true"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
@@ -128,10 +133,15 @@ Project Details: ${formData.projectDetails}
               </div>
 
               <div>
-                <label className="text-sm text-gray-400">Email</label>
+                <label htmlFor="landing-email" className="text-sm text-gray-400">
+                  Email *
+                </label>
                 <input
+                  id="landing-email"
                   type="email"
                   name="email"
+                  required
+                  aria-required="true"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@company.com"
@@ -147,10 +157,11 @@ Project Details: ${formData.projectDetails}
               </div>
 
               <div>
-                <label className="text-sm text-gray-400">
+                <label htmlFor="landing-company" className="text-sm text-gray-400">
                   Company (Optional)
                 </label>
                 <input
+                  id="landing-company"
                   type="text"
                   name="company"
                   value={formData.company}
@@ -168,11 +179,14 @@ Project Details: ${formData.projectDetails}
               </div>
 
               <div>
-                <label className="text-sm text-gray-400">
-                  Project Details
+                <label htmlFor="landing-project-details" className="text-sm text-gray-400">
+                  Project Details *
                 </label>
                 <textarea
+                  id="landing-project-details"
                   name="projectDetails"
+                  required
+                  aria-required="true"
                   value={formData.projectDetails}
                   onChange={handleChange}
                   placeholder="What are we building?"

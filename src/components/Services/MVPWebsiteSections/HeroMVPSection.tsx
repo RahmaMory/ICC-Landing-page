@@ -46,7 +46,7 @@ export default function HeroMVPSection() {
           </div>
 
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[110px] font-bold leading-[1.05] text-white">
-            Launch Fast.
+            Launch Fast.{" "}
             <br />
             <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
               Learn Faster.

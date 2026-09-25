@@ -354,9 +354,10 @@ export default function Hero() {
             {/* background images */}
             {bgImages.map((img, i) => (
               <motion.img
-                title='bg_img'
                 key={i}
                 src={img}
+                alt=""
+                aria-hidden="true"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 0.5, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 + i * 0.08 }}
@@ -380,7 +381,7 @@ export default function Hero() {
                 z-20
               "
             >
-              <img title='img1' src="/projects/p5.jpg" className="w-full h-full object-cover" />
+              <img alt="" aria-hidden="true" src="/projects/p5.jpg" className="w-full h-full object-cover" />
             </motion.div>
 
             {/* bottom card */}
@@ -398,7 +399,7 @@ export default function Hero() {
                 z-20
               "
             >
-              <img title='img2' src="/projects/p2.webp" className="w-full h-full object-cover" />
+              <img alt="" aria-hidden="true" src="/projects/p2.webp" className="w-full h-full object-cover" />
             </motion.div>
 
             {/* center */}

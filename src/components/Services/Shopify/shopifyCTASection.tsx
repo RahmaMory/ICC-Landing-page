@@ -63,7 +63,7 @@ export default function ShopifyCTASection() {
           variants={fadeUp}
           className="max-w-5xl text-2xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-7xl md:text-6xl lg:text-[80px]"
         >
-          <span className="block">Streamline the Work Behind Your Store.</span>
+          <span className="block">Streamline the Work Behind Your Store.{" "}</span>
           <span className="mt-1.5 block bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">Keep Your Team Focused on Growth.</span>
         </motion.h2>
 

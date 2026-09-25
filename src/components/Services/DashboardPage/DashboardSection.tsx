@@ -166,7 +166,7 @@ export default function DashboardSection() {
               variants={fadeLeft}
               className="text-5xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[88px]"
             >
-              <span className="block">Smart Dashboards.</span>
+              <span className="block">Smart Dashboards.{" "}</span>
               <span className="block bg-linear-to-r from-cyan-300 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Smarter Decisions.
               </span>

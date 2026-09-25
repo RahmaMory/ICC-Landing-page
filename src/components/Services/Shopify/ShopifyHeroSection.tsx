@@ -74,7 +74,7 @@ export default function ShopifyHeroSection() {
           variants={fadeUp}
           className="mx-auto mt-10 max-w-6xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[92px]"
         >
-          <span className="block">Complete Shopify Stores,</span>
+          <span className="block">Complete Shopify Stores,{" "}</span>
           <span className="mt-2 block bg-linear-to-r from-cyan-400 via-sky-400 to-violet-400 bg-clip-text text-transparent">
             Built to Sell and Scale.
           </span>
