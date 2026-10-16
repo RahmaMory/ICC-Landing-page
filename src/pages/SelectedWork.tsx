@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { fadeUp } from "../lib/motion"
 
 export default function SelectedWork() {
+  const featuredProjects = projects.filter((project) => project.featured)
+
   return (
     <section className=" bg-[#0B121E] text-white py-24">
       {/* header */}
@@ -22,8 +24,8 @@ export default function SelectedWork() {
             </h2>
 
             <p className="text-gray-400 max-w-lg">
-              Explore a selection of recent websites, apps, stores, and digital
-              products built by ICC.
+              Explore real platforms, websites, stores, dashboards, and games
+              delivered by ICC.
             </p>
           </motion.div>
 
@@ -45,7 +47,7 @@ export default function SelectedWork() {
 
       {/* grid */}
       <div className="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.slice(0, 6).map(project => (
+        {featuredProjects.map(project => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

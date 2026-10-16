@@ -60,6 +60,8 @@ interface Props {
 }
 
 export default function ProjectCard({ project }: Props) {
+  const usesLogo = project.imageFit === "contain"
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 35 }}
@@ -73,28 +75,35 @@ export default function ProjectCard({ project }: Props) {
         className="group block"
       >
         {/* image box */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/5 bg-[#0B1120]">
+        <div
+          className="relative h-60 rounded-2xl overflow-hidden border border-white/10 bg-[#0B1120]"
+          style={{ background: project.imageBackground }}
+        >
           <img
             src={project.image}
-            alt={project.title}
-            className="w-full h-60 object-cover transition duration-500 group-hover:scale-110"
+            alt={project.imageAlt}
+            className={`h-full w-full transition duration-500 ${
+              usesLogo
+                ? "object-contain p-10 group-hover:scale-105"
+                : "object-cover group-hover:scale-105"
+            }`}
           />
 
           {/* overlay */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-linear-to-t from-black/90 via-black/40 to-transparent flex items-end justify-start p-6">
             <span className="text-white font-medium tracking-wide flex">
-              View Case Study <ArrowUpRight className="text-xs ml-1" />
+              View Project <ArrowUpRight className="text-xs ml-1" />
             </span>
           </div>
         </div>
 
         {/* title row */}
-        <div className="flex items-center justify-between mt-4">
+        <div className="flex items-start justify-between gap-4 mt-4">
           <h3 className="text-lg font-semibold text-white group-hover:text-blue-500 transition duration-300">
             {project.title}
           </h3>
 
-          <span className="text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-lg text-gray-300">
+          <span className="shrink-0 text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-lg text-gray-300">
             {project.tag}
           </span>
         </div>
