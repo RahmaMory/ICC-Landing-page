@@ -58,7 +58,7 @@ export default function Projects() {
             <div className="min-w-36 rounded-2xl border border-white/10 bg-white/4 p-5">
               <Layers3 className="h-5 w-5 text-cyan-300" aria-hidden="true" />
               <strong className="mt-5 block text-3xl font-semibold">{portfolioCategories.length}</strong>
-              <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-white/45">Service types</span>
+              <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-white/45">Project categories</span>
             </div>
           </div>
         </div>

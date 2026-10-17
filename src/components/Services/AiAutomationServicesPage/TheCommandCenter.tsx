@@ -298,6 +298,8 @@ export default function TheCommandCenter() {
                       <img
                         src={curveLine}
                         alt="Analytics trend line"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 h-full w-full object-contain opacity-95"
                       />
 

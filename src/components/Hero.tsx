@@ -280,7 +280,7 @@ export default function Hero() {
   className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto"
 >
   <a
-    href="#start-project"
+    href="#contact"
     className="
       inline-flex items-center justify-center
       w-full sm:w-auto

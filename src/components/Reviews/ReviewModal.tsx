@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react"
 
 const reviewWhatsAppNumber = "201031158933"
 
@@ -26,6 +26,8 @@ export default function ReviewModal({
   const [consentToPublish, setConsentToPublish] = useState(false)
   const [consentError, setConsentError] = useState("")
   const nameInputRef = useRef<HTMLInputElement>(null)
+  const dialogRef = useRef<HTMLFormElement>(null)
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null)
 
   const resetForm = useCallback(() => {
     setName("")
@@ -46,19 +48,47 @@ export default function ReviewModal({
   useEffect(() => {
     if (!open) return
 
+    previouslyFocusedRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null
     nameInputRef.current?.focus()
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         handleCancel()
+        return
+      }
+
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusable = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+          ),
+        )
+
+        if (focusable.length === 0) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first.focus()
+        }
       }
     }
 
     window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+      previouslyFocusedRef.current?.focus()
+    }
   }, [handleCancel, open])
 
-  function submit() {
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
     const trimmedName = name.trim()
     const trimmedText = text.trim()
 
@@ -77,7 +107,12 @@ export default function ReviewModal({
       return
     }
 
-    const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
+    let saved: unknown = []
+    try {
+      saved = JSON.parse(localStorage.getItem("reviews") || "[]")
+    } catch {
+      saved = []
+    }
     const reviewsArray = Array.isArray(saved) ? saved : []
 
     const newReview = {
@@ -117,12 +152,20 @@ export default function ReviewModal({
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-      <div
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) handleCancel()
+      }}
+    >
+      <form
+        ref={dialogRef}
+        onSubmit={submit}
         className="relative w-full max-w-105 rounded-xl bg-[#0D1421] p-8 text-white"
         role="dialog"
         aria-modal="true"
         aria-labelledby="review-dialog-title"
+        aria-describedby="review-dialog-description"
       >
         <button
           type="button"
@@ -137,11 +180,13 @@ export default function ReviewModal({
           Your Rating: {rating} ⭐
         </h3>
 
-        <p className="mb-5 text-sm leading-6 text-gray-400">
+        <p id="review-dialog-description" className="mb-5 text-sm leading-6 text-gray-400">
           WhatsApp will open so you can send a copy of your rating or review to ICC.
         </p>
 
+        <label htmlFor="review-name" className="sr-only">Your name</label>
         <input
+          id="review-name"
           ref={nameInputRef}
           type="text"
           placeholder="Your name *"
@@ -165,7 +210,9 @@ export default function ReviewModal({
           <div className="mb-3" />
         )}
 
+        <label htmlFor="review-role" className="sr-only">Your role (optional)</label>
         <input
+          id="review-role"
           type="text"
           placeholder="Your role (optional)"
           className="mb-3 w-full rounded border border-gray-600 bg-transparent p-2"
@@ -174,7 +221,9 @@ export default function ReviewModal({
           maxLength={80}
         />
 
+        <label htmlFor="review-company" className="sr-only">Your company (optional)</label>
         <input
+          id="review-company"
           type="text"
           placeholder="Your company (optional)"
           className="mb-3 w-full rounded border border-gray-600 bg-transparent p-2"
@@ -183,7 +232,9 @@ export default function ReviewModal({
           maxLength={100}
         />
 
+        <label htmlFor="review-text" className="sr-only">Write your review (optional)</label>
         <textarea
+          id="review-text"
           placeholder="Write your review (optional)"
           className="w-full rounded border border-gray-600 bg-transparent p-2"
           value={text}
@@ -244,14 +295,13 @@ export default function ReviewModal({
           </button>
 
           <button
-            type="button"
-            onClick={submit}
+            type="submit"
             className="rounded bg-blue-600 px-6 py-2"
           >
             {text.trim() ? "Add & Send Review" : "Send Rating"}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   )
 }

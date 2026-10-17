@@ -136,7 +136,7 @@ export default function Footer() {
             {/* <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center font-bold">
               
             </div> */}
-  <img src={logo} className="h-10 w-10 rounded-full" alt="logo"/>
+  <img src={logo} className="h-10 w-10 rounded-full" alt="ICC — IO Code Company"/>
             <span className="font-semibold text-lg">ICC</span>
           </div>
 

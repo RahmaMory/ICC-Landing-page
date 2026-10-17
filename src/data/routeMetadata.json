@@ -1,0 +1,54 @@
+{
+  "/": {
+    "title": "ICC — IO Code Company | Software Development & Digital Solutions",
+    "description": "ICC — IO Code Company designs and builds websites, mobile apps, e-commerce systems, dashboards, MVPs, and practical automation for growing businesses."
+  },
+  "/services": {
+    "title": "Software Development Services | ICC — IO Code Company",
+    "description": "Explore website, mobile app, Shopify, custom e-commerce, dashboard, MVP, game, and automation services from ICC — IO Code Company."
+  },
+  "/projects": {
+    "title": "Selected Software Projects | ICC — IO Code Company",
+    "description": "Explore selected live websites, applications, dashboards, e-commerce stores, and games delivered by ICC — IO Code Company."
+  },
+  "/privacy": {
+    "title": "Privacy Policy | ICC — IO Code Company",
+    "description": "Learn how ICC — IO Code Company handles website inquiries, ratings, project information, communications, and client data."
+  },
+  "/terms": {
+    "title": "Terms & Conditions | ICC — IO Code Company",
+    "description": "Read the service, project, payment, ownership, privacy, delivery, and support terms for ICC — IO Code Company."
+  },
+  "/services/landing-page": {
+    "title": "Landing Page Design & Development | ICC",
+    "description": "Focused landing page strategy, design, development, integrations, SEO foundations, analytics setup, and launch support from ICC."
+  },
+  "/services/mvp-website": {
+    "title": "MVP Website Development | ICC — IO Code Company",
+    "description": "Web MVP development with a responsive interface, backend, database, user access, admin tools, testing, and deployment."
+  },
+  "/services/mobile-app": {
+    "title": "Android & iOS App Development | ICC",
+    "description": "Native and cross-platform Android and iOS app development with UI/UX, backend, admin tools, testing, store launch support, and maintenance."
+  },
+  "/services/game": {
+    "title": "Browser & Multiplayer Game Development | ICC",
+    "description": "Game planning, UI/UX, gameplay development, multiplayer systems, testing, launch, and support from ICC — IO Code Company."
+  },
+  "/services/shopify": {
+    "title": "Shopify Store Design & Development | ICC",
+    "description": "Complete Shopify store strategy, design, development, product setup, payments, shipping, integrations, launch, and support."
+  },
+  "/services/ecommerce": {
+    "title": "Custom E-commerce Development | ICC",
+    "description": "Custom e-commerce systems with tailored catalogs, checkout, payments, shipping, admin workflows, integrations, launch, and support."
+  },
+  "/services/dashboard": {
+    "title": "Business Dashboard Development | ICC",
+    "description": "Custom business dashboards with connected data, role-based access, reports, exports, alerts, admin tools, and ongoing support."
+  },
+  "/services/ai-automation": {
+    "title": "AI & Workflow Automation Services | ICC",
+    "description": "Practical AI and automation systems for repetitive tasks, customer support, documents, and connected business workflows."
+  }
+}

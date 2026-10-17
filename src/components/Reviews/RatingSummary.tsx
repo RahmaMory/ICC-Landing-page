@@ -10,6 +10,15 @@ const ratings = [
   { star: 1, percent: 1 },
 ]
 
+function getStoredReviewsCount() {
+  try {
+    const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
+    return Array.isArray(saved) ? saved.length : 0
+  } catch {
+    return 0
+  }
+}
+
 export default function RatingSummary() {
   const baseReviews = 1119152
   const displayRating = 4.8
@@ -20,9 +29,7 @@ export default function RatingSummary() {
   const [submissionMessage, setSubmissionMessage] = useState("")
 
   const [reviewsCount, setReviewsCount] = useState<number>(() => {
-    const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
-    const reviewsArray = Array.isArray(saved) ? saved : []
-    return baseReviews + reviewsArray.length
+    return baseReviews + getStoredReviewsCount()
   })
 
   const [animatedBars, setAnimatedBars] = useState([0, 0, 0, 0, 0])
@@ -86,9 +93,7 @@ export default function RatingSummary() {
   }
 
   function handleReviewSubmitted(hasWrittenReview: boolean) {
-    const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
-    const reviewsArray = Array.isArray(saved) ? saved : []
-    setReviewsCount(baseReviews + reviewsArray.length)
+    setReviewsCount(baseReviews + getStoredReviewsCount())
     setSubmissionMessage(
       hasWrittenReview
         ? "WhatsApp is ready — send the message to share your review with ICC."
@@ -114,7 +119,7 @@ export default function RatingSummary() {
               {displayRating.toFixed(1)}
             </h3>
 
-            <div className="mt-2 flex">
+            <div className="mt-2 flex" aria-label={`${displayRating} out of 5 stars`}>
               {[1, 2, 3, 4, 5].map((star) => {
                 const fillPercent = Math.max(
                   0,
@@ -156,7 +161,14 @@ export default function RatingSummary() {
                   {item.star}
                 </span>
 
-                <div className="h-3 flex-1 overflow-hidden rounded-full bg-gray-400">
+                <div
+                  className="h-3 flex-1 overflow-hidden rounded-full bg-gray-400"
+                  role="progressbar"
+                  aria-label={`${item.star}-star reviews`}
+                  aria-valuenow={item.percent}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
                   <div
                     className="h-full rounded-full bg-blue-600 transition-all duration-700 ease-out"
                     style={{ width: `${animatedBars[index]}%` }}

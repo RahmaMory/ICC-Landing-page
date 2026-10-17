@@ -24,7 +24,8 @@ export default function LandingPageForm() {
     }));
   };
 
-  const handleWhatsAppSubmit = () => {
+  const handleWhatsAppSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (!formData.name || !formData.email || !formData.projectDetails) {
       alert("Please fill in the required fields.");
       return;
@@ -101,12 +102,13 @@ Project Details: ${formData.projectDetails}
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.form
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeRight}
               className="space-y-6"
+              onSubmit={handleWhatsAppSubmit}
             >
               <div>
                 <label htmlFor="landing-name" className="text-sm text-gray-400">
@@ -206,8 +208,7 @@ Project Details: ${formData.projectDetails}
               <motion.button
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.99 }}
-                type="button"
-                onClick={handleWhatsAppSubmit}
+                type="submit"
                 className={`
                   w-full mt-4 rounded-xl py-4 font-medium text-white
                   transition-all duration-300
@@ -230,7 +231,7 @@ Project Details: ${formData.projectDetails}
                   {buttonState === "idle" && "Continue on WhatsApp"}
                 </span>
               </motion.button>
-            </motion.div>
+            </motion.form>
           </div>
         </div>
       </div>

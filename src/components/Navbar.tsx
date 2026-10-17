@@ -1,13 +1,15 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 // import logo2 from "../assets/logos/Gemini_Generated_Image_uzp7zxuzp7zxuzp7-removebg-preview-removebg-preview.png";
 import ICCLogo from "../assets/logos/ICC.png";
 
 type MenuLinkProps = {
   to: string;
   children: React.ReactNode;
+  onNavigate?: () => void;
 };
 
-function MenuLink({ to, children }: MenuLinkProps) {
+function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
   const { pathname, hash } = useLocation();
 
   const currentHash = to.includes("#")
@@ -22,6 +24,7 @@ function MenuLink({ to, children }: MenuLinkProps) {
   return (
     <NavLink
       to={to}
+      onClick={onNavigate}
       className={`text-gray-400 hover:text-blue-600 transition-colors ${
         isActive ? "active" : ""
       }`}
@@ -32,6 +35,23 @@ function MenuLink({ to, children }: MenuLinkProps) {
 }
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
+
   return (
     <div className="sticky top-0 z-50 w-full border-b border-gray-800 bg-[#0D1421]">
       <div className="navbar container mx-auto">
@@ -44,7 +64,7 @@ export default function Navbar() {
             <img
               src={ICCLogo}
               className="h-16 w-16 rounded-full"
-              alt="logo"
+              alt="ICC — IO Code Company"
             />
             <span className="text-xl">ICC</span>
           </Link>
@@ -83,35 +103,43 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div className="navbar-end">
-          <div className="dropdown lg:hidden">
-            <button type="button" tabIndex={0} aria-label="Open navigation menu" className="btn btn-ghost">
+          <div className="relative lg:hidden">
+            <button
+              ref={menuButtonRef}
+              type="button"
+              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="btn btn-ghost"
+            >
               ☰
             </button>
 
-            <ul className="menu menu-sm dropdown-content right-0 z-50 mt-3 w-52 rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
+            {isMenuOpen && <ul id="mobile-navigation" className="menu menu-sm absolute right-0 z-50 mt-3 w-52 rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
               <li>
-                <MenuLink to="/#services">Services</MenuLink>
+                <MenuLink to="/#services" onNavigate={() => setIsMenuOpen(false)}>Services</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#work">Work</MenuLink>
+                <MenuLink to="/#work" onNavigate={() => setIsMenuOpen(false)}>Work</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#industries">Industries</MenuLink>
+                <MenuLink to="/#industries" onNavigate={() => setIsMenuOpen(false)}>Industries</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#testimonials">Testimonials</MenuLink>
+                <MenuLink to="/#testimonials" onNavigate={() => setIsMenuOpen(false)}>Testimonials</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#process">Process</MenuLink>
+                <MenuLink to="/#process" onNavigate={() => setIsMenuOpen(false)}>Process</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#pricing">Pricing</MenuLink>
+                <MenuLink to="/#pricing" onNavigate={() => setIsMenuOpen(false)}>Pricing</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#faq">FAQ</MenuLink>
+                <MenuLink to="/#faq" onNavigate={() => setIsMenuOpen(false)}>FAQ</MenuLink>
               </li>
               <li>
-                <MenuLink to="/#contact">Contact</MenuLink>
+                <MenuLink to="/#contact" onNavigate={() => setIsMenuOpen(false)}>Contact</MenuLink>
               </li>
 
               <li>
@@ -121,12 +149,13 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/#contact"
+                  onClick={() => setIsMenuOpen(false)}
                   className="btn bg-blue-500 text-white hover:bg-blue-600"
                 >
-                  Book a Call
+                  Talk to Our Team
                 </Link>
               </li>
-            </ul>
+            </ul>}
           </div>
         </div>
 
@@ -135,7 +164,7 @@ export default function Navbar() {
           to="/#contact"
           className="btn hidden bg-blue-500 text-white transition duration-300 hover:bg-blue-600 lg:inline-flex"
         >
-          Book a Call
+          Talk to Our Team
         </Link>
       </div>
     </div>

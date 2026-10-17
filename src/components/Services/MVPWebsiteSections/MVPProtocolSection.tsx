@@ -353,6 +353,8 @@ export default function MVPProtocolSection() {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
+                    decoding="async"
                     className="h-55 sm:h-65 md:h-75 w-full rounded-2xl object-cover shadow-xl transition duration-500 group-hover:scale-105"
                   />
                 </div>

@@ -109,7 +109,7 @@ export default function ShopifyContactSection() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const text = `New Shopify Automation Inquiry\n\nName: ${formData.name || '-'}\nEmail: ${formData.email || '-'}\nPhone: ${formData.phone || '-'}\n\nMessage:\n${formData.message || '-'}`
+    const text = `New Shopify Store Inquiry\n\nName: ${formData.name || '-'}\nEmail: ${formData.email || '-'}\nPhone: ${formData.phone || '-'}\n\nMessage:\n${formData.message || '-'}`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
@@ -178,7 +178,7 @@ export default function ShopifyContactSection() {
               </div>
               <div>
                 <label htmlFor="message" className="mb-3 block text-sm font-medium text-white/75">Message *</label>
-                <textarea id="message" name="message" required value={formData.message} onChange={handleChange} rows={5} placeholder="Tell us about your store and automation needs..." className="w-full rounded-xl border border-white/10 bg-[#031634] px-5 py-4 text-white outline-none placeholder:text-white/40 focus:border-cyan-300/35" />
+                <textarea id="message" name="message" required value={formData.message} onChange={handleChange} rows={5} placeholder="Tell us about your products, store, and required workflows..." className="w-full rounded-xl border border-white/10 bg-[#031634] px-5 py-4 text-white outline-none placeholder:text-white/40 focus:border-cyan-300/35" />
               </div>
               <motion.button
                 whileHover={{ y: -2 }}
@@ -186,7 +186,7 @@ export default function ShopifyContactSection() {
                 type="submit"
                 className="group inline-flex w-full items-center justify-center rounded-2xl bg-linear-to-r from-cyan-400 to-sky-400 px-8 py-5 text-xl font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_28px_rgba(34,211,238,0.30)]"
               >
-                <span>Send Message</span>
+                <span>Continue on WhatsApp</span>
                 <Send className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </motion.button>
             </form>

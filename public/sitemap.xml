@@ -28,6 +28,14 @@
   <url><loc>https://www.icc-collab.com/services/ecommerce</loc><priority>0.8</priority></url>
   <url><loc>https://www.icc-collab.com/services/dashboard</loc><priority>0.8</priority></url>
   <url><loc>https://www.icc-collab.com/services/ai-automation</loc><priority>0.8</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/startup</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/retail</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/education</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/healthcare</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/logistics</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/creators</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/fintech</loc><priority>0.6</priority></url>
+  <url><loc>https://www.icc-collab.com/industry/travel</loc><priority>0.6</priority></url>
   <url><loc>https://www.icc-collab.com/privacy</loc><priority>0.4</priority></url>
   <url><loc>https://www.icc-collab.com/terms</loc><priority>0.4</priority></url>
 </urlset>

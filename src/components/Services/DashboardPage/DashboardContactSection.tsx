@@ -387,7 +387,7 @@ ${formData.message || '-'}`
                   type="submit"
                   className="group inline-flex w-full items-center justify-center rounded-2xl bg-linear-to-r from-cyan-400 to-sky-400 px-8 py-5 text-xl font-semibold text-[#071126] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_28px_rgba(34,211,238,0.30)]"
                 >
-                  <span>Send Message</span>
+                  <span>Continue on WhatsApp</span>
                   <Send className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </motion.button>
               </form>

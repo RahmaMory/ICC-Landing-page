@@ -20,7 +20,7 @@ export const pricingPlans: PricingPlan[] = [
       "1 Week Turnaround",
     ],
     buttonText: "Get Started",
-    href: "#start-project"
+    href: "#contact"
   },
   {
     name: "Growth",
@@ -35,7 +35,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     popular: true,
     buttonText: "Get Started",
-    href: "#start-project"
+    href: "#contact"
   },
   {
     name: "Pro",
@@ -49,6 +49,6 @@ export const pricingPlans: PricingPlan[] = [
       "6+ Weeks Turnaround",
     ],
     buttonText: "Get Started",
-    href: "#start-project"
+    href: "#contact"
   },
 ]

@@ -103,7 +103,7 @@ export default function GamePage() {
               <Gamepad2 className="h-4 w-4" aria-hidden="true" /> Game Development
             </motion.div>
             <motion.h1 variants={fadeUp} className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
-              Games Built for
+              Games Built for{" "}
               <span className="block bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Real Play.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">

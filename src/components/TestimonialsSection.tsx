@@ -92,11 +92,11 @@ import { testimonials as initialTestimonials } from "../data/testimonials"
 import type { Testimonial } from "../data/testimonials"
 import { useEffect, useState } from "react"
 import TestimonialCard from "./TestimonialCard"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { fadeUp } from "../lib/motion"
 
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Navigation, Autoplay, A11y } from "swiper/modules"
 
 import "../App.css"
 import "swiper/css"
@@ -145,6 +145,7 @@ function loadUserTestimonials(): Testimonial[] {
 }
 
 export default function TestimonialsSection() {
+  const prefersReducedMotion = useReducedMotion()
   const [userTestimonials, setUserTestimonials] = useState<Testimonial[]>(loadUserTestimonials)
 
   useEffect(() => {
@@ -202,11 +203,12 @@ export default function TestimonialsSection() {
           <Swiper
             key={writtenUserTestimonials.length}
             className="testimonials-swiper"
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation, Autoplay, A11y]}
             navigation
             loop
             centeredSlides
-            autoplay={{
+            a11y={{ enabled: true }}
+            autoplay={prefersReducedMotion ? false : {
               delay: 7000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,

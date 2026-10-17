@@ -300,6 +300,8 @@ function FeatureCard({
           <img
             src={image}
             alt={title}
+            loading="lazy"
+            decoding="async"
             className="h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-[260px] lg:h-[250px]"
           />
 

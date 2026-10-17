@@ -103,7 +103,6 @@
 
 import { ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import MobileAppFeatureList from "./MobileAppFeatureList";
 import MobileAppPhoneMockup from "./MobileAppPhoneMockup";
 import { fadeLeft, fadeRight, fadeUp, staggerContainer } from "../../../lib/motion";
 
@@ -186,8 +185,6 @@ export default function MobileAppHeroSection() {
               </p>
             </div>
           </motion.div>
-
-          <MobileAppFeatureList />
 
           <motion.blockquote
             variants={fadeUp}

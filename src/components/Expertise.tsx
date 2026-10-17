@@ -59,6 +59,11 @@ import { servicesData } from "../data/servicesData";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../lib/motion";
 
+const deliveredProjects = servicesData.reduce(
+  (total, service) => total + (service.count ?? 0),
+  0,
+);
+
 export default function Expertise() {
   return (
     <div className="bg-[#090E18] py-16 text-white">
@@ -84,7 +89,25 @@ export default function Expertise() {
       </motion.p>
 
       <motion.div
-        className="container mx-auto mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={fadeUp}
+        className="mx-auto mt-6 flex max-w-2xl flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4"
+      >
+        <span className="rounded-full border border-blue-400/25 bg-blue-400/10 px-4 py-2 text-sm font-semibold text-blue-300">
+          {deliveredProjects >= 100 ? "100+" : deliveredProjects} projects across our services
+        </span>
+        <Link
+          to="/projects"
+          className="text-sm text-gray-400 underline-offset-4 transition hover:text-white hover:underline"
+        >
+          Explore selected public work
+        </Link>
+      </motion.div>
+
+      <motion.div
+        className="container mx-auto mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
