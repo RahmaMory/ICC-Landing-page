@@ -47,10 +47,14 @@
 
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Sparkles, Joystick} from 'lucide-react'
+import { Joystick, Users, Boxes, MonitorSmartphone } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../../../lib/motion'
+import ProjectCard from '../../ProjectCard'
+import { projects } from '../../../data/projects'
 
 export default function GameFeatureComingSoonSection() {
+  const gameProjects = projects.filter((project) => project.category === 'Game')
+
   return (
     <section className="relative overflow-hidden px-4 py-24 sm:px-6 md:py-28 lg:px-8">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(34,211,238,0.10),transparent_24%),radial-gradient(circle_at_80%_70%,rgba(99,102,241,0.08),transparent_28%)]" />
@@ -70,8 +74,8 @@ export default function GameFeatureComingSoonSection() {
               variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-full border border-blue-400/15 bg-blue-400/8 px-5 py-2 text-xs font-medium tracking-[0.12em] text-blue-300"
             >
-              <Sparkles className="h-4 w-4" />
-              COMING SOON
+              <Joystick className="h-4 w-4" />
+              GAME DEVELOPMENT
             </motion.div>
 
             <motion.div variants={fadeUp} className="relative mt-8">
@@ -85,16 +89,15 @@ export default function GameFeatureComingSoonSection() {
               variants={fadeUp}
               className="mt-8 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-5xl lg:text-[64px]"
             >
-              Our <span className="bg-linear-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">Game Development Service</span> is coming soon.
+              Interactive Games, <span className="bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Built to Be Played.</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="mt-6 max-w-2xl text-base leading-8 text-white/62 sm:text-lg"
             >
-              ICC is preparing a focused service for interactive brand
-              experiences and digital products. Contact us to discuss an idea or
-              join the first project schedule.
+              ICC designs and develops responsive browser games, multiplayer
+              experiences, and interactive products from concept to launch.
             </motion.p>
 
             <motion.div
@@ -102,17 +105,18 @@ export default function GameFeatureComingSoonSection() {
               className="mt-10 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3"
             >
               {[
-                "Early project discussions",
-                "Service launch updates",
-                "First booking availability",
-              ].map((item) => (
+                { icon: Users, text: "Real-time and room-based multiplayer" },
+                { icon: Boxes, text: "Game logic, rules, and interactive 3D" },
+                { icon: MonitorSmartphone, text: "Responsive browser experiences" },
+              ].map(({ icon: Icon, text }) => (
                 <motion.div
-                  key={item}
+                  key={text}
                   variants={fadeUp}
                   whileHover={{ y: -3 }}
-                  className="rounded-2xl border border-white/10 bg-white/3 px-5 py-4 text-sm text-white/70"
+                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/3 px-5 py-4 text-left text-sm text-white/70"
                 >
-                  {item}
+                  <Icon className="h-5 w-5 shrink-0 text-blue-300" aria-hidden="true" />
+                  {text}
                 </motion.div>
               ))}
             </motion.div>
@@ -164,15 +168,34 @@ export default function GameFeatureComingSoonSection() {
               </Link>
 
               <p className="text-sm text-white/45">
-                Early project conversations are now open.
+                Free 15-minute discovery call.
               </p>
             </motion.div>
           </div>
         </motion.div>
 
-    
+        <div className="mt-20">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-10 text-center"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-400">
+              Real work
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+              Explore Our Game Projects
+            </h2>
+          </motion.div>
 
-
+          <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+            {gameProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

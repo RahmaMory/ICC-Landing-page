@@ -1,9 +1,17 @@
 export type ProjectCategory =
+  | "Landing Page"
   | "MVP Website"
   | "E-commerce"
   | "Dashboard"
-  | "Game Development"
-  | "Landing Page"
+  | "Game"
+
+export const projectCategories: ProjectCategory[] = [
+  "Landing Page",
+  "MVP Website",
+  "E-commerce",
+  "Dashboard",
+  "Game",
+]
 
 export interface Project {
   id: number
@@ -105,7 +113,7 @@ export const projects: Project[] = [
     imageAlt: "Ludo 3D dice mark",
     imageFit: "contain",
     imageBackground: "linear-gradient(135deg, #151b32 0%, #2c1743 100%)",
-    category: "Game Development",
+    category: "Game",
     tag: "Multiplayer",
     desc: "A real-time multiplayer Ludo experience with a fully interactive 3D board.",
     content: "The game combines room-based multiplayer play, server-controlled dice and moves, live player states, turn management, and multiple camera views around a 3D board. The interface also includes clear gameplay guidance and connection feedback.",
@@ -204,7 +212,7 @@ export const projects: Project[] = [
     imageAlt: "Shafra 15 game mark",
     imageFit: "contain",
     imageBackground: "linear-gradient(135deg, #03100d 0%, #0e2a22 100%)",
-    category: "Game Development",
+    category: "Game",
     tag: "Card Game",
     desc: "An Arabic online card game with private rooms, solo play, settings, and guided rules.",
     content: "Players can create a private room, join an existing code, or start a solo experience. The interface supports clear onboarding, game instructions, sound settings, and a responsive visual identity designed around the social card-game concept.",

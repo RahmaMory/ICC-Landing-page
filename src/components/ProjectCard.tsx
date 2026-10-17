@@ -50,8 +50,7 @@
 // }
 
 
-import { Link } from "react-router-dom"
-import { ArrowUpRight } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import type { Project } from "../data/projects"
 
@@ -70,8 +69,11 @@ export default function ProjectCard({ project }: Props) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{ y: -6 }}
     >
-      <Link
-        to={`/project/${project.slug}`}
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${project.title} live project in a new tab`}
         className="group block"
       >
         {/* image box */}
@@ -92,7 +94,7 @@ export default function ProjectCard({ project }: Props) {
           {/* overlay */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-linear-to-t from-black/90 via-black/40 to-transparent flex items-end justify-start p-6">
             <span className="text-white font-medium tracking-wide flex">
-              View Project <ArrowUpRight className="text-xs ml-1" />
+              Open Live Project <ExternalLink className="ml-2 h-4 w-4" />
             </span>
           </div>
         </div>
@@ -111,7 +113,7 @@ export default function ProjectCard({ project }: Props) {
         <p className="text-sm text-gray-400 mt-1">
           {project.category}
         </p>
-      </Link>
+      </a>
     </motion.div>
   )
 }

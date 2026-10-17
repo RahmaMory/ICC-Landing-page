@@ -45,7 +45,7 @@ export const servicesData: ServiceItem[] = [
     title: "Game",
     desc: "Interactive games for brands and digital products.",
     icon: Gamepad2,
-    comingSoon: true,
+    count: 2,
     path: "/services/game"
   },
   {

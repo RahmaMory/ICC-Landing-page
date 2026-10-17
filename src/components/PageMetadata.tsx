@@ -40,7 +40,7 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
   },
   "/services/game": {
     title: "Game Development | ICC — IO Code Company",
-    description: "Upcoming game development solutions for brands, products, and interactive digital experiences.",
+    description: "Interactive game development for brands and digital products, including real-time multiplayer experiences and browser-based games.",
   },
   "/services/shopify": {
     title: "Shopify Store Development & Automation | ICC — IO Code Company",
