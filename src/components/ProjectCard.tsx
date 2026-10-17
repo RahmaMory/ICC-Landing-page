@@ -1,56 +1,4 @@
-
-// import { Link } from "react-router-dom"
-// import { ArrowUpRight } from "lucide-react"
-// import type { Project } from "../data/projects"
-
-// interface Props {
-//   project: Project
-// }
-
-// export default function ProjectCard({ project }: Props) {
-//   return (
-//     <Link
-    
-//       to={`/project/${project.slug}`}
-//       className="group block"
-//     >
-//       {/* image box */}
-//       <div className="relative rounded-2xl overflow-hidden border border-white/5 bg-[#0B1120]">
-
-//         <img
-//           src={project.image}
-//           alt={project.title}
-//           className="w-full h-60 object-cover transition duration-500 group-hover:scale-110"
-//         />
-
-//         {/* overlay */}
-//        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-start p-6">
-//   <span className="text-white font-medium tracking-wide flex">
-//     View Case Study <ArrowUpRight className="text-xs ml-1"/>
-//   </span>
-// </div>
-//       </div>
-
-//       {/* title row */}
-//       <div className="flex items-center justify-between mt-4">
-//         <h3 className="text-lg font-semibold text-white group-hover:text-blue-500 transition duration-300">
-//           {project.title} 
-//         </h3>
-
-//         <span className="text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-lg text-gray-300">
-//           {project.tag}
-//         </span>
-//       </div>
-
-//       <p className="text-sm text-gray-400 mt-1">
-//         {project.category}
-//       </p>
-//     </Link>
-//   )
-// }
-
-
-import { ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import type { Project } from "../data/projects"
 
@@ -74,11 +22,11 @@ export default function ProjectCard({ project }: Props) {
         target="_blank"
         rel="noreferrer"
         aria-label={`Open ${project.title} live project in a new tab`}
-        className="group block"
+        className="group block overflow-hidden rounded-3xl border border-white/10 bg-[#09111f] p-2 shadow-[0_18px_60px_rgba(0,0,0,0.18)] transition duration-300 hover:border-blue-400/35 hover:shadow-[0_22px_70px_rgba(30,64,175,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
       >
         {/* image box */}
         <div
-          className="relative h-60 rounded-2xl overflow-hidden border border-white/10 bg-[#0B1120]"
+          className="relative h-60 overflow-hidden rounded-[20px] border border-white/8 bg-[#0B1120]"
           style={{ background: project.imageBackground }}
         >
           <img
@@ -86,33 +34,44 @@ export default function ProjectCard({ project }: Props) {
             alt={project.imageAlt}
             className={`h-full w-full transition duration-500 ${
               usesLogo
-                ? "object-contain p-10 group-hover:scale-105"
+                ? `${project.imagePadding === "compact" ? "p-4" : "p-10"} object-contain group-hover:scale-105`
                 : "object-cover group-hover:scale-105"
             }`}
           />
 
-          {/* overlay */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-linear-to-t from-black/90 via-black/40 to-transparent flex items-end justify-start p-6">
-            <span className="text-white font-medium tracking-wide flex">
-              Open Live Project <ExternalLink className="ml-2 h-4 w-4" />
-            </span>
+          <div className="absolute inset-0 bg-linear-to-t from-black/72 via-transparent to-black/15" />
+
+          <div className="absolute bottom-4 left-4 rounded-full border border-white/15 bg-[#050a13]/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.13em] text-white/85 backdrop-blur-md transition duration-300 group-hover:opacity-0">
+            {project.category}
+          </div>
+
+          <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#050a13]/80 text-white backdrop-blur-md transition duration-300 group-hover:rotate-6 group-hover:bg-blue-500">
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          </div>
+
+          <div className="absolute inset-x-0 bottom-0 flex translate-y-2 items-center justify-between px-5 pb-4 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="text-sm font-medium text-white">Open Live Project</span>
+            <ArrowUpRight className="h-4 w-4 text-blue-300" aria-hidden="true" />
           </div>
         </div>
 
-        {/* title row */}
-        <div className="flex items-start justify-between gap-4 mt-4">
-          <h3 className="text-lg font-semibold text-white group-hover:text-blue-500 transition duration-300">
-            {project.title}
-          </h3>
+        <div className="px-3 pb-4 pt-5">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-blue-400">
+                {project.tag}
+              </p>
+              <h3 className="mt-2 text-xl font-semibold text-white transition duration-300 group-hover:text-blue-300">
+                {project.title}
+              </h3>
+            </div>
+            <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-white/35 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" aria-hidden="true" />
+          </div>
 
-          <span className="shrink-0 text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-lg text-gray-300">
-            {project.tag}
-          </span>
+          <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/52">
+            {project.desc}
+          </p>
         </div>
-
-        <p className="text-sm text-gray-400 mt-1">
-          {project.category}
-        </p>
       </a>
     </motion.div>
   )

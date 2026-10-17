@@ -20,6 +20,7 @@ export interface Project {
   image: string
   imageAlt: string
   imageFit?: "cover" | "contain"
+  imagePadding?: "compact" | "regular"
   imageBackground?: string
   category: ProjectCategory
   tag: string
@@ -49,10 +50,10 @@ export const projects: Project[] = [
     id: 2,
     slug: "real-estate-crm",
     title: "Real Estate CRM",
-    image: "/projects/real-estate-crm.webp",
-    imageAlt: "Real Estate CRM dashboard interface",
+    image: "/projects/real-estate-crm-v2.webp",
+    imageAlt: "Real estate CRM lead pipeline and property management interface",
     imageFit: "cover",
-    imageBackground: "#edf2ee",
+    imageBackground: "#071624",
     category: "Dashboard",
     tag: "CRM",
     desc: "A focused sales workspace for real-estate teams, from the first lead to the final deal.",
@@ -180,10 +181,11 @@ export const projects: Project[] = [
     id: 11,
     slug: "qasr-el-salam",
     title: "Qasr El Salam",
-    image: "/projects/qasr-el-salam-hero.webp",
-    imageAlt: "Qasr El Salam restaurant presentation",
+    image: "/projects/qasr-el-salam-logo.webp",
+    imageAlt: "Official Qasr El Salam Restaurant logo",
     imageFit: "contain",
-    imageBackground: "linear-gradient(135deg, #fffaf2 0%, #ead7b7 100%)",
+    imagePadding: "compact",
+    imageBackground: "#050505",
     category: "E-commerce",
     tag: "Digital Menu",
     desc: "An interactive Arabic menu for a grill restaurant, with categories, sizes, prices, and direct actions.",
@@ -250,10 +252,10 @@ export const projects: Project[] = [
     id: 16,
     slug: "a-plus-aura",
     title: "A Plus Aura",
-    image: "/projects/a-plus-aura-hero.webp",
-    imageAlt: "A Plus Aura campaign artwork",
+    image: "/projects/a-plus-aura-logo.webp",
+    imageAlt: "Official A Plus Aura Media Production logo",
     imageFit: "cover",
-    imageBackground: "#17131f",
+    imageBackground: "#050505",
     category: "MVP Website",
     tag: "Marketing & Media",
     desc: "A company website for marketing, media production, campaigns, services, and client inquiries.",
