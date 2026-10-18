@@ -6,12 +6,15 @@ import { motion } from "framer-motion"
 import { fadeUp } from "../lib/motion"
 
 export default function SelectedWork() {
-  const featuredProjects = projects.filter((project) => project.featured)
+  const homeProjectSlugs = ["remax-in-town", "fiqh-el-alaqat", "ali-baba-pastry"]
+  const featuredProjects = homeProjectSlugs
+    .map((slug) => projects.find((project) => project.slug === slug))
+    .filter((project): project is (typeof projects)[number] => Boolean(project))
 
   return (
-    <section className=" bg-[#0B121E] text-white py-24">
+    <section className="bg-[#0B121E] py-28 text-white">
       {/* header */}
-      <div className="container mx-auto px-6 mb-14">
+      <div className="container mx-auto mb-16 px-6">
         <div className="flex items-center justify-between flex-wrap gap-6">
           <motion.div
             initial="hidden"
@@ -46,7 +49,7 @@ export default function SelectedWork() {
       </div>
 
       {/* grid */}
-      <div className="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="container mx-auto grid gap-10 px-6 md:grid-cols-2 lg:grid-cols-3">
         {featuredProjects.map(project => (
           <ProjectCard key={project.id} project={project} />
         ))}

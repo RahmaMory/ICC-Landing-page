@@ -24,21 +24,15 @@ const AIAutomationPage = lazy(() => import("./components/Services/AIAutomationPa
 const NotFound = lazy(() => import("./components/NotFound"));
 
 function App() {
-  const [showLoader, setShowLoader] = useState(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    return !prefersReducedMotion && sessionStorage.getItem("icc-intro-seen") !== "true";
-  });
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    if (!showLoader) return;
-
-    sessionStorage.setItem("icc-intro-seen", "true");
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 900);
+    }, 1600);
 
     return () => clearTimeout(timer);
-  }, [showLoader]);
+  }, []);
 
   return (
 
