@@ -6,6 +6,11 @@
       "source": "/project/:slug",
       "destination": "/projects",
       "permanent": false
+    },
+    {
+      "source": "/industry/:slug",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "headers": [

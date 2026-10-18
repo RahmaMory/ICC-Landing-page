@@ -5,21 +5,12 @@ const root = process.cwd()
 const siteUrl = "https://www.icc-collab.com"
 const socialImage = `${siteUrl}/icc-social-preview.png`
 
-const [template, staticMetadataText, industriesSource] = await Promise.all([
+const [template, staticMetadataText] = await Promise.all([
   readFile(join(root, "dist/index.html"), "utf8"),
   readFile(join(root, "src/data/routeMetadata.json"), "utf8"),
-  readFile(join(root, "src/data/industries.ts"), "utf8"),
 ])
 
 const routeMetadata = JSON.parse(staticMetadataText)
-
-for (const match of industriesSource.matchAll(/slug:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?description:\s*"([^"]+)"/g)) {
-  const [, slug, title, description] = match
-  routeMetadata[`/industry/${slug}`] = {
-    title: `${title} Digital Solutions | ICC — IO Code Company`,
-    description,
-  }
-}
 
 const escapeHtml = (value) => value
   .replaceAll("&", "&amp;")

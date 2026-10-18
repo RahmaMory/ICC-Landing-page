@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import { industries } from "../data/industries"
 import routeMetadataJson from "../data/routeMetadata.json"
 
 const siteUrl = "https://www.icc-collab.com"
@@ -23,17 +22,7 @@ export default function PageMetadata() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    let metadata: { title: string; description: string } | undefined = routeMetadata[pathname]
-
-    if (pathname.startsWith("/industry/")) {
-      const industry = industries.find((item) => item.slug === pathname.split("/").pop())
-      metadata = industry
-        ? {
-            title: `${industry.title} Digital Solutions | ICC — IO Code Company`,
-            description: industry.description,
-          }
-        : undefined
-    }
+    const metadata: { title: string; description: string } | undefined = routeMetadata[pathname]
 
     const title = metadata?.title || "Page Not Found | ICC — IO Code Company"
     const description = metadata?.description || "The requested page could not be found on the ICC — IO Code Company website."
