@@ -137,3 +137,18 @@
 .animate-float-slow {
   animation: float-slow 4.5s ease-in-out infinite;
 }
+
+@keyframes hero-collage-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+.hero-collage-drift {
+  animation: hero-collage-drift 9s ease-in-out infinite;
+  will-change: transform;
+}

@@ -5,10 +5,10 @@ import { fadeUp, staggerContainer } from "../lib/motion"
 
 export default function Industries() {
   return (
-    <section className="border-y border-white/5 bg-[#0D1421] py-28 text-white">
+    <section className="border-y border-white/5 bg-[#0D1421] py-20 text-white sm:py-24">
       <div className="container mx-auto px-6">
         <motion.div
-          className="mx-auto mb-14 max-w-2xl text-center"
+          className="mx-auto mb-10 max-w-2xl text-center sm:mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
