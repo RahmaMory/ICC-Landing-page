@@ -6,10 +6,7 @@ import { motion } from "framer-motion"
 import { fadeUp } from "../lib/motion"
 
 export default function SelectedWork() {
-  const homeProjectSlugs = ["remax-in-town", "fiqh-el-alaqat", "ali-baba-pastry"]
-  const featuredProjects = homeProjectSlugs
-    .map((slug) => projects.find((project) => project.slug === slug))
-    .filter((project): project is (typeof projects)[number] => Boolean(project))
+  const featuredProjects = projects.filter((project) => project.featured)
 
   return (
     <section className="bg-[#0B121E] py-28 text-white">

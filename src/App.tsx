@@ -7,7 +7,6 @@ import ScrollToHash from "./components/ScrollToHash";
 import ScrollToTop from "./components/ScrollToTop";
 
 const Home = lazy(() => import("./pages/Home"));
-const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const Projects = lazy(() => import("./pages/Projects"));
 const IndustryDetails = lazy(() => import("./pages/IndustryDetails"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -46,7 +45,6 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/project/:slug" element={<ProjectDetails />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/industry/:slug" element={<IndustryDetails />} />
           <Route path="/privacy" element={<Privacy />} />

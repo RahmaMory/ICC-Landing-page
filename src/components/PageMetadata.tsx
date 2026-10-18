@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { industries } from "../data/industries"
-import { projects } from "../data/projects"
 import routeMetadataJson from "../data/routeMetadata.json"
 
 const siteUrl = "https://www.icc-collab.com"
@@ -25,16 +24,6 @@ export default function PageMetadata() {
 
   useEffect(() => {
     let metadata: { title: string; description: string } | undefined = routeMetadata[pathname]
-
-    if (pathname.startsWith("/project/")) {
-      const project = projects.find((item) => item.slug === pathname.split("/").pop())
-      metadata = project
-        ? {
-            title: `${project.title} Case Study | ICC — IO Code Company`,
-            description: project.desc || "Explore a project delivered by ICC — IO Code Company.",
-          }
-        : undefined
-    }
 
     if (pathname.startsWith("/industry/")) {
       const industry = industries.find((item) => item.slug === pathname.split("/").pop())
