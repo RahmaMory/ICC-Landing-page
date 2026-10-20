@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { dirname, join } from "node:path"
+import { pathToFileURL } from "node:url"
 
 const root = process.cwd()
 const siteUrl = "https://www.icc-collab.com"
@@ -11,6 +12,9 @@ const [template, staticMetadataText] = await Promise.all([
 ])
 
 const routeMetadata = JSON.parse(staticMetadataText)
+const { render } = await import(
+  pathToFileURL(join(root, "dist-ssr/entry-server.js")).href
+)
 
 const escapeHtml = (value) => value
   .replaceAll("&", "&amp;")
@@ -46,20 +50,66 @@ function replaceMeta(html, route, metadata, noIndex = false) {
     .replaceAll('content="907"', 'content="630"')
 }
 
+function resolvePrerenderedSuspense(html) {
+  const completedBoundary = html.match(
+    /<div hidden id="S:0">([\s\S]*)<\/div><script>\$RB=\[\];\$RV=[\s\S]*<\/script>$/,
+  )
+
+  if (!completedBoundary) return html
+
+  const routeContent = completedBoundary[1]
+
+  return html
+    .replace(
+      /<!--\$\?--><template id="B:0"><\/template>[\s\S]*?<!--\/\$-->/,
+      `<!--$-->${routeContent}<!--/$-->`,
+    )
+    .replace(/<script>requestAnimationFrame\([\s\S]*?<\/script>/, "")
+    .replace(/<div hidden id="S:0">[\s\S]*<\/div><script>\$RB=\[\];\$RV=[\s\S]*<\/script>$/, "")
+}
+
+function makePrerenderedContentVisible(html) {
+  return html.replace(/\sstyle="([^"]*)"/g, (attribute, style) => {
+    const declarations = style.split(";").filter(Boolean)
+    const startsHidden = declarations.some((declaration) => declaration.trim() === "opacity:0")
+
+    if (!startsHidden) return attribute
+
+    const visibleDeclarations = declarations.filter((declaration) => {
+      const property = declaration.trim()
+      return property !== "opacity:0" && !property.startsWith("transform:")
+    })
+
+    return visibleDeclarations.length > 0
+      ? ` style="${visibleDeclarations.join(";")}"`
+      : ""
+  })
+}
+
+async function buildRouteHtml(route, metadata, noIndex = false) {
+  const renderedApp = makePrerenderedContentVisible(
+    resolvePrerenderedSuspense(await render(route)),
+  )
+  return replaceMeta(template, route, metadata, noIndex).replace(
+    '<div id="root"></div>',
+    `<div id="root">${renderedApp}</div>`,
+  )
+}
+
 const sitemapEntries = []
 
 for (const [route, metadata] of Object.entries(routeMetadata)) {
   sitemapEntries.push(route)
-  if (route === "/") continue
-
-  const outputPath = join(root, "dist", `${route.slice(1)}.html`)
+  const outputPath = route === "/"
+    ? join(root, "dist/index.html")
+    : join(root, "dist", `${route.slice(1)}.html`)
   await mkdir(dirname(outputPath), { recursive: true })
-  await writeFile(outputPath, replaceMeta(template, route, metadata), "utf8")
+  await writeFile(outputPath, await buildRouteHtml(route, metadata), "utf8")
 }
 
 await writeFile(
   join(root, "dist/404.html"),
-  replaceMeta(template, "/404", {
+  await buildRouteHtml("/404", {
     title: "Page Not Found | ICC — IO Code Company",
     description: "The requested page could not be found on the ICC — IO Code Company website.",
   }, true),

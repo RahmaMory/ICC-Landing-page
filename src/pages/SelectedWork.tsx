@@ -24,8 +24,8 @@ export default function SelectedWork() {
             </h2>
 
             <p className="text-gray-400 max-w-lg">
-              Explore real platforms, websites, stores, dashboards, and games
-              delivered by ICC.
+              A selected sample of the live platforms, websites, stores,
+              dashboards, and games delivered by ICC.
             </p>
           </motion.div>
 

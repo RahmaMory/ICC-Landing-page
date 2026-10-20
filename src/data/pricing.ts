@@ -40,7 +40,7 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Pro",
     price: "$2,000+",
-    description: "Scale and enterprise.",
+    description: "Custom products and advanced builds.",
     features: [
       "Custom Architecture",
       "Mobile Apps (iOS/Android)",

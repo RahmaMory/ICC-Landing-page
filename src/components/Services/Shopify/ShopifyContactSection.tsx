@@ -92,7 +92,7 @@
 
 
 
-import React, { useState } from 'react'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { BadgeCheck, Send } from 'lucide-react'
 import { fadeLeft, fadeRight } from '../../../lib/motion'
@@ -101,12 +101,12 @@ export default function ShopifyContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
   const whatsappNumber = '201031158933'
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const text = `New Shopify Store Inquiry\n\nName: ${formData.name || '-'}\nEmail: ${formData.email || '-'}\nPhone: ${formData.phone || '-'}\n\nMessage:\n${formData.message || '-'}`

@@ -203,7 +203,7 @@
 
 
 
-import React, { useState } from 'react'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { BadgeCheck, Send } from 'lucide-react'
 import { fadeLeft, fadeRight } from '../../../lib/motion'
@@ -220,13 +220,13 @@ export default function DashboardContactSection() {
   
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const text = `New Dashboard Inquiry

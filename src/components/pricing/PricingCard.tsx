@@ -70,26 +70,24 @@
 import type { PricingPlan } from "../../data/pricing"
 import { Check } from "lucide-react"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import { fadeUp } from "../../lib/motion"
 
 interface Props {
   plan: PricingPlan;
-  isSelected: boolean;
-  onSelect: () => void;
-  onGetStarted?: () => void;
-  href?: string;
 }
 
-export default function PricingCard({ plan, isSelected, onSelect,href }: Props) {
+export default function PricingCard({ plan }: Props) {
+  const isHighlighted = Boolean(plan.popular)
+
   return (
-    <motion.div
+    <motion.article
       variants={fadeUp}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.25 }}
-      onClick={onSelect}
-      className={`cursor-pointer relative rounded-2xl p-10 border transition duration-300
+      className={`relative flex h-full flex-col rounded-2xl border p-10 transition duration-300
       ${
-        isSelected
+        isHighlighted
           ? "bg-[#0E1832] border-blue-600 -translate-y-4 shadow-2xl"
           : "bg-[#111927] border-white/5 hover:border-white/20"
       }`}
@@ -103,7 +101,7 @@ export default function PricingCard({ plan, isSelected, onSelect,href }: Props) 
       {/* name */}
       <h3
         className={`text-xl font-semibold mb-2 transition
-        ${isSelected ? "text-blue-500" : "text-white"}`}
+        ${isHighlighted ? "text-blue-500" : "text-white"}`}
       >
         {plan.name}
       </h3>
@@ -126,9 +124,16 @@ export default function PricingCard({ plan, isSelected, onSelect,href }: Props) 
         ))}
       </ul>
 
-      <a href={href} className={`w-full py-3 px-1.5 rounded-lg transition bg-[#155DFC]`}>
+      <Link
+        to={plan.href || "/#contact"}
+        className={`mt-auto inline-flex w-full items-center justify-center rounded-lg px-4 py-3 font-semibold transition ${
+          isHighlighted
+            ? "bg-linear-to-r from-blue-600 to-indigo-500 text-white hover:opacity-90"
+            : "border border-white/20 text-white hover:border-blue-400/60 hover:bg-white/5"
+        }`}
+      >
         {plan.buttonText}
-      </a>
-    </motion.div>
+      </Link>
+    </motion.article>
   )
 }

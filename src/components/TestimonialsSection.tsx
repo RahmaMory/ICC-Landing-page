@@ -114,6 +114,8 @@ function hasWrittenReview(text?: string): boolean {
 }
 
 function loadUserTestimonials(): Testimonial[] {
+  if (typeof window === "undefined") return []
+
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
     if (!Array.isArray(parsed)) return []

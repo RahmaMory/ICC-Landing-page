@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 // import logo2 from "../assets/logos/Gemini_Generated_Image_uzp7zxuzp7zxuzp7-removebg-preview-removebg-preview.png";
 import ICCLogo from "../assets/logos/ICC.png";
@@ -22,15 +22,16 @@ function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
     : pathname === to;
 
   return (
-    <NavLink
+    <Link
       to={to}
       onClick={onNavigate}
-      className={`text-gray-400 hover:text-blue-600 transition-colors ${
-        isActive ? "active" : ""
+      aria-current={isActive ? "location" : undefined}
+      className={`transition-colors hover:text-blue-400 ${
+        isActive ? "text-blue-400" : "text-gray-400"
       }`}
     >
       {children}
-    </NavLink>
+    </Link>
   );
 }
 
@@ -78,6 +79,9 @@ export default function Navbar() {
               <MenuLink to="/#services">Services</MenuLink>
             </li>
             <li>
+              <MenuLink to="/#process">Process</MenuLink>
+            </li>
+            <li>
               <MenuLink to="/#work">Work</MenuLink>
             </li>
             <li>
@@ -85,9 +89,6 @@ export default function Navbar() {
             </li>
             <li>
               <MenuLink to="/#testimonials">Testimonials</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#process">Process</MenuLink>
             </li>
             <li>
               <MenuLink to="/#pricing">Pricing</MenuLink>
@@ -121,6 +122,9 @@ export default function Navbar() {
                 <MenuLink to="/#services" onNavigate={() => setIsMenuOpen(false)}>Services</MenuLink>
               </li>
               <li>
+                <MenuLink to="/#process" onNavigate={() => setIsMenuOpen(false)}>Process</MenuLink>
+              </li>
+              <li>
                 <MenuLink to="/#work" onNavigate={() => setIsMenuOpen(false)}>Work</MenuLink>
               </li>
               <li>
@@ -128,9 +132,6 @@ export default function Navbar() {
               </li>
               <li>
                 <MenuLink to="/#testimonials" onNavigate={() => setIsMenuOpen(false)}>Testimonials</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#process" onNavigate={() => setIsMenuOpen(false)}>Process</MenuLink>
               </li>
               <li>
                 <MenuLink to="/#pricing" onNavigate={() => setIsMenuOpen(false)}>Pricing</MenuLink>

@@ -21,16 +21,36 @@ const DashboardPage = lazy(() => import("./components/Services/DashboardPage"));
 const AIAutomationPage = lazy(() => import("./components/Services/AIAutomationPage"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
+const introSessionKey = "icc-intro-seen"
+
+function shouldShowIntroLoader() {
+  if (typeof window === "undefined") return false
+
+  try {
+    return window.sessionStorage.getItem(introSessionKey) !== "true"
+  } catch {
+    return true
+  }
+}
+
 function App() {
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(shouldShowIntroLoader);
 
   useEffect(() => {
+    if (!showLoader) return
+
+    try {
+      window.sessionStorage.setItem(introSessionKey, "true")
+    } catch {
+      // The intro still works when browser storage is unavailable.
+    }
+
     const timer = setTimeout(() => {
       setShowLoader(false);
     }, 1600);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showLoader]);
 
   return (
 

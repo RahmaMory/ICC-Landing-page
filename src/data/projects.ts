@@ -28,6 +28,11 @@ export interface Project {
   content: string
   url: string
   featured?: boolean
+  caseStudy?: {
+    challenge: string
+    delivery: string
+    outcome: string
+  }
 }
 
 export const projects: Project[] = [
@@ -45,6 +50,11 @@ export const projects: Project[] = [
     content: "The platform brings property listings, search, agent profiles, authentication, and a role-based management dashboard into one bilingual experience. Teams can add and update listings, manage agents, and keep the public property catalog connected to daily operations.",
     url: "https://re-max-in-town.vercel.app/",
     featured: true,
+    caseStudy: {
+      challenge: "Bring public property discovery and daily team operations into one connected platform.",
+      delivery: "A bilingual property experience with search, authentication, agent profiles, and a role-based management dashboard.",
+      outcome: "Listings, agents, and public property information can be managed through one clear workflow.",
+    },
   },
   {
     id: 2,
@@ -60,6 +70,11 @@ export const projects: Project[] = [
     content: "The CRM organizes clients, properties, units, follow-ups, deals, reports, users, and daily activity in one practical dashboard. Clear statuses and role-aware screens help the sales team see priorities and keep every opportunity moving.",
     url: "https://icc-real-estate-crm.vercel.app/",
     featured: true,
+    caseStudy: {
+      challenge: "Give real-estate teams a clearer way to organize leads, properties, follow-ups, and active deals.",
+      delivery: "A focused CRM with pipeline views, role-aware screens, activity tracking, reports, and daily priorities.",
+      outcome: "The sales journey is easier to follow from the first inquiry through the final deal.",
+    },
   },
   {
     id: 3,
@@ -75,6 +90,11 @@ export const projects: Project[] = [
     content: "The platform combines a public course experience with member accounts, course discovery, learner access, and a personal dashboard. Its Arabic-first interface keeps educational content, subscriptions, and the learning journey clear and easy to navigate.",
     url: "https://fiqh-el-3alaqat.vercel.app/",
     featured: true,
+    caseStudy: {
+      challenge: "Turn Arabic educational content into a structured learning journey with clear member access.",
+      delivery: "An Arabic-first platform with course discovery, learner accounts, organized access, and a personal dashboard.",
+      outcome: "Visitors can move clearly from discovering the content to joining and continuing their learning.",
+    },
   },
   {
     id: 4,

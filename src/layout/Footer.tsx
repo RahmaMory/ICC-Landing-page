@@ -141,8 +141,9 @@ export default function Footer() {
           </div>
 
           <p className="text-gray-400 text-sm mb-6">
-            ICC — IO Code Company is a modern software studio for startups and growing businesses.
-            Building the future, one click at a time.
+            ICC — IO Code Company builds practical websites, apps, stores,
+            dashboards, and automation for growing businesses. Founded in Sadat
+            City, with a branch in 6th of October City.
           </p>
 
           

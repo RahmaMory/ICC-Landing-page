@@ -16,8 +16,9 @@ export default function MainLayout() {
       <div id="main-content" tabIndex={-1} className="m-auto w-[97%] outline-none">
         <Suspense
           fallback={
-            <div className="flex min-h-[50vh] items-center justify-center" role="status" aria-label="Loading page">
-              <span className="h-10 w-10 animate-spin rounded-full border-2 border-white/20 border-t-cyan-400" />
+            <div className="flex min-h-[65vh] flex-col items-center justify-center gap-4" role="status" aria-live="polite">
+              <span className="h-11 w-11 animate-spin rounded-full border-2 border-white/15 border-t-cyan-400" aria-hidden="true" />
+              <span className="text-sm font-medium tracking-wide text-white/55">Loading page…</span>
             </div>
           }
         >

@@ -59,11 +59,6 @@ import { servicesData } from "../data/servicesData";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../lib/motion";
 
-const deliveredProjects = servicesData.reduce(
-  (total, service) => total + (service.count ?? 0),
-  0,
-);
-
 export default function Expertise() {
   return (
     <div className="bg-[#090E18] py-16 text-white">
@@ -93,16 +88,13 @@ export default function Expertise() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
         variants={fadeUp}
-        className="mx-auto mt-6 flex max-w-2xl flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4"
+        className="mx-auto mt-6 flex max-w-2xl items-center justify-center text-center"
       >
-        <span className="rounded-full border border-blue-400/25 bg-blue-400/10 px-4 py-2 text-sm font-semibold text-blue-300">
-          {deliveredProjects >= 100 ? "100+" : deliveredProjects} projects across our services
-        </span>
         <Link
           to="/projects"
-          className="text-sm text-gray-400 underline-offset-4 transition hover:text-white hover:underline"
+          className="text-sm text-blue-300 underline-offset-4 transition hover:text-white hover:underline"
         >
-          Explore selected public work
+          Explore a selected sample of our public work →
         </Link>
       </motion.div>
 
@@ -124,14 +116,20 @@ export default function Expertise() {
                 className="group relative overflow-hidden bg-[#0D131F] border border-gray-800 rounded-2xl p-6 hover:scale-105 transition duration-500 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-500 block"
               >
                 {item.comingSoon && (
-                  <span className="absolute right-4 top-4 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300 transition-colors group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white">
+                  <span className="absolute right-4 top-4 z-30 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300 transition-colors group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white">
                     Coming Soon
+                  </span>
+                )}
+
+                {!item.comingSoon && (
+                  <span className="absolute right-4 top-4 z-30 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-[11px] font-semibold text-blue-300 lg:hidden">
+                    +{item.count} Projects
                   </span>
                 )}
 
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 z-20 flex translate-x-24 scale-90 items-center justify-center text-2xl font-bold text-white opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-70 group-focus-visible:translate-x-0 group-focus-visible:scale-100 group-focus-visible:opacity-70 sm:text-3xl"
+                  className="pointer-events-none absolute inset-0 z-20 hidden translate-x-24 scale-90 items-center justify-center text-3xl font-bold text-white opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-70 group-focus-visible:translate-x-0 group-focus-visible:scale-100 group-focus-visible:opacity-70 lg:flex"
                 >
                   {item.comingSoon ? "Coming Soon" : `+${item.count} Projects`}
                 </span>

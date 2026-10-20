@@ -210,6 +210,7 @@ Project Details: ${formData.projectDetails}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.99 }}
                 type="submit"
+                aria-label={buttonState === "ready" ? "WhatsApp is ready — send your message" : "Continue on WhatsApp"}
                 className={`
                   w-full mt-4 rounded-xl py-4 font-medium text-white
                   transition-all duration-300
@@ -221,7 +222,7 @@ Project Details: ${formData.projectDetails}
                   }
                 `}
               >
-                <span className="flex items-center justify-center gap-2" role="status">
+                <span className="flex items-center justify-center gap-2" aria-live="polite">
                   {buttonState === "ready" && (
                     <>
                       <CheckCircle2 className="h-5 w-5 animate-pulse" />

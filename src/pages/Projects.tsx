@@ -7,6 +7,7 @@ import {
   type ProjectCategory,
 } from "../data/projects"
 import { servicesData } from "../data/servicesData"
+import CaseStudyHighlights from "../components/CaseStudyHighlights"
 
 type ProjectFilter = "All" | ProjectCategory
 
@@ -44,8 +45,8 @@ export default function Projects() {
               <span className="block bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Real Businesses.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/58 sm:text-lg">
-              Explore live websites, ordering experiences, business platforms,
-              dashboards, and games delivered by ICC.
+              Explore a selected public portfolio of live websites, ordering
+              experiences, business platforms, dashboards, and games delivered by ICC.
             </p>
           </div>
 
@@ -53,7 +54,7 @@ export default function Projects() {
             <div className="min-w-36 rounded-2xl border border-white/10 bg-white/4 p-5">
               <BriefcaseBusiness className="h-5 w-5 text-blue-400" aria-hidden="true" />
               <strong className="mt-5 block text-3xl font-semibold">{projects.length}</strong>
-              <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-white/45">Live projects</span>
+              <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-white/45">Public projects</span>
             </div>
             <div className="min-w-36 rounded-2xl border border-white/10 bg-white/4 p-5">
               <Layers3 className="h-5 w-5 text-cyan-300" aria-hidden="true" />
@@ -79,6 +80,8 @@ export default function Projects() {
             })}
           </div>
         </div>
+
+        {activeFilter === "All" ? <CaseStudyHighlights /> : null}
 
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-5">
           <div className="text-left">

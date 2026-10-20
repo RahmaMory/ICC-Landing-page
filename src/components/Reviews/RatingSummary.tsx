@@ -1,8 +1,11 @@
 import { Star } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import ReviewModal from "./ReviewModal"
 
-const ratings = [
+const baseReviews = 1119152
+const displayRating = 4.8
+
+const baseRatingDistribution = [
   { star: 5, percent: 85 },
   { star: 4, percent: 10 },
   { star: 3, percent: 3 },
@@ -10,27 +13,56 @@ const ratings = [
   { star: 1, percent: 1 },
 ]
 
-function getStoredReviewsCount() {
+function getStoredRatings(): number[] {
+  if (typeof window === "undefined") return []
+
   try {
     const saved: unknown = JSON.parse(localStorage.getItem("reviews") || "[]")
-    return Array.isArray(saved) ? saved.length : 0
+    if (!Array.isArray(saved)) return []
+
+    return saved.flatMap((review): number[] => {
+      if (typeof review !== "object" || review === null) return []
+      const rating = (review as { rating?: unknown }).rating
+      return typeof rating === "number" && rating >= 1 && rating <= 5
+        ? [rating]
+        : []
+    })
   } catch {
-    return 0
+    return []
   }
 }
 
-export default function RatingSummary() {
-  const baseReviews = 1119152
-  const displayRating = 4.8
+function calculateRatingDistribution(storedRatings: number[]) {
+  const seededCounts = new Map(
+    baseRatingDistribution.map((item) => [
+      item.star,
+      Math.round(baseReviews * (item.percent / 100)),
+    ]),
+  )
 
+  storedRatings.forEach((rating) => {
+    seededCounts.set(rating, (seededCounts.get(rating) ?? 0) + 1)
+  })
+
+  const total = [...seededCounts.values()].reduce((sum, count) => sum + count, 0)
+
+  return baseRatingDistribution.map((item) => ({
+    star: item.star,
+    percent: Number((((seededCounts.get(item.star) ?? 0) / total) * 100).toFixed(4)),
+  }))
+}
+
+export default function RatingSummary() {
   const [hover, setHover] = useState(0)
   const [rating, setRating] = useState(0)
   const [open, setOpen] = useState(false)
   const [submissionMessage, setSubmissionMessage] = useState("")
-
-  const [reviewsCount, setReviewsCount] = useState<number>(() => {
-    return baseReviews + getStoredReviewsCount()
-  })
+  const [storedRatings, setStoredRatings] = useState<number[]>(getStoredRatings)
+  const ratingDistribution = useMemo(
+    () => calculateRatingDistribution(storedRatings),
+    [storedRatings],
+  )
+  const reviewsCount = baseReviews + storedRatings.length
 
   const [animatedBars, setAnimatedBars] = useState([0, 0, 0, 0, 0])
 
@@ -51,7 +83,7 @@ export default function RatingSummary() {
           timers.forEach(clearTimeout);
           timers = [];
 
-          ratings.forEach((item, index) => {
+          ratingDistribution.forEach((item, index) => {
             const timer = setTimeout(() => {
               setAnimatedBars((prev) => {
                 const next = [...prev];
@@ -79,7 +111,7 @@ export default function RatingSummary() {
       timers.forEach(clearTimeout);
       observer.disconnect();
     };
-  }, []);
+  }, [ratingDistribution]);
 
   function handleClick(value: number) {
     setRating(value)
@@ -93,7 +125,7 @@ export default function RatingSummary() {
   }
 
   function handleReviewSubmitted(hasWrittenReview: boolean) {
-    setReviewsCount(baseReviews + getStoredReviewsCount())
+    setStoredRatings(getStoredRatings())
     setSubmissionMessage(
       hasWrittenReview
         ? "WhatsApp is ready — send the message to share your review with ICC."
@@ -155,7 +187,7 @@ export default function RatingSummary() {
 
           {/* RIGHT */}
           <div className="w-full flex-1">
-            {ratings.map((item, index) => (
+            {ratingDistribution.map((item, index) => (
               <div key={item.star} className="mb-3 flex items-center gap-4">
                 <span className="w-4 text-gray-500">
                   {item.star}

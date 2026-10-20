@@ -45,7 +45,6 @@
 
 
 
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { pricingPlans} from "../../data/pricing"
@@ -53,21 +52,20 @@ import PricingCard from "./PricingCard"
 import { fadeUp, staggerContainer } from "../../lib/motion"
 
 export default function PricingSection() {
-  const [selected, setSelected] = useState<string>("Growth")
-
-
-
   return (
     <section className="bg-[#0B121E] text-white py-24">
       <div className="container mx-auto px-6">
         <motion.h2
-          className="text-3xl font-bold text-center mb-16"
+          className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeUp}
         >
-          Simple Pricing
+          <span className="block text-3xl font-bold">Starting Prices</span>
+          <span className="mx-auto mt-4 block max-w-2xl text-sm font-normal leading-6 text-gray-400 sm:text-base">
+            Final scope, timeline, and cost are confirmed after the discovery discussion.
+          </span>
         </motion.h2>
 
         <motion.div
@@ -81,9 +79,6 @@ export default function PricingSection() {
             <PricingCard
               key={plan.name}
               plan={plan}
-              isSelected={selected === plan.name}
-              onSelect={() => setSelected(plan.name)}
-              href={plan.href} 
             />
           ))}
         </motion.div>

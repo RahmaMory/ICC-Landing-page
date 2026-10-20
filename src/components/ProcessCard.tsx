@@ -51,6 +51,15 @@ export default function ProcessCard({ step }: Props) {
       <p className="text-gray-400 text-md pt-4">
         {step.description}
       </p>
+
+      <div className="mt-5 border-t border-white/8 pt-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/35">
+          What you receive
+        </p>
+        <p className="mt-2 text-sm font-medium text-blue-300">
+          {step.deliverable}
+        </p>
+      </div>
     </motion.div>
   );
 }
