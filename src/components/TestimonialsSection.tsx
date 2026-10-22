@@ -103,6 +103,7 @@ import "swiper/css"
 import "swiper/css/navigation"
 
 const reviewsUpdatedEvent = "icc-reviews-updated"
+const arabicTextPattern = /[\u0600-\u06FF]/
 const emptyReviewPlaceholders = new Set([
   "no comment provided",
   "تجربة جيدة مع فريق icc.",
@@ -111,6 +112,17 @@ const emptyReviewPlaceholders = new Set([
 function hasWrittenReview(text?: string): boolean {
   const normalizedText = text?.trim().toLowerCase() || ""
   return Boolean(normalizedText) && !emptyReviewPlaceholders.has(normalizedText)
+}
+
+interface StoredReview {
+  id?: number
+  name?: string
+  role?: string
+  company?: string
+  rating?: number
+  text?: string
+  image?: string
+  consentToPublish?: boolean
 }
 
 function loadUserTestimonials(): Testimonial[] {
@@ -122,23 +134,28 @@ function loadUserTestimonials(): Testimonial[] {
 
     return parsed.flatMap((item, index): Testimonial[] => {
       const review = typeof item === "object" && item !== null
-        ? item as Partial<Testimonial>
+        ? item as StoredReview
         : {}
 
       const reviewText = review.text?.trim() || ""
 
-      if (!hasWrittenReview(reviewText)) {
+      if (!hasWrittenReview(reviewText) || review.consentToPublish !== true) {
         return []
       }
 
+      const language = arabicTextPattern.test(reviewText) ? "ar-EG" : "en"
+
       return [{
         id: typeof review.id === "number" ? review.id : 10_000 + index,
+        projectName: review.company?.trim() || "ICC website review",
         name: review.name?.trim() || "زائر",
         role: review.role?.trim() || "عميل",
         company: review.company?.trim() || "",
         rating: typeof review.rating === "number" ? review.rating : 5,
         text: reviewText,
         image: review.image || "/avatars/default.webp",
+        language,
+        approvalStatus: "approved",
       }]
     })
   } catch {
@@ -172,6 +189,7 @@ export default function TestimonialsSection() {
     ...[...writtenUserTestimonials].reverse(),
     ...initialTestimonials,
   ]
+  const enableLoop = testimonials.length > 3
 
   return (
     <section className="bg-[#0D1421] text-white py-24 overflow-visible">
@@ -207,8 +225,8 @@ export default function TestimonialsSection() {
             className="testimonials-swiper"
             modules={[Navigation, Autoplay, A11y]}
             navigation
-            loop
-            centeredSlides
+            loop={enableLoop}
+            centeredSlides={enableLoop}
             a11y={{ enabled: true }}
             autoplay={prefersReducedMotion ? false : {
               delay: 7000,

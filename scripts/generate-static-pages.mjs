@@ -35,10 +35,19 @@ function replaceMeta(html, route, metadata, noIndex = false) {
     .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
 
-  output = output.replace(
-    /<meta name="twitter:card" content="[^"]*"\s*\/>/,
-    `<meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${title}" />\n    <meta name="twitter:description" content="${description}" />`,
-  )
+  output = output
+    .replace(
+      /<meta name="twitter:card" content="[^"]*"\s*\/>/,
+      '<meta name="twitter:card" content="summary_large_image" />',
+    )
+    .replace(
+      /<meta name="twitter:title" content="[^"]*"\s*\/>/,
+      `<meta name="twitter:title" content="${title}" />`,
+    )
+    .replace(
+      /<meta name="twitter:description" content="[^"]*"\s*\/>/,
+      `<meta name="twitter:description" content="${description}" />`,
+    )
 
   if (noIndex) {
     output = output.replace("</head>", '    <meta name="robots" content="noindex, nofollow" />\n  </head>')

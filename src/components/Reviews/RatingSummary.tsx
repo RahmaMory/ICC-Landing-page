@@ -2,15 +2,16 @@ import { Star } from "lucide-react"
 import { useState, useEffect, useMemo, useRef } from "react"
 import ReviewModal from "./ReviewModal"
 
-const baseReviews = 1119152
+// Preview values awaiting confirmation from ICC's approved review records.
+const baseReviews = 20
 const displayRating = 4.8
 
-const baseRatingDistribution = [
-  { star: 5, percent: 85 },
-  { star: 4, percent: 10 },
-  { star: 3, percent: 3 },
-  { star: 2, percent: 1 },
-  { star: 1, percent: 1 },
+const baseRatingCounts = [
+  { star: 5, count: 16 },
+  { star: 4, count: 4 },
+  { star: 3, count: 0 },
+  { star: 2, count: 0 },
+  { star: 1, count: 0 },
 ]
 
 function getStoredRatings(): number[] {
@@ -34,9 +35,9 @@ function getStoredRatings(): number[] {
 
 function calculateRatingDistribution(storedRatings: number[]) {
   const seededCounts = new Map(
-    baseRatingDistribution.map((item) => [
+    baseRatingCounts.map((item) => [
       item.star,
-      Math.round(baseReviews * (item.percent / 100)),
+      item.count,
     ]),
   )
 
@@ -46,7 +47,7 @@ function calculateRatingDistribution(storedRatings: number[]) {
 
   const total = [...seededCounts.values()].reduce((sum, count) => sum + count, 0)
 
-  return baseRatingDistribution.map((item) => ({
+  return baseRatingCounts.map((item) => ({
     star: item.star,
     percent: Number((((seededCounts.get(item.star) ?? 0) / total) * 100).toFixed(4)),
   }))
@@ -141,7 +142,7 @@ export default function RatingSummary() {
         </h2>
 
         <p className="mb-10 max-w-xl text-gray-500">
-          See how clients rate their experience with ICC.
+          Client feedback and rating experience with ICC.
         </p>
 
         <div className="flex flex-col items-center gap-12 md:flex-row">
@@ -181,7 +182,7 @@ export default function RatingSummary() {
             </div>
 
             <p className="mt-2 text-gray-500">
-              {reviewsCount.toLocaleString()}
+              {reviewsCount.toLocaleString()} reviews
             </p>
           </div>
 

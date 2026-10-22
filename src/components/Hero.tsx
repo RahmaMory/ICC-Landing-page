@@ -39,9 +39,9 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-6 max-w-xl text-lg text-gray-400 sm:text-xl"
             >
-              Turn your idea into a clear, launch-ready digital product. ICC — IO
-              Code Company brings strategy, design, and development together for
-              startups and growing businesses.
+              ICC — IO Code Company is a software development company in Egypt
+              building custom websites, mobile apps, CRM systems, SaaS platforms,
+              and practical AI-powered solutions for growing businesses.
             </motion.p>
 
             <motion.div
