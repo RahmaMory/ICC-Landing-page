@@ -43,8 +43,8 @@ const privacySections: PrivacySection[] = [
     id: "ratings",
     title: "4. Ratings and Reviews",
     paragraphs: [
-      "When you submit a rating or review, the website may keep a local copy in your browser so you can see it on the same device. This local copy is not automatically published to other visitors and is not a public website database submission.",
-      "WhatsApp may open with a prepared copy of your rating or review. ICC receives it only if you send the WhatsApp message. A written review may be considered for publication only when the reviewer has provided the requested consent. ICC may select, format, shorten, or decline a review for presentation while preserving its meaning, and may remove published material when reasonably requested.",
+      "When you share a rating or review, the website prepares a WhatsApp message containing the details you entered. Opening WhatsApp does not mean the message was sent; ICC receives the review only if you choose to press Send in WhatsApp.",
+      "The review form does not currently store ratings or reviews in a website database or save them to localStorage in your browser. You may send written feedback whether or not you grant publication permission. ICC will consider a written review for public use only when you have explicitly provided that permission.",
     ],
   },
   {
