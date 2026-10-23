@@ -6,7 +6,7 @@ Internal pre-production checklist. This file is not rendered on the website.
 
 - `100+ Projects Shipped`: preserved as requested. Keep an internal project list or delivery register that supports this total.
 - `4.8`: preserved in the local preview. Confirm the source ratings and calculation before publishing this value as a customer average.
-- `20 reviews`: configured in the local preview at the requested minimum. Confirm that at least 20 real rating records exist before publishing the count.
+- `32 reviews`: configured in the local preview at the requested count. Confirm that at least 32 real rating records exist before publishing the count.
 
 ## Structured data rule
 

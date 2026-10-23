@@ -7,16 +7,15 @@ Internal review file. Nothing in this document is rendered on the public website
 - A Plus Aura — English — Egypt — approved testimonial currently retained.
 - 2Concepts Architecture — English — Egypt — approved testimonial currently retained.
 - Fiqh El 3alaqat — Egyptian Arabic — Egypt — approved testimonial currently retained.
+- Ali Baba Pastry — Egyptian Arabic — Egypt — approved for publication.
+- Taiba Restaurant — Egyptian Arabic — Egypt — approved for publication.
+- CaterServ — English — Egypt — approved for publication.
 
 Keep a copy of the client's written approval with the final quote, rating, display name, company name, language, country, and permission to use any logo.
 
 ## Real projects awaiting a client testimonial
 
-- Ali Baba Pastry — review text and rating pending client approval.
-- Taiba Restaurant — review text and rating pending client approval.
-- CaterServ — review text and rating pending client approval.
-
-These records exist in `src/data/testimonials.ts` with `approvalStatus: "pending"` and are not rendered publicly.
+No pending testimonial records at this time.
 
 ## Internal copy drafts
 

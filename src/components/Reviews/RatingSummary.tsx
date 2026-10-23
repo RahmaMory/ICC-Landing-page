@@ -3,12 +3,12 @@ import { useState, useEffect, useMemo, useRef } from "react"
 import ReviewModal from "./ReviewModal"
 
 // Preview values awaiting confirmation from ICC's approved review records.
-const baseReviews = 20
+const baseReviews = 32
 const displayRating = 4.8
 
 const baseRatingCounts = [
-  { star: 5, count: 16 },
-  { star: 4, count: 4 },
+  { star: 5, count: 26 },
+  { star: 4, count: 6 },
   { star: 3, count: 0 },
   { star: 2, count: 0 },
   { star: 1, count: 0 },

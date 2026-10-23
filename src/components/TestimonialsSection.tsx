@@ -229,7 +229,7 @@ export default function TestimonialsSection() {
             centeredSlides={enableLoop}
             a11y={{ enabled: true }}
             autoplay={prefersReducedMotion ? false : {
-              delay: 7000,
+              delay: 6000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
