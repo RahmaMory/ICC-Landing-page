@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "How long does a typical project take?",
     answer:
-      "Most projects are delivered within 2-3 weeks. Larger or more complex projects may take longer depending on scope and feedback.",
+      "Simple websites can start at 7-10 business days. Multi-page websites or projects with custom functionality often take 2-3 weeks, while more complex systems require longer depending on scope and feedback.",
   },
   {
     question: "Do you provide hosting?",
@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "What payment methods do you accept?",
     answer:
-      "We accept bank transfers, credit cards (Stripe), and crypto for international clients.",
+      "We accept bank transfers, credit cards (Stripe), and crypto for international clients. Stage-based payment plans can be agreed according to the project scope.",
   }
 
 ]

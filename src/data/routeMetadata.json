@@ -50,5 +50,27 @@
   "/services/ai-automation": {
     "title": "AI Automation Solutions for Businesses | ICC Egypt",
     "description": "Practical AI automation solutions for repetitive tasks, customer support, document processing, CRM integrations, and connected business workflows."
+  },
+  "/ar/blog": {
+    "title": "مدونة ICC العربية | تصميم المواقع وتطوير البرمجيات",
+    "description": "مقالات عملية من ICC — IO Code Company عن تصميم المواقع، تطوير البرمجيات، تجربة المستخدم، الأداء ومحركات البحث.",
+    "language": "ar",
+    "direction": "rtl",
+    "locale": "ar_EG",
+    "ogType": "website",
+    "lastModified": "2026-10-24",
+    "sitemapPriority": "0.8"
+  },
+  "/ar/blog/website-design-cost-egypt": {
+    "title": "تكلفة تصميم موقع إلكتروني في مصر 2026 | ICC",
+    "description": "تعرف على عوامل تكلفة تصميم موقع إلكتروني في مصر، ومدة التنفيذ، وما تشمل الخدمة من تصميم وبرمجة واختبارات ودعم مع ICC.",
+    "language": "ar",
+    "direction": "rtl",
+    "locale": "ar_EG",
+    "ogType": "article",
+    "publishedTime": "2026-10-24",
+    "modifiedTime": "2026-10-24",
+    "lastModified": "2026-10-24",
+    "sitemapPriority": "0.9"
   }
 }

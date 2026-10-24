@@ -19,6 +19,8 @@ const ShopifyPage = lazy(() => import("./components/Services/ShopifyPage"));
 const EcommercePage = lazy(() => import("./components/Services/EcommercePage"));
 const DashboardPage = lazy(() => import("./components/Services/DashboardPage"));
 const AIAutomationPage = lazy(() => import("./components/Services/AIAutomationPage"));
+const ArabicBlog = lazy(() => import("./pages/ArabicBlog"));
+const WebsiteDesignCostArticle = lazy(() => import("./pages/WebsiteDesignCostArticle"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
 const introSessionKey = "icc-intro-seen"
@@ -77,6 +79,8 @@ function App() {
           <Route path="/services/ecommerce" element={<EcommercePage />} />
           <Route path="/services/dashboard" element={<DashboardPage />} />
           <Route path="/services/ai-automation" element={<AIAutomationPage />} />
+          <Route path="/ar/blog" element={<ArabicBlog />} />
+          <Route path="/ar/blog/website-design-cost-egypt" element={<WebsiteDesignCostArticle />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

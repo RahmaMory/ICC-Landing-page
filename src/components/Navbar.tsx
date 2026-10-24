@@ -85,6 +85,9 @@ export default function Navbar() {
               <MenuLink to="/#work">Work</MenuLink>
             </li>
             <li>
+              <MenuLink to="/ar/blog">Blog</MenuLink>
+            </li>
+            <li>
               <MenuLink to="/#industries">Industries</MenuLink>
             </li>
             <li>
@@ -126,6 +129,9 @@ export default function Navbar() {
               </li>
               <li>
                 <MenuLink to="/#work" onNavigate={() => setIsMenuOpen(false)}>Work</MenuLink>
+              </li>
+              <li>
+                <MenuLink to="/ar/blog" onNavigate={() => setIsMenuOpen(false)}>Blog</MenuLink>
               </li>
               <li>
                 <MenuLink to="/#industries" onNavigate={() => setIsMenuOpen(false)}>Industries</MenuLink>

@@ -26,12 +26,19 @@ function replaceMeta(html, route, metadata, noIndex = false) {
   const canonicalUrl = `${siteUrl}${route === "/" ? "" : route}`
   const title = escapeHtml(metadata.title)
   const description = escapeHtml(metadata.description)
+  const language = metadata.language || "en"
+  const direction = metadata.direction || "ltr"
+  const locale = metadata.locale || "en_US"
+  const ogType = metadata.ogType || "website"
 
   let output = html
+    .replace(/<html lang="[^"]*"(?: dir="[^"]*")?>/, `<html lang="${language}" dir="${direction}">`)
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/>/, `<meta name="description" content="${description}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${title}" />`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${description}" />`)
+    .replace(/<meta property="og:type" content="[^"]*"\s*\/>/, `<meta property="og:type" content="${ogType}" />`)
+    .replace(/<meta property="og:locale" content="[^"]*"\s*\/>/, `<meta property="og:locale" content="${locale}" />`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
 
@@ -51,6 +58,20 @@ function replaceMeta(html, route, metadata, noIndex = false) {
 
   if (noIndex) {
     output = output.replace("</head>", '    <meta name="robots" content="noindex, nofollow" />\n  </head>')
+  }
+
+  if (metadata.publishedTime) {
+    output = output.replace(
+      "</head>",
+      `    <meta property="article:published_time" content="${metadata.publishedTime}" />\n  </head>`,
+    )
+  }
+
+  if (metadata.modifiedTime) {
+    output = output.replace(
+      "</head>",
+      `    <meta property="article:modified_time" content="${metadata.modifiedTime}" />\n  </head>`,
+    )
   }
 
   return output
@@ -127,7 +148,16 @@ await writeFile(
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapEntries.map((route) => `  <url><loc>${siteUrl}${route}</loc></url>`).join("\n")}
+${sitemapEntries.map((route) => {
+  const metadata = routeMetadata[route]
+  const lastModified = metadata.lastModified
+    ? `<lastmod>${metadata.lastModified}</lastmod>`
+    : ""
+  const priority = metadata.sitemapPriority
+    ? `<priority>${metadata.sitemapPriority}</priority>`
+    : ""
+  return `  <url><loc>${siteUrl}${route}</loc>${lastModified}${priority}</url>`
+}).join("\n")}
 </urlset>
 `
 
