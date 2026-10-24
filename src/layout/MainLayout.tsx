@@ -13,7 +13,7 @@ export default function MainLayout() {
         Skip to main content
       </a>
       <Navbar />
-      <div id="main-content" tabIndex={-1} className="m-auto w-[97%] outline-none">
+      <div id="main-content" tabIndex={-1} className="w-full outline-none">
         <Suspense
           fallback={
             <div className="flex min-h-[65vh] flex-col items-center justify-center gap-4" role="status" aria-live="polite">
