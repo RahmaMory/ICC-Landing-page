@@ -283,28 +283,22 @@ export default function WebsiteDesignCostArticle() {
                 الصيانة. عرض ICC النهائي يُحدد بعد مراجعة نطاق المشروع.
               </p>
               <aside className="mt-6 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6" aria-labelledby="pricing-methodology-title">
-                <h3 id="pricing-methodology-title" className="text-lg font-bold text-white">منهجية الأسعار والمصادر</h3>
+                <h3 id="pricing-methodology-title" className="text-lg font-bold text-white">منهجية الأسعار</h3>
                 <p className="mt-3 leading-8 text-white/62">
-                  هذه النطاقات مقارنة تحريرية بين أسعار منشورة في أدلة مصرية خلال
-                  2026، وليست متوسطات محسوبة من عينة إحصائية أو دراسة شاملة للسوق.
-                  راجعنا نطاقات المشروعات المتقاربة، ثم أبقينا النطاقات المعتمدة في
-                  هذا الدليل كما هي لتكوين تصور أولي فقط؛ ويظل عرض السعر النهائي مرتبطًا بنطاق العمل.
+                  أُعدت هذه الأسعار من خلال بحث تحريري ومقارنة نطاقات منشورة لمشروعات
+                  متقاربة في السوق المصري خلال 2026. وهي نطاقات سوقية استرشادية تساعد
+                  على تكوين تصور أولي، وليست متوسطات محسوبة من عينة إحصائية أو عروض
+                  أسعار ملزمة من ICC؛ إذ يُحدد العرض النهائي بعد مراجعة نطاق العمل.
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm leading-7">
                   <li>
-                    <a href="https://www.e-rankers.com/ar/blog/website-cost-egypt-ar.html" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
-                      E-Rankers: دليل الأسعار 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
-                    </a>
+                    <Link to="/services/mvp-website" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">خدمات تطوير المواقع</Link>
                   </li>
                   <li>
-                    <a href="https://smweb.studio/ar/guides/website-cost-in-egypt" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
-                      SM Web Studio: تكلفة المواقع 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
-                    </a>
+                    <Link to="/projects" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">سابقة أعمال ICC</Link>
                   </li>
                   <li>
-                    <a href="https://hexapert.com/website-design-cost-egypt/" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
-                      Hexapert: نطاقات السوق 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
-                    </a>
+                    <Link to="/#contact" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">اطلب تقديرًا لمشروعك</Link>
                   </li>
                 </ul>
               </aside>
