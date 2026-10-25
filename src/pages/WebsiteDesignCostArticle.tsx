@@ -6,7 +6,7 @@ const articleFaqs = [
   {
     question: "ما تكلفة تصميم موقع إلكتروني في مصر؟",
     answer:
-      "تختلف التكلفة حسب نوع الموقع وعدد الصفحات والتصميم والخصائص ولوحة التحكم والتكاملات المطلوبة. تحدد ICC السعر بعد فهم الاحتياجات وإعداد نطاق عمل واضح، بدلًا من استخدام رقم واحد لمشروعات مختلفة.",
+      "كنطاقات سوقية استرشادية في 2026، قد تتراوح صفحة الهبوط بين 5,000 و15,000 جنيه، وموقع الشركة بين 10,000 و40,000 جنيه، والمتجر الإلكتروني بين 25,000 و80,000 جنيه أو أكثر، بينما تبدأ الأنظمة المخصصة غالبًا من 50,000 جنيه وقد تتجاوز 250,000 جنيه. هذه الأرقام ليست عرض سعر من ICC؛ فالتكلفة النهائية تتحدد بعد معرفة الصفحات والتصميم والخصائص والتكاملات المطلوبة.",
   },
   {
     question: "هل يمكن معرفة السعر قبل بدء المشروع؟",
@@ -146,6 +146,9 @@ export default function WebsiteDesignCostArticle() {
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
                 نُشر في <time dateTime={websiteDesignCostPost.publishedDate}>{websiteDesignCostPost.publishedLabel}</time>
               </span>
+              <span>
+                آخر تحديث <time dateTime={websiteDesignCostPost.updatedDate}>{websiteDesignCostPost.updatedLabel}</time>
+              </span>
               <span className="inline-flex items-center gap-2">
                 <Clock3 className="h-4 w-4" aria-hidden="true" />
                 {websiteDesignCostPost.readingTime}
@@ -174,7 +177,8 @@ export default function WebsiteDesignCostArticle() {
               <aside className="mt-9 rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.07] p-7 sm:p-8" aria-labelledby="quick-answer-title">
                 <h2 id="quick-answer-title" className="text-2xl font-bold text-cyan-200">الإجابة المختصرة</h2>
                 <ul className="mt-5 space-y-4 text-base leading-8 text-white/75">
-                  <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />لا يوجد سعر واحد يناسب كل المواقع؛ التكلفة تتبع نطاق العمل.</li>
+                  <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />تبدأ صفحة الهبوط في السوق غالبًا من نحو 5,000 جنيه، بينما تبدأ المواقع والأنظمة الأكبر من نطاقات أعلى.</li>
+                  <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />الأرقام المنشورة هنا متوسطات سوقية استرشادية، وليست عرض سعر ثابتًا من ICC.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />قد يبدأ الموقع البسيط من 7 إلى 10 أيام عمل.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />المواقع متعددة الصفحات أو ذات الوظائف البرمجية تستغرق غالبًا من أسبوعين إلى ثلاثة أسابيع.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />الأنظمة الأكثر تعقيدًا تحتاج إلى مراحل ومدة أطول.</li>
@@ -200,11 +204,11 @@ export default function WebsiteDesignCostArticle() {
             </section>
 
             <section id="website-types" className={sectionClass}>
-              <h2 className={headingClass}>نوع الموقع يغير التكلفة والمدة</h2>
+              <h2 className={headingClass}>متوسط أسعار تصميم المواقع في مصر 2026</h2>
               <p className={paragraphClass}>
-                قبل مقارنة العروض، حدد نوع الحل الذي يحتاجه نشاطك. أحيانًا تكفي صفحة
-                هبوط مركزة، وأحيانًا تكون الحاجة الفعلية إلى موقع شركة متكامل أو متجر
-                أو نظام مخصص.
+                تساعدك النطاقات التالية على تكوين ميزانية أولية قبل طلب عرض السعر.
+                وهي خلاصة مقارنة لنطاقات معلنة في السوق المصري خلال 2026، وليست تسعيرة
+                موحدة؛ فقد يكون المشروع أقل أو أعلى وفق مستوى التصميم والوظائف والخدمة.
               </p>
               <div className="mt-8 overflow-x-auto rounded-2xl border border-white/10">
                 <table className="w-full min-w-[56rem] border-collapse text-right">
@@ -212,21 +216,22 @@ export default function WebsiteDesignCostArticle() {
                     <tr>
                       <th className="px-5 py-4 font-semibold">نوع المشروع</th>
                       <th className="px-5 py-4 font-semibold">الاحتياج المعتاد</th>
+                      <th className="px-5 py-4 font-semibold">النطاق السوقي الاسترشادي</th>
                       <th className="px-5 py-4 font-semibold">ما يؤثر في التكلفة</th>
-                      <th className="px-5 py-4 font-semibold">مستوى التكلفة المعتاد</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/8 text-white/68">
-                    <tr><td className="px-5 py-4 font-semibold text-white">صفحة هبوط</td><td className="px-5 py-4">خدمة أو حملة واحدة</td><td className="px-5 py-4">التصميم، المحتوى، النماذج والتكاملات</td><td className="px-5 py-4">الأقل عادةً</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">موقع شركة</td><td className="px-5 py-4">عرض الهوية والخدمات والأعمال والتواصل</td><td className="px-5 py-4">عدد الصفحات واللغات وإدارة المحتوى</td><td className="px-5 py-4">منخفضة إلى متوسطة</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">متجر إلكتروني</td><td className="px-5 py-4">منتجات وطلبات ودفع وشحن</td><td className="px-5 py-4">حجم الكتالوج وطرق الدفع والإدارة</td><td className="px-5 py-4">متوسطة إلى مرتفعة</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">منصة أو نظام مخصص</td><td className="px-5 py-4">مستخدمون وصلاحيات وعمليات مترابطة</td><td className="px-5 py-4">قواعد العمل والبيانات والتقارير والتكاملات</td><td className="px-5 py-4">تُحسب حسب النطاق</td></tr>
+                    <tr><td className="px-5 py-4 font-semibold text-white">صفحة هبوط</td><td className="px-5 py-4">خدمة أو حملة واحدة</td><td className="px-5 py-4 font-semibold text-cyan-200">5,000–15,000 جنيه</td><td className="px-5 py-4">التصميم، المحتوى، النماذج والتكاملات</td></tr>
+                    <tr><td className="px-5 py-4 font-semibold text-white">موقع شركة</td><td className="px-5 py-4">عرض الهوية والخدمات والأعمال والتواصل</td><td className="px-5 py-4 font-semibold text-cyan-200">10,000–40,000 جنيه</td><td className="px-5 py-4">عدد الصفحات واللغات وإدارة المحتوى</td></tr>
+                    <tr><td className="px-5 py-4 font-semibold text-white">متجر إلكتروني</td><td className="px-5 py-4">منتجات وطلبات ودفع وشحن</td><td className="px-5 py-4 font-semibold text-cyan-200">25,000–80,000+ جنيه</td><td className="px-5 py-4">حجم الكتالوج وطرق الدفع والشحن والإدارة</td></tr>
+                    <tr><td className="px-5 py-4 font-semibold text-white">منصة أو نظام مخصص</td><td className="px-5 py-4">مستخدمون وصلاحيات وعمليات مترابطة</td><td className="px-5 py-4 font-semibold text-cyan-200">50,000–250,000+ جنيه</td><td className="px-5 py-4">قواعد العمل والبيانات والتقارير والتكاملات</td></tr>
                   </tbody>
                 </table>
               </div>
               <p className="mt-4 text-sm leading-7 text-white/48">
-                المقارنة توضح مستوى الاستثمار النسبي، وليست قائمة أسعار ثابتة؛ لأن
-                مشروعين من النوع نفسه قد يختلفان في الصفحات والوظائف والتكاملات.
+                آخر مراجعة: أكتوبر 2026. الأرقام بالجنيه المصري ولا تمثل عرضًا ملزمًا
+                من ICC، وقد لا تشمل الدومين والاستضافة أو المحتوى أو التراخيص أو
+                الصيانة. عرض ICC النهائي يُحدد بعد مراجعة نطاق المشروع.
               </p>
             </section>
 
@@ -569,7 +574,7 @@ export default function WebsiteDesignCostArticle() {
               <nav className="mt-5">
                 <ul className="space-y-3 text-sm leading-6 text-white/55">
                   <li><a href="#fixed-price" className="transition hover:text-cyan-300">هل يوجد سعر ثابت؟</a></li>
-                  <li><a href="#website-types" className="transition hover:text-cyan-300">أنواع المواقع</a></li>
+                  <li><a href="#website-types" className="transition hover:text-cyan-300">نطاقات الأسعار</a></li>
                   <li><a href="#cost-factors" className="transition hover:text-cyan-300">عوامل تحديد التكلفة</a></li>
                   <li><a href="#ready-vs-custom" className="transition hover:text-cyan-300">الجاهز أم المخصص؟</a></li>
                   <li><a href="#included-services" className="transition hover:text-cyan-300">ما الذي تشمل الخدمة؟</a></li>
