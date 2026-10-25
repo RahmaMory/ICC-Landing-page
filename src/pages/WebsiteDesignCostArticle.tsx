@@ -106,6 +106,32 @@ const articleStructuredData = {
 const sectionClass = "scroll-mt-28 border-t border-white/10 pt-12"
 const headingClass = "text-3xl font-bold leading-relaxed text-white sm:text-4xl"
 const paragraphClass = "mt-5 text-lg leading-9 text-white/72"
+const pricingRanges = [
+  {
+    type: "صفحة هبوط",
+    typicalNeed: "خدمة أو حملة واحدة",
+    price: "5,000–15,000",
+    factors: "التصميم، المحتوى، النماذج والتكاملات",
+  },
+  {
+    type: "موقع شركة",
+    typicalNeed: "عرض الهوية والخدمات والأعمال والتواصل",
+    price: "10,000–40,000",
+    factors: "عدد الصفحات واللغات وإدارة المحتوى",
+  },
+  {
+    type: "متجر إلكتروني",
+    typicalNeed: "منتجات وطلبات ودفع وشحن",
+    price: "25,000–80,000+",
+    factors: "حجم الكتالوج وطرق الدفع والشحن والإدارة",
+  },
+  {
+    type: "منصة أو نظام مخصص",
+    typicalNeed: "مستخدمون وصلاحيات وعمليات مترابطة",
+    price: "50,000–250,000+",
+    factors: "قواعد العمل والبيانات والتقارير والتكاملات",
+  },
+] as const
 
 export default function WebsiteDesignCostArticle() {
   return (
@@ -178,7 +204,7 @@ export default function WebsiteDesignCostArticle() {
                 <h2 id="quick-answer-title" className="text-2xl font-bold text-cyan-200">الإجابة المختصرة</h2>
                 <ul className="mt-5 space-y-4 text-base leading-8 text-white/75">
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />تبدأ صفحة الهبوط في السوق غالبًا من نحو 5,000 جنيه، بينما تبدأ المواقع والأنظمة الأكبر من نطاقات أعلى.</li>
-                  <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />الأرقام المنشورة هنا متوسطات سوقية استرشادية، وليست عرض سعر ثابتًا من ICC.</li>
+                  <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />الأرقام المنشورة هنا مقارنات سوقية استرشادية، وليست عرض سعر ثابتًا من ICC أو متوسطًا إحصائيًا للسوق.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />قد يبدأ الموقع البسيط من 7 إلى 10 أيام عمل.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />المواقع متعددة الصفحات أو ذات الوظائف البرمجية تستغرق غالبًا من أسبوعين إلى ثلاثة أسابيع.</li>
                   <li className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />الأنظمة الأكثر تعقيدًا تحتاج إلى مراحل ومدة أطول.</li>
@@ -204,35 +230,84 @@ export default function WebsiteDesignCostArticle() {
             </section>
 
             <section id="website-types" className={sectionClass}>
-              <h2 className={headingClass}>متوسط أسعار تصميم المواقع في مصر 2026</h2>
+              <h2 className={headingClass}>نطاقات أسعار تصميم المواقع في مصر 2026</h2>
               <p className={paragraphClass}>
                 تساعدك النطاقات التالية على تكوين ميزانية أولية قبل طلب عرض السعر.
                 وهي خلاصة مقارنة لنطاقات معلنة في السوق المصري خلال 2026، وليست تسعيرة
                 موحدة؛ فقد يكون المشروع أقل أو أعلى وفق مستوى التصميم والوظائف والخدمة.
               </p>
-              <div className="mt-8 overflow-x-auto rounded-2xl border border-white/10">
+              <div className="mt-8 hidden overflow-x-auto rounded-2xl border border-white/10 md:block">
                 <table className="w-full min-w-[56rem] border-collapse text-right">
+                  <caption className="sr-only">نطاقات الأسعار الاسترشادية حسب نوع المشروع</caption>
                   <thead className="bg-white/[0.06] text-white">
                     <tr>
-                      <th className="px-5 py-4 font-semibold">نوع المشروع</th>
-                      <th className="px-5 py-4 font-semibold">الاحتياج المعتاد</th>
-                      <th className="px-5 py-4 font-semibold">النطاق السوقي الاسترشادي</th>
-                      <th className="px-5 py-4 font-semibold">ما يؤثر في التكلفة</th>
+                      <th scope="col" className="px-5 py-4 font-semibold">نوع المشروع</th>
+                      <th scope="col" className="px-5 py-4 font-semibold">الاحتياج المعتاد</th>
+                      <th scope="col" className="px-5 py-4 font-semibold">النطاق السوقي الاسترشادي</th>
+                      <th scope="col" className="px-5 py-4 font-semibold">ما يؤثر في التكلفة</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/8 text-white/68">
-                    <tr><td className="px-5 py-4 font-semibold text-white">صفحة هبوط</td><td className="px-5 py-4">خدمة أو حملة واحدة</td><td className="px-5 py-4 font-semibold text-cyan-200">5,000–15,000 جنيه</td><td className="px-5 py-4">التصميم، المحتوى، النماذج والتكاملات</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">موقع شركة</td><td className="px-5 py-4">عرض الهوية والخدمات والأعمال والتواصل</td><td className="px-5 py-4 font-semibold text-cyan-200">10,000–40,000 جنيه</td><td className="px-5 py-4">عدد الصفحات واللغات وإدارة المحتوى</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">متجر إلكتروني</td><td className="px-5 py-4">منتجات وطلبات ودفع وشحن</td><td className="px-5 py-4 font-semibold text-cyan-200">25,000–80,000+ جنيه</td><td className="px-5 py-4">حجم الكتالوج وطرق الدفع والشحن والإدارة</td></tr>
-                    <tr><td className="px-5 py-4 font-semibold text-white">منصة أو نظام مخصص</td><td className="px-5 py-4">مستخدمون وصلاحيات وعمليات مترابطة</td><td className="px-5 py-4 font-semibold text-cyan-200">50,000–250,000+ جنيه</td><td className="px-5 py-4">قواعد العمل والبيانات والتقارير والتكاملات</td></tr>
+                    {pricingRanges.map((item) => (
+                      <tr key={item.type}>
+                        <th scope="row" className="px-5 py-4 font-semibold text-white">{item.type}</th>
+                        <td className="px-5 py-4">{item.typicalNeed}</td>
+                        <td className="px-5 py-4 font-semibold text-cyan-200"><bdi dir="ltr">{item.price}</bdi>{" "}جنيه</td>
+                        <td className="px-5 py-4">{item.factors}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
+              </div>
+              <div className="mt-8 grid gap-4 md:hidden" aria-label="نطاقات الأسعار الاسترشادية حسب نوع المشروع">
+                {pricingRanges.map((item) => (
+                  <article key={item.type} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
+                    <h3 className="text-xl font-bold text-white">{item.type}</h3>
+                    <p className="mt-2 text-lg font-semibold text-cyan-200"><bdi dir="ltr">{item.price}</bdi>{" "}جنيه</p>
+                    <dl className="mt-4 space-y-3 text-sm leading-7">
+                      <div>
+                        <dt className="font-semibold text-white/85">الاحتياج المعتاد</dt>
+                        <dd className="text-white/62">{item.typicalNeed}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold text-white/85">ما يؤثر في التكلفة</dt>
+                        <dd className="text-white/62">{item.factors}</dd>
+                      </div>
+                    </dl>
+                  </article>
+                ))}
               </div>
               <p className="mt-4 text-sm leading-7 text-white/48">
                 آخر مراجعة: أكتوبر 2026. الأرقام بالجنيه المصري ولا تمثل عرضًا ملزمًا
                 من ICC، وقد لا تشمل الدومين والاستضافة أو المحتوى أو التراخيص أو
                 الصيانة. عرض ICC النهائي يُحدد بعد مراجعة نطاق المشروع.
               </p>
+              <aside className="mt-6 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6" aria-labelledby="pricing-methodology-title">
+                <h3 id="pricing-methodology-title" className="text-lg font-bold text-white">منهجية الأسعار والمصادر</h3>
+                <p className="mt-3 leading-8 text-white/62">
+                  هذه النطاقات مقارنة تحريرية بين أسعار منشورة في أدلة مصرية خلال
+                  2026، وليست متوسطات محسوبة من عينة إحصائية أو دراسة شاملة للسوق.
+                  راجعنا نطاقات المشروعات المتقاربة، ثم أبقينا النطاقات المعتمدة في
+                  هذا الدليل كما هي لتكوين تصور أولي فقط؛ ويظل عرض السعر النهائي مرتبطًا بنطاق العمل.
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm leading-7">
+                  <li>
+                    <a href="https://www.e-rankers.com/ar/blog/website-cost-egypt-ar.html" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
+                      E-Rankers: دليل الأسعار 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://smweb.studio/ar/guides/website-cost-in-egypt" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
+                      SM Web Studio: تكلفة المواقع 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://hexapert.com/website-design-cost-egypt/" target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">
+                      Hexapert: نطاقات السوق 2026<span className="sr-only"> (يفتح في نافذة جديدة)</span>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
             </section>
 
             <section id="cost-factors" className={sectionClass}>
@@ -558,11 +633,11 @@ export default function WebsiteDesignCostArticle() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link to="/#contact" className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3.5 font-semibold transition hover:bg-blue-400">
-                  تواصل مع فريق ICC
+                  اطلب تقديرًا مبدئيًا لمشروعك
                   <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link to="/projects" className="inline-flex items-center rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white/85 transition hover:bg-white/7">
-                  شاهد سابقة الأعمال
+                  راجع سابقة أعمال ICC
                 </Link>
               </div>
             </section>
@@ -589,7 +664,7 @@ export default function WebsiteDesignCostArticle() {
                 </ul>
               </nav>
               <Link to="/#contact" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white transition hover:bg-blue-400">
-                اطلب تقدير مشروعك
+                اطلب تقديرًا مبدئيًا
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
