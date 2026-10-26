@@ -38,6 +38,7 @@ function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -49,8 +50,22 @@ export default function Navbar() {
       }
     };
 
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        !mobileMenuRef.current?.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    document.addEventListener("pointerdown", closeOnOutsidePointer);
+
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOnOutsidePointer);
+    };
   }, [isMenuOpen]);
 
   return (
@@ -107,7 +122,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div className="navbar-end">
-          <div className="relative lg:hidden">
+          <div ref={mobileMenuRef} className="relative lg:hidden">
             <button
               ref={menuButtonRef}
               type="button"
@@ -120,7 +135,7 @@ export default function Navbar() {
               ☰
             </button>
 
-            {isMenuOpen && <ul id="mobile-navigation" className="menu menu-sm absolute right-0 z-50 mt-3 w-52 rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
+            {isMenuOpen && <ul id="mobile-navigation" className="menu menu-sm absolute end-0 z-50 mt-3 max-h-[calc(100dvh-5.5rem)] w-52 max-w-[calc(100vw-1rem)] overflow-y-auto rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
               <li>
                 <MenuLink to="/#services" onNavigate={() => setIsMenuOpen(false)}>Services</MenuLink>
               </li>
