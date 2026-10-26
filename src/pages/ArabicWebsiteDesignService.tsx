@@ -120,6 +120,13 @@ const selectedProjectSlugs = new Set([
   "a-plus-aura",
 ])
 
+const projectDescriptionsAr: Record<string, string> = {
+  "remax-in-town": "نموذج منصة عقارية يجمع بين استكشاف العقارات ومساحة إدارة متكاملة.",
+  "two-concepts-architecture": "موقع لعرض أعمال استوديو متكامل للعمارة والهندسة والإنشاءات.",
+  caterserv: "نموذج موقع متعدد الصفحات لخدمات الضيافة والفعاليات، يشمل الخدمات والقوائم والتعريف بالفريق والحجز.",
+  "a-plus-aura": "موقع شركة للتسويق والإنتاج الإعلامي يعرض الحملات والخدمات والأعمال واستفسارات العملاء.",
+}
+
 const selectedProjects = projects.filter((project) => selectedProjectSlugs.has(project.slug))
 
 const structuredData = {
@@ -371,9 +378,9 @@ export default function ArabicWebsiteDesignService() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold text-blue-300">مشروعات حقيقية منشورة</p>
-              <h2 className={`mt-4 ${sectionHeadingClass}`}>أمثلة من مواقع ومنصات نفذتها ICC</h2>
-              <p className="mt-5 max-w-3xl text-lg leading-9 text-white/62">نماذج عامة من سابقة الأعمال الحالية، مع روابط مباشرة للمشروعات المنشورة دون ادعاء نتائج أو أرقام غير موثقة.</p>
+              <p className="text-sm font-semibold text-blue-300">نماذج أعمال منشورة</p>
+              <h2 className={`mt-4 ${sectionHeadingClass}`}>أمثلة من مواقع ومنصات طورتها ICC</h2>
+              <p className="mt-5 max-w-3xl text-lg leading-9 text-white/62">نماذج من سابقة الأعمال الحالية، مع روابط مباشرة للنسخ المنشورة ودون افتراض علاقة عميل أو ادعاء نتائج غير موثقة.</p>
             </div>
             <Link to="/projects" className="inline-flex items-center gap-2 font-semibold text-cyan-300 hover:text-cyan-200">
               شاهد سابقة الأعمال كاملة
@@ -396,9 +403,9 @@ export default function ArabicWebsiteDesignService() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="mt-3 line-clamp-3 text-sm leading-7 text-white/52">{project.desc}</p>
+                  <p className="mt-3 line-clamp-3 text-sm leading-7 text-white/52">{projectDescriptionsAr[project.slug]}</p>
                   <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-300 transition hover:text-cyan-200">
-                    افتح المشروع المنشور
+                    افتح نموذج العمل المنشور
                     <ExternalLink className="h-4 w-4" aria-hidden="true" />
                     <span className="sr-only"> (يفتح في نافذة جديدة)</span>
                   </a>
@@ -470,7 +477,7 @@ export default function ArabicWebsiteDesignService() {
             <p className="mt-5 max-w-3xl text-lg leading-9 text-white/66">شاركنا نوع النشاط والصفحات والخصائص المطلوبة والموعد المستهدف. سنساعدك على تحديد النطاق والمدة والخطوات المناسبة قبل بدء التنفيذ.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link to="/#contact" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-blue-500 px-7 py-3.5 font-semibold transition hover:bg-blue-400">
-                تواصل مع فريق ICC
+                ناقش تصميم وتطوير موقعك
                 <ArrowUpLeft className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link to="/projects" className="inline-flex min-h-14 items-center justify-center rounded-xl border border-white/15 px-7 py-3.5 font-semibold text-white/85 transition hover:bg-white/[0.06]">
