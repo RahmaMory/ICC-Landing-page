@@ -21,6 +21,7 @@ const DashboardPage = lazy(() => import("./components/Services/DashboardPage"));
 const AIAutomationPage = lazy(() => import("./components/Services/AIAutomationPage"));
 const ArabicBlog = lazy(() => import("./pages/ArabicBlog"));
 const WebsiteDesignCostArticle = lazy(() => import("./pages/WebsiteDesignCostArticle"));
+const ArabicWebsiteDesignService = lazy(() => import("./pages/ArabicWebsiteDesignService"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
 const introSessionKey = "icc-intro-seen"
@@ -81,6 +82,7 @@ function App() {
           <Route path="/services/ai-automation" element={<AIAutomationPage />} />
           <Route path="/ar/blog" element={<ArabicBlog />} />
           <Route path="/ar/blog/website-design-cost-egypt" element={<WebsiteDesignCostArticle />} />
+          <Route path="/ar/services/website-design-egypt" element={<ArabicWebsiteDesignService />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

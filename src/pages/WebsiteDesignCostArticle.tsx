@@ -292,7 +292,7 @@ export default function WebsiteDesignCostArticle() {
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm leading-7">
                   <li>
-                    <Link to="/services/mvp-website" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">خدمات تطوير المواقع</Link>
+                    <Link to="/ar/services/website-design-egypt" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">خدمات تصميم وتطوير المواقع في مصر</Link>
                   </li>
                   <li>
                     <Link to="/projects" className="font-semibold text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:text-cyan-200">سابقة أعمال ICC</Link>
