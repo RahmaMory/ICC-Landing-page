@@ -51,6 +51,38 @@
     "title": "AI Automation Solutions for Businesses | ICC Egypt",
     "description": "Practical AI automation solutions for repetitive tasks, customer support, document processing, CRM integrations, and connected business workflows."
   },
+  "/blog": {
+    "title": "ICC Blog | Website Design & Software Development Insights",
+    "description": "Practical guides from ICC about website design, software development, project scope, pricing, performance, user experience, and digital product delivery.",
+    "language": "en",
+    "direction": "ltr",
+    "locale": "en_US",
+    "ogType": "website",
+    "lastModified": "2026-10-27",
+    "sitemapPriority": "0.8",
+    "alternateLanguages": [
+      { "hrefLang": "en", "href": "https://www.icc-collab.com/blog" },
+      { "hrefLang": "ar", "href": "https://www.icc-collab.com/ar/blog" },
+      { "hrefLang": "x-default", "href": "https://www.icc-collab.com/blog" }
+    ]
+  },
+  "/blog/website-design-cost-egypt": {
+    "title": "Website Design Cost in Egypt 2026: Pricing, Features & Development Timeline",
+    "description": "Explore indicative website design costs in Egypt for 2026, what each project scope includes, the factors that affect pricing, and realistic development timelines.",
+    "language": "en",
+    "direction": "ltr",
+    "locale": "en_US",
+    "ogType": "article",
+    "publishedTime": "2026-10-27",
+    "modifiedTime": "2026-10-27",
+    "lastModified": "2026-10-27",
+    "sitemapPriority": "0.9",
+    "alternateLanguages": [
+      { "hrefLang": "en", "href": "https://www.icc-collab.com/blog/website-design-cost-egypt" },
+      { "hrefLang": "ar", "href": "https://www.icc-collab.com/ar/blog/website-design-cost-egypt" },
+      { "hrefLang": "x-default", "href": "https://www.icc-collab.com/blog/website-design-cost-egypt" }
+    ]
+  },
   "/ar/blog": {
     "title": "مدونة ICC العربية | تصميم المواقع وتطوير البرمجيات",
     "description": "مقالات عملية من ICC — IO Code Company عن تصميم المواقع، تطوير البرمجيات، تجربة المستخدم، الأداء ومحركات البحث.",
@@ -59,7 +91,12 @@
     "locale": "ar_EG",
     "ogType": "website",
     "lastModified": "2026-10-25",
-    "sitemapPriority": "0.8"
+    "sitemapPriority": "0.8",
+    "alternateLanguages": [
+      { "hrefLang": "en", "href": "https://www.icc-collab.com/blog" },
+      { "hrefLang": "ar", "href": "https://www.icc-collab.com/ar/blog" },
+      { "hrefLang": "x-default", "href": "https://www.icc-collab.com/blog" }
+    ]
   },
   "/ar/blog/website-design-cost-egypt": {
     "title": "تكلفة تصميم موقع إلكتروني في مصر 2026 | ICC",
@@ -71,7 +108,12 @@
     "publishedTime": "2026-10-24",
     "modifiedTime": "2026-10-25",
     "lastModified": "2026-10-25",
-    "sitemapPriority": "0.9"
+    "sitemapPriority": "0.9",
+    "alternateLanguages": [
+      { "hrefLang": "en", "href": "https://www.icc-collab.com/blog/website-design-cost-egypt" },
+      { "hrefLang": "ar", "href": "https://www.icc-collab.com/ar/blog/website-design-cost-egypt" },
+      { "hrefLang": "x-default", "href": "https://www.icc-collab.com/blog/website-design-cost-egypt" }
+    ]
   },
   "/ar/services/website-design-egypt": {
     "title": "شركة تصميم مواقع في مصر | تصميم وتطوير المواقع - ICC",

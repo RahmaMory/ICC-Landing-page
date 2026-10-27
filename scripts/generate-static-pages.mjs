@@ -74,6 +74,14 @@ function replaceMeta(html, route, metadata, noIndex = false) {
     )
   }
 
+  if (metadata.alternateLanguages?.length) {
+    const alternateLinks = metadata.alternateLanguages
+      .map((alternate) => `    <link rel="alternate" hreflang="${escapeHtml(alternate.hrefLang)}" href="${escapeHtml(alternate.href)}" data-icc-hreflang="true" />`)
+      .join("\n")
+
+    output = output.replace("</head>", `${alternateLinks}\n  </head>`)
+  }
+
   return output
     .replaceAll("https://www.icc-collab.com/icc-social-preview.png", socialImage)
     .replaceAll('content="1733"', 'content="1200"')

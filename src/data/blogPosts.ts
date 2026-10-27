@@ -36,3 +36,28 @@ export const blogPosts: BlogPost[] = [
 ]
 
 export const websiteDesignCostPost = blogPosts[0]
+
+export const englishBlogPosts: BlogPost[] = [
+  {
+    slug: "website-design-cost-egypt",
+    href: "/blog/website-design-cost-egypt",
+    title: "Website Design Cost in Egypt 2026: Pricing, Features & Development Timeline",
+    excerpt:
+      "A practical guide to indicative website design price ranges in Egypt, the scope behind each range, and the timelines and services businesses should clarify before development begins.",
+    category: "Website Design & Development",
+    publishedDate: "2026-10-27",
+    publishedLabel: "October 27, 2026",
+    updatedDate: "2026-10-27",
+    updatedLabel: "October 27, 2026",
+    readingTime: "15 min read",
+    keywords: [
+      "website design cost in Egypt",
+      "website development prices in Egypt",
+      "website design company in Egypt",
+      "custom website development",
+      "website development timeline",
+    ],
+  },
+]
+
+export const englishWebsiteDesignCostPost = englishBlogPosts[0]

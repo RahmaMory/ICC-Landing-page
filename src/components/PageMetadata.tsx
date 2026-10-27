@@ -13,6 +13,10 @@ type RouteMetadata = {
   ogType?: "website" | "article"
   publishedTime?: string
   modifiedTime?: string
+  alternateLanguages?: Array<{
+    hrefLang: string
+    href: string
+  }>
 }
 
 const routeMetadata = routeMetadataJson as Record<string, RouteMetadata>
@@ -41,6 +45,21 @@ function syncOptionalMeta(
   }
 
   document.head.querySelector(selector)?.remove()
+}
+
+function syncAlternateLanguages(alternates: RouteMetadata["alternateLanguages"]) {
+  document.head
+    .querySelectorAll('link[data-icc-hreflang="true"]')
+    .forEach((element) => element.remove())
+
+  alternates?.forEach((alternate) => {
+    const link = document.createElement("link")
+    link.rel = "alternate"
+    link.hreflang = alternate.hrefLang
+    link.href = alternate.href
+    link.dataset.iccHreflang = "true"
+    document.head.appendChild(link)
+  })
 }
 
 export default function PageMetadata() {
@@ -97,6 +116,7 @@ export default function PageMetadata() {
       document.head.appendChild(canonical)
     }
     canonical.href = canonicalUrl
+    syncAlternateLanguages(metadata?.alternateLanguages)
   }, [pathname])
 
   return null

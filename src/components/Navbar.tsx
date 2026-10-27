@@ -1,12 +1,26 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 // import logo2 from "../assets/logos/Gemini_Generated_Image_uzp7zxuzp7zxuzp7-removebg-preview-removebg-preview.png";
 import ICCLogo from "../assets/logos/ICC.png";
 
 type MenuLinkProps = {
   to: string;
-  children: React.ReactNode;
+  children: ReactNode;
   onNavigate?: () => void;
+};
+
+const equivalentLanguageRoutes: Record<string, { en: string; ar: string }> = {
+  "/blog": { en: "/blog", ar: "/ar/blog" },
+  "/ar/blog": { en: "/blog", ar: "/ar/blog" },
+  "/blog/website-design-cost-egypt": {
+    en: "/blog/website-design-cost-egypt",
+    ar: "/ar/blog/website-design-cost-egypt",
+  },
+  "/ar/blog/website-design-cost-egypt": {
+    en: "/blog/website-design-cost-egypt",
+    ar: "/ar/blog/website-design-cost-egypt",
+  },
 };
 
 function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
@@ -17,9 +31,10 @@ function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
     : "";
 
   const isHashLink = to.includes("#");
+  const isBlogLink = to === "/blog" || to === "/ar/blog";
   const isActive = isHashLink
     ? pathname === "/" && hash === currentHash
-    : pathname === to;
+    : pathname === to || (isBlogLink && pathname.startsWith(`${to}/`));
 
   return (
     <Link
@@ -35,10 +50,79 @@ function MenuLink({ to, children, onNavigate }: MenuLinkProps) {
   );
 }
 
+type LanguageSwitchProps = {
+  currentLanguage: "en" | "ar";
+  englishPath: string;
+  arabicPath: string;
+  onNavigate?: () => void;
+  compact?: boolean;
+};
+
+function LanguageSwitch({
+  currentLanguage,
+  englishPath,
+  arabicPath,
+  onNavigate,
+  compact = false,
+}: LanguageSwitchProps) {
+  return (
+    <nav
+      aria-label={currentLanguage === "ar" ? "اختيار اللغة" : "Language switcher"}
+      className={`flex items-center gap-2 text-sm font-semibold ${
+        compact
+          ? "justify-center rounded-lg bg-white/[0.035] px-3 py-2"
+          : "rounded-full border border-white/10 px-3 py-2"
+      }`}
+    >
+      <Link
+        to={englishPath}
+        lang="en"
+        hrefLang="en"
+        onClick={onNavigate}
+        aria-current={currentLanguage === "en" ? "page" : undefined}
+        className={currentLanguage === "en" ? "text-cyan-300" : "text-white/55 transition hover:text-white"}
+      >
+        English
+      </Link>
+      <span aria-hidden="true" className="text-white/25">|</span>
+      <Link
+        to={arabicPath}
+        lang="ar"
+        dir="rtl"
+        hrefLang="ar"
+        onClick={onNavigate}
+        aria-current={currentLanguage === "ar" ? "page" : undefined}
+        className={currentLanguage === "ar" ? "text-cyan-300" : "text-white/55 transition hover:text-white"}
+      >
+        العربية
+      </Link>
+    </nav>
+  );
+}
+
 export default function Navbar() {
+  const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const isArabicPage = pathname.startsWith("/ar/");
+  const currentLanguage = isArabicPage ? "ar" : "en";
+  const equivalentRoutes = equivalentLanguageRoutes[pathname];
+  const englishPath = equivalentRoutes?.en ?? (isArabicPage ? "/" : pathname);
+  const arabicPath = equivalentRoutes?.ar ?? (isArabicPage ? pathname : "/ar/blog");
+  const blogPath = isArabicPage ? "/ar/blog" : "/blog";
+  const closeMenu = () => setIsMenuOpen(false);
+  const navigationItems = [
+    { to: "/#services", en: "Services", ar: "الخدمات" },
+    { to: "/#process", en: "Process", ar: "مراحل العمل" },
+    { to: "/#work", en: "Work", ar: "أعمالنا" },
+    { to: blogPath, en: "Blog", ar: "المدونة" },
+    { to: "/#industries", en: "Industries", ar: "القطاعات" },
+    { to: "/#testimonials", en: "Testimonials", ar: "آراء العملاء" },
+    { to: "/#pricing", en: "Pricing", ar: "الأسعار" },
+    { to: "/#faq", en: "FAQ", ar: "الأسئلة الشائعة" },
+    { to: "/#contact", en: "Contact", ar: "تواصل معنا" },
+  ];
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -87,42 +171,26 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden xl:flex">
           <ul className="menu menu-horizontal px-1">
-         
-            <li>
-              <MenuLink to="/#services">Services</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#process">Process</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#work">Work</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/ar/blog">Blog</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#industries">Industries</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#testimonials">Testimonials</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#pricing">Pricing</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#faq">FAQ</MenuLink>
-            </li>
-            <li>
-              <MenuLink to="/#contact">Contact</MenuLink>
-            </li>
+            {navigationItems.map((item) => (
+              <li key={item.en}>
+                <MenuLink to={item.to}>{isArabicPage ? item.ar : item.en}</MenuLink>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Mobile Menu */}
-        <div className="navbar-end">
-          <div ref={mobileMenuRef} className="relative lg:hidden">
+        <div className="navbar-end gap-2">
+          <div className="hidden xl:block">
+            <LanguageSwitch
+              currentLanguage={currentLanguage}
+              englishPath={englishPath}
+              arabicPath={arabicPath}
+            />
+          </div>
+          <div ref={mobileMenuRef} className="relative xl:hidden">
             <button
               ref={menuButtonRef}
               type="button"
@@ -135,58 +203,51 @@ export default function Navbar() {
               ☰
             </button>
 
-            {isMenuOpen && <ul id="mobile-navigation" className="menu menu-sm absolute end-0 z-50 mt-3 max-h-[calc(100dvh-5.5rem)] w-52 max-w-[calc(100vw-1rem)] overflow-y-auto rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl">
-              <li>
-                <MenuLink to="/#services" onNavigate={() => setIsMenuOpen(false)}>Services</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#process" onNavigate={() => setIsMenuOpen(false)}>Process</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#work" onNavigate={() => setIsMenuOpen(false)}>Work</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/ar/blog" onNavigate={() => setIsMenuOpen(false)}>Blog</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#industries" onNavigate={() => setIsMenuOpen(false)}>Industries</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#testimonials" onNavigate={() => setIsMenuOpen(false)}>Testimonials</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#pricing" onNavigate={() => setIsMenuOpen(false)}>Pricing</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#faq" onNavigate={() => setIsMenuOpen(false)}>FAQ</MenuLink>
-              </li>
-              <li>
-                <MenuLink to="/#contact" onNavigate={() => setIsMenuOpen(false)}>Contact</MenuLink>
-              </li>
+            {isMenuOpen ? (
+              <ul
+                id="mobile-navigation"
+                className="menu menu-sm absolute end-0 z-50 mt-3 max-h-[calc(100dvh-5.5rem)] w-56 max-w-[calc(100vw-1rem)] overflow-y-auto rounded-box border border-gray-800 bg-[#0F1623] p-2 text-white shadow-xl"
+              >
+                {navigationItems.map((item) => (
+                  <li key={item.en}>
+                    <MenuLink to={item.to} onNavigate={closeMenu}>
+                      {isArabicPage ? item.ar : item.en}
+                    </MenuLink>
+                  </li>
+                ))}
 
-              <li>
-                <div className="divider my-1"></div>
-              </li>
-
-              <li>
-                <Link
-                  to="/#contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="btn bg-blue-500 text-white hover:bg-blue-600"
-                >
-                  Talk to Our Team
-                </Link>
-              </li>
-            </ul>}
+                <li>
+                  <div className="divider my-1" />
+                </li>
+                <li>
+                  <LanguageSwitch
+                    currentLanguage={currentLanguage}
+                    englishPath={englishPath}
+                    arabicPath={arabicPath}
+                    onNavigate={closeMenu}
+                    compact
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/#contact"
+                    onClick={closeMenu}
+                    className="btn bg-blue-500 text-white hover:bg-blue-600"
+                  >
+                    {isArabicPage ? "تحدث مع فريقنا" : "Talk to Our Team"}
+                  </Link>
+                </li>
+              </ul>
+            ) : null}
           </div>
         </div>
 
         {/* Desktop CTA */}
         <Link
           to="/#contact"
-          className="btn hidden bg-blue-500 text-white transition duration-300 hover:bg-blue-600 lg:inline-flex"
+          className="btn hidden bg-blue-500 text-white transition duration-300 hover:bg-blue-600 xl:inline-flex"
         >
-          Talk to Our Team
+          {isArabicPage ? "تحدث معنا" : "Talk to Our Team"}
         </Link>
       </div>
     </div>

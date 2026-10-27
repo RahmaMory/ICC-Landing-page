@@ -1,7 +1,7 @@
 export const footerLinks = {
   company: [
     { name: "Our Work", path: "/#work" },
-    { name: "Arabic Blog", path: "/ar/blog" },
+    { name: "Blog", path: "/blog" },
     { name: "Industries", path: "/#industries" },
     { name: "Contact", path: "/#contact" },
   ],

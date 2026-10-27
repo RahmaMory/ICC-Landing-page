@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from "../assets/logo.jpeg"
 import { Mail} from "lucide-react"
 import { footerLinks } from "../data/footer"
 import { socialLinks } from "../data/socialLinks"
 export default function Footer() {
+  const { pathname } = useLocation()
+  const isArabicPage = pathname.startsWith("/ar/")
+  const companyLinks = footerLinks.company.map((item) => (
+    item.name === "Blog"
+      ? { name: isArabicPage ? "المدونة" : "Blog", path: isArabicPage ? "/ar/blog" : "/blog" }
+      : item
+  ))
 
     const whatsappUrl =
     'https://wa.me/201031158933?text=Hello!%20I%20would%20like%20to%20book%20a%20free%2015-minute%20discovery%20call%20with%20ICC.'
@@ -153,7 +160,7 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Company</h4>
           <ul className="space-y-3 text-sm text-gray-400">
-            {footerLinks.company.map((item) => (
+            {companyLinks.map((item) => (
               <li key={item.path}>
                 <Link to={item.path} className="hover:text-blue-400 transition">
                   {item.name}
